@@ -1,0 +1,5 @@
+- Tổng hợp các bài lab môn Nguyên Lý lập trình cấu trúc 
+- Giảng viên hướng dẫn: thầy Trần Tuấn Minh
+- Ngôn ngữ: C/C++
+- Thuộc về: Nguyễn Trọng Hiếu - CTK42
+- Đại học Đà Lạt
