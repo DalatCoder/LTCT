@@ -1,0 +1,7 @@
+﻿  program.cpp
+c:\users\tronghieu\desktop\laptrinhcautruc\1812756_lab04\1812756_lab04_bb\lab04_e_bai3_songuyento\lab04_e_bai3_songuyento\thuvien.h(42): warning C4018: '<=': signed/unsigned mismatch
+c:\users\tronghieu\desktop\laptrinhcautruc\1812756_lab04\1812756_lab04_bb\lab04_e_bai3_songuyento\lab04_e_bai3_songuyento\thuvien.h(62): warning C4018: '<=': signed/unsigned mismatch
+c:\users\tronghieu\desktop\laptrinhcautruc\1812756_lab04\1812756_lab04_bb\lab04_e_bai3_songuyento\lab04_e_bai3_songuyento\thuvien.h(78): warning C4018: '<=': signed/unsigned mismatch
+c:\users\tronghieu\desktop\laptrinhcautruc\1812756_lab04\1812756_lab04_bb\lab04_e_bai3_songuyento\lab04_e_bai3_songuyento\thuvien.h(94): warning C4018: '<=': signed/unsigned mismatch
+  Lab04_E_Bai3_SoNguyenTo.vcxproj -> C:\Users\TrongHieu\Desktop\LapTrinhCauTruc\1812756_Lab04\1812756_Lab04_BB\Lab04_E_Bai3_SoNguyenTo\Debug\Lab04_E_Bai3_SoNguyenTo.exe
+  Lab04_E_Bai3_SoNguyenTo.vcxproj -> C:\Users\TrongHieu\Desktop\LapTrinhCauTruc\1812756_Lab04\1812756_Lab04_BB\Lab04_E_Bai3_SoNguyenTo\Debug\Lab04_E_Bai3_SoNguyenTo.pdb (Full PDB)
