@@ -1,6 +1,0 @@
-﻿  program.cpp
-c:\users\tronghieu\desktop\laptrinhcautruc\1812756_lab04\1812756_lab04_bb\lab04_e_bai2_doicosoi\lab04_e_bai2_doicosoi\thuvien.h(60): warning C4244: 'return': conversion from 'double' to 'unsigned int', possible loss of data
-c:\users\tronghieu\desktop\laptrinhcautruc\1812756_lab04\1812756_lab04_bb\lab04_e_bai2_doicosoi\lab04_e_bai2_doicosoi\thuvien.h(76): warning C4018: '<': signed/unsigned mismatch
-c:\users\tronghieu\desktop\laptrinhcautruc\1812756_lab04\1812756_lab04_bb\lab04_e_bai2_doicosoi\lab04_e_bai2_doicosoi\menu.h(56): warning C4101: 'x': unreferenced local variable
-  Lab04_E_Bai2_DoiCoSoi.vcxproj -> C:\Users\TrongHieu\Desktop\LapTrinhCauTruc\1812756_Lab04\1812756_Lab04_BB\Lab04_E_Bai2_DoiCoSoi\Debug\Lab04_E_Bai2_DoiCoSoi.exe
-  Lab04_E_Bai2_DoiCoSoi.vcxproj -> C:\Users\TrongHieu\Desktop\LapTrinhCauTruc\1812756_Lab04\1812756_Lab04_BB\Lab04_E_Bai2_DoiCoSoi\Debug\Lab04_E_Bai2_DoiCoSoi.pdb (Full PDB)

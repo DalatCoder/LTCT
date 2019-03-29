@@ -1,8 +1,0 @@
-﻿  program.cpp
-c:\users\tronghieu\desktop\laptrinhcautruc\1812756_lab04\1812756_lab04_bb\lab04_e_bai4_uocso\lab04_e_bai4_uocso\thuvien.h(17): warning C4018: '<=': signed/unsigned mismatch
-c:\users\tronghieu\desktop\laptrinhcautruc\1812756_lab04\1812756_lab04_bb\lab04_e_bai4_uocso\lab04_e_bai4_uocso\thuvien.h(34): warning C4018: '<=': signed/unsigned mismatch
-c:\users\tronghieu\desktop\laptrinhcautruc\1812756_lab04\1812756_lab04_bb\lab04_e_bai4_uocso\lab04_e_bai4_uocso\thuvien.h(50): warning C4018: '<=': signed/unsigned mismatch
-c:\users\tronghieu\desktop\laptrinhcautruc\1812756_lab04\1812756_lab04_bb\lab04_e_bai4_uocso\lab04_e_bai4_uocso\thuvien.h(70): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\tronghieu\desktop\laptrinhcautruc\1812756_lab04\1812756_lab04_bb\lab04_e_bai4_uocso\lab04_e_bai4_uocso\thuvien.h(83): warning C4018: '<': signed/unsigned mismatch
-  Lab04_E_Bai4_UocSo.vcxproj -> C:\Users\TrongHieu\Desktop\LapTrinhCauTruc\1812756_Lab04\1812756_Lab04_BB\Lab04_E_Bai4_UocSo\Debug\Lab04_E_Bai4_UocSo.exe
-  Lab04_E_Bai4_UocSo.vcxproj -> C:\Users\TrongHieu\Desktop\LapTrinhCauTruc\1812756_Lab04\1812756_Lab04_BB\Lab04_E_Bai4_UocSo\Debug\Lab04_E_Bai4_UocSo.pdb (Full PDB)
