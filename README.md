@@ -3,3 +3,4 @@
 - Ngôn ngữ: C/C++
 - Thuộc về: Nguyễn Trọng Hiếu - CTK42
 - Đại học Đà Lạt
+- Đây là bài làm khi mới học C++ nên chắc chắn sẽ có những thiếu sót, hoàn thiện chưa tốt. Do đó, nếu tham khảo thì nên cẩn thận khi sử dụng!!!
