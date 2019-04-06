@@ -1,7 +1,7 @@
 
 void XuatMenu();
 int  ChonMenu(int soMenu);
-void XuLyMenu(int menu, DaySo a, int n);
+void XuLyMenu(int menu, DaySo a, int &n);
 
 void XuatMenu()
 {
@@ -30,7 +30,7 @@ int ChonMenu(int soMenu)
 	return stt;
 }
 
-void XuLyMenu(int menu, DaySo a, int n)
+void XuLyMenu(int menu, DaySo a, int &n)
 {
 	int kq;
 	switch (menu)
@@ -60,9 +60,16 @@ void XuLyMenu(int menu, DaySo a, int n)
 		break;
 	case 4:
 		cout << "\n4. Tim phan tu xuat hien nhieu nhat";
+		XuatHienNhieuNhat(a, n);
+		cout << "\nXem mang hien hanh de kiem tra:\n";
+		XuatMang(a, n);
 		break;
 	case 5:
 		cout << "\n5. Tim phan tu co gia tri nho nhat";
+		kq = ViTriMin(a, n);
+		cout << "\nPhan tu nho nhat la : " << a[kq] << ", vi tri xuat hien dau tien la : " << kq;
+		cout << "\nXem mang de kiem tra:\n";
+		XuatMang(a, n);
 		break;
 	case 6:
 		cout << "\n6. Tim so am lon nhat";
