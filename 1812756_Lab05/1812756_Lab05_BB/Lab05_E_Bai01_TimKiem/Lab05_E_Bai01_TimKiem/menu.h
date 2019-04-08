@@ -57,10 +57,15 @@ void XuLyMenu(int menu, DaySo a, int &n)
 		else
 			cout << "\nSo nguyen to cuoi cung la " << a[kq]
 				<< ", tai vi tri: " << kq;
+
+		cout << "\nXem mang hien hanh de kiem tra:\n";
+		XuatMang(a, n);
 		break;
 	case 4:
 		cout << "\n4. Tim phan tu xuat hien nhieu nhat";
-		XuatHienNhieuNhat(a, n);
+		kq = PhanTuXuatHienNhieuNhat(a, n);
+		cout << "\nPhan tu xuat hien nhieu nhat la : " << kq
+			<< ", voi so lan xuat hien la : " << DemSoLanXuatHien(a, n, kq);
 		cout << "\nXem mang hien hanh de kiem tra:\n";
 		XuatMang(a, n);
 		break;
@@ -73,9 +78,25 @@ void XuLyMenu(int menu, DaySo a, int &n)
 		break;
 	case 6:
 		cout << "\n6. Tim so am lon nhat";
+		kq = soAmLonNhat(a, n);
+		if (kq == -1)
+			cout << "\nMang khong chua so am\n";
+		else
+			cout << "\nSo am lon nhat la : " << a[kq] << ", tai vi tri: " << kq;
+
+		cout << "\nXem mang hien hanh de kiem tra: \n";
+		XuatMang(a, n);
 		break;
 	case 7:
 		cout << "\n7. Tim so duong nho nhat";
+		kq = soDuongNhoNhat(a, n);
+		if (kq == -1)
+			cout << "\nMang khong chua so duong\n";
+		else
+			cout << "\nSo duong nho nhat la : " << a[kq] << ", tai vi tri : " << kq;
+
+		cout << "\nXem mang hien hanh de kiem tra: \n";
+		XuatMang(a, n);
 		break;
 	}
 	_getch();
