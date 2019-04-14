@@ -100,3 +100,5 @@ void MaxHang_MinCot(int a[SIZE][SIZE], int m, int n)
 					<< " : Max hang " << i << " va Min cot " << j;
 	}
 }
+
+
