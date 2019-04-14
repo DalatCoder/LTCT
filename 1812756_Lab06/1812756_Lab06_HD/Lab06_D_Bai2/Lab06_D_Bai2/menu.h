@@ -33,6 +33,7 @@ int ChonMenu(int soMenu)
 
 void XuLyMenu(int menu, int a[SIZE][SIZE], int &m, int &n)
 {
+	int kq;
 	system("cls");
 	switch (menu)
 	{
@@ -56,6 +57,10 @@ void XuLyMenu(int menu, int a[SIZE][SIZE], int &m, int &n)
 		break;
 	case 3:
 		cout << "\n3. tinh gia tri lon nhat cua ma tran";
+		kq = Tinh_Max_MaTran(a, m, n);
+		cout << "\nMa tran hien hanh:\n";
+		XuatMaTran(a, m, n);
+		cout << "\nMax(a) = " << kq;
 		break;
 	case 4:
 		cout << "\n4. Tinh gia tri lon nhat hang i";

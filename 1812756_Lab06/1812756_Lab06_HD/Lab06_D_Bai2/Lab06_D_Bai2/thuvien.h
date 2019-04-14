@@ -1,6 +1,10 @@
 #define SIZE 10
 #define TAB '\t'
 
+void NhapTuDong(int a[SIZE][SIZE], int m, int n);
+void XuatMaTran(int a[SIZE][SIZE], int m, int n);
+int Tinh_Max_MaTran(int a[SIZE][SIZE], int m, int n);
+
 void NhapTuDong(int a[SIZE][SIZE], int m, int n)
 {
 	int i, j;
@@ -20,3 +24,17 @@ void XuatMaTran(int a[SIZE][SIZE], int m, int n)
 			cout << a[i][j] << TAB;
 	}
 }
+
+int Tinh_Max_MaTran(int a[SIZE][SIZE], int m, int n)
+{
+	int max, i, j;
+	max = a[0][0];
+	for (i = 0; i < m; i++)
+		for (j = 0; j < n; j++)
+			if (max < a[i][j])
+				max = a[i][j];
+	return max;
+}
+
+
+
