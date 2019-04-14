@@ -47,3 +47,10 @@ int Tinh_Max_Hang_i(int a[SIZE][SIZE], int i, int n)
 	return maxi;
 }
 
+int Tinh_Tong_Hang_i(int a[SIZE][SIZE], int i, int n)
+{
+	int j, sum = 0;
+	for (j = 0; j < n; j++)
+		sum += a[i][j];
+	return sum;
+}

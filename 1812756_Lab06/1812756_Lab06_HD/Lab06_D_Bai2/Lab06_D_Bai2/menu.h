@@ -76,6 +76,14 @@ void XuLyMenu(int menu, int a[SIZE][SIZE], int &m, int &n)
 		break;
 	case 5:
 		cout << "\n5. Tinh tong cac phan tu hang i";
+		do
+		{
+			cout << "\nChon hang i (0 <= i <=" << m - 1 << ") : i = ";
+			cin >> i;
+		} while (i < 0 || i > m - 1);
+		kq = Tinh_Tong_Hang_i(a, i, n);
+		cout << "\nMa tran hien hanh:\n";
+		cout << "\nTong(hang " << i << ") = " << kq;
 		break;
 	case 6:
 		cout << "\n6. Tinh gia tri nho nhat cot j";
