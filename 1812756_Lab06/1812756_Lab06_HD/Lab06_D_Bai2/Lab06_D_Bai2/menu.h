@@ -83,13 +83,14 @@ void XuLyMenu(int menu, int a[SIZE][SIZE], int &m, int &n)
 		} while (i < 0 || i > m - 1);
 		kq = Tinh_Tong_Hang_i(a, i, n);
 		cout << "\nMa tran hien hanh:\n";
+		XuatMaTran(a, m, n);
 		cout << "\nTong(hang " << i << ") = " << kq;
 		break;
 	case 6:
 		cout << "\n6. Tinh gia tri nho nhat cot j";
 		do
 		{
-			cout << "\nChon cot j (0 <= j <=" << n - 1 << ") : i = ";
+			cout << "\nChon cot j (0 <= j <=" << n - 1 << ") : j = ";
 			cin >> j;
 		} while (j < 0 || j > n - 1);
 		kq = Tinh_Min_Cot_j(a, m, j);
@@ -99,9 +100,21 @@ void XuLyMenu(int menu, int a[SIZE][SIZE], int &m, int &n)
 		break;
 	case 7:
 		cout << "\n7. Tinh tich cac phan tu cot j";
+		do
+		{
+			cout << "\nChon cot j (0 <= j <=" << n - 1 << ") : j = ";
+			cin >> j;
+		} while (j < 0 || j > n - 1);
+		kq = Tinh_Tich_Cot_j(a, m, j);
+		cout << "\nMa tran hien hanh:\n";
+		XuatMaTran(a, m, n);
+		cout << "\nTich(cot " << j << ") = " << kq;
 		break;
 	case 8:
 		cout << "\n8. Xuat aij : lon nhat hang 1 va nho nhat cot j";
+		cout << "\nMa tran hien hanh:\n";
+		XuatMaTran(a, m, n);
+		MaxHang_MinCot(a, m, n);
 		break;
 	}
 	_getch();
