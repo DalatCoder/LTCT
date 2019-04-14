@@ -4,6 +4,7 @@
 void NhapTuDong(int a[SIZE][SIZE], int m, int n);
 void XuatMaTran(int a[SIZE][SIZE], int m, int n);
 int Tinh_Max_MaTran(int a[SIZE][SIZE], int m, int n);
+int Tinh_Max_Hang_i(int a[SIZE][SIZE], int i, int n);
 
 void NhapTuDong(int a[SIZE][SIZE], int m, int n)
 {
@@ -36,5 +37,13 @@ int Tinh_Max_MaTran(int a[SIZE][SIZE], int m, int n)
 	return max;
 }
 
-
+int Tinh_Max_Hang_i(int a[SIZE][SIZE], int i, int n)
+{
+	int maxi, j;
+	maxi = a[i][0];
+	for (j = 1; j < n; j++)
+		if (maxi < a[i][j])
+			maxi = a[i][j];
+	return maxi;
+}
 
