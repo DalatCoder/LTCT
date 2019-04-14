@@ -5,6 +5,8 @@ void NhapTuDong(int a[SIZE][SIZE], int m, int n);
 void XuatMaTran(int a[SIZE][SIZE], int m, int n);
 int Tinh_Max_MaTran(int a[SIZE][SIZE], int m, int n);
 int Tinh_Max_Hang_i(int a[SIZE][SIZE], int i, int n);
+int Tinh_Tong_Hang_i(int a[SIZE][SIZE], int i, int n);
+int Tinh_Min_Cot_j(int a[SIZE][SIZE], int m, int j);
 
 void NhapTuDong(int a[SIZE][SIZE], int m, int n)
 {
@@ -54,3 +56,15 @@ int Tinh_Tong_Hang_i(int a[SIZE][SIZE], int i, int n)
 		sum += a[i][j];
 	return sum;
 }
+
+int Tinh_Min_Cot_j(int a[SIZE][SIZE], int m, int j)
+{
+	int minj, i;
+	minj = a[0][j];
+	for (i = 1; i < m; i++)
+		if (minj > a[i][j])
+			minj = a[i][j];
+	return minj;
+}
+
+
