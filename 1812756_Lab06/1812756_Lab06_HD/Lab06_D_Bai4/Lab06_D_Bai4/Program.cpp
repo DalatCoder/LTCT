@@ -34,6 +34,10 @@ int main()
 	TinhHieu_2_MaTran(a, b, c, n);
 	XuatMaTran(c, n);
 
+	cout << "\n\nTich ma tran a va ma tran b:";
+	TinhTich_2_MaTran(a, b, c, n);
+	XuatMaTran(c, n);
+
 	_getch();
 	return 0;
 }
