@@ -6,6 +6,7 @@ void NhapMaTran(MaTranVuong a, int n, char kt);
 void NhapMaTran_TD(MaTranVuong a, int n);
 void XuatMaTran(MaTranVuong a, int n);
 void TinhTong_2_MaTran(MaTranVuong a, MaTranVuong b, MaTranVuong c, int n);
+void TinhHieu_2_MaTran(MaTranVuong a, MaTranVuong b, MaTranVuong c, int n);
 
 void NhapMaTran(MaTranVuong a, int n, char kt)
 {
@@ -45,5 +46,12 @@ void TinhTong_2_MaTran(MaTranVuong a, MaTranVuong b, MaTranVuong c, int n)
 			c[i][j] = a[i][j] + b[i][j];
 }
 
+void TinhHieu_2_MaTran(MaTranVuong a, MaTranVuong b, MaTranVuong c, int n)
+{
+	int i, j;
+	for (i = 0; i < n; i++)
+		for (j = 0; j < n; j++)
+			c[i][j] = a[i][j] - b[i][j];
+}
 
 
