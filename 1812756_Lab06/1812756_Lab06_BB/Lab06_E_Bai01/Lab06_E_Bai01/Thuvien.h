@@ -51,7 +51,10 @@ double SoDuongNhoNhat_Hang(MaTranVuong a, int n, int i)
 
 	for (j = 0; j < n; j++)
 		if (a[i][j] > 0)
+		{
 			kq = a[i][j];
+			break;
+		}
 
 	for (j; j < n; j++)
 		if (a[i][j] > 0 && kq > a[i][j])
@@ -59,4 +62,24 @@ double SoDuongNhoNhat_Hang(MaTranVuong a, int n, int i)
 
 	return kq;
 }
+
+double SoAmLonNhat_Cot(MaTranVuong a, int n, int j)
+{
+	int kq = 1, i;
+
+	for (i = 0; i < n; i++)
+		if (a[i][j] < 0)
+		{
+			kq = a[i][j];
+			break;
+		}
+
+	for (i; i < n; i++)
+		if (a[i][j] < 0 && kq < a[i][j])
+			kq = a[i][j];
+
+	return kq;
+}
+
+
 
