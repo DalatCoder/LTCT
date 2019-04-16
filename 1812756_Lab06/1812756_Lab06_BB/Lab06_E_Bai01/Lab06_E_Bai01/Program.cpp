@@ -22,6 +22,9 @@ int main()
 	NhapMaTran_TD(a, n);
 	XuatMaTran(a, n);
 
+	cout << "\nCac cap gia tri S | T\n";
+	Xuat_S_T(a, n);
+
 	_getch();
 	return 0;
 }

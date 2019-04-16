@@ -6,6 +6,8 @@ void NhapMaTran_TD(MaTranVuong a, int n);
 void XuatMaTran(MaTranVuong a, int n);
 void NhapMaTran(MaTranVuong a, int n);
 double SoDuongNhoNhat_Hang(MaTranVuong a, int n, int i);
+double SoAmLonNhat_Cot(MaTranVuong a, int n, int j);
+void Xuat_S_T(MaTranVuong a, int n);
 
 double fRand(double fMin, double fMax)
 {
@@ -47,7 +49,8 @@ void XuatMaTran(MaTranVuong a, int n)
 
 double SoDuongNhoNhat_Hang(MaTranVuong a, int n, int i)
 {
-	int kq = -1, j;
+	double kq = -1.0;
+	int j;
 
 	for (j = 0; j < n; j++)
 		if (a[i][j] > 0)
@@ -65,7 +68,8 @@ double SoDuongNhoNhat_Hang(MaTranVuong a, int n, int i)
 
 double SoAmLonNhat_Cot(MaTranVuong a, int n, int j)
 {
-	int kq = 1, i;
+	double kq = 1.0;
+	int i;
 
 	for (i = 0; i < n; i++)
 		if (a[i][j] < 0)
@@ -81,5 +85,22 @@ double SoAmLonNhat_Cot(MaTranVuong a, int n, int j)
 	return kq;
 }
 
-
+void Xuat_S_T(MaTranVuong a, int n)
+{
+	int i, j;
+	double max, min;
+	for (i = 0; i < n; i++)
+	{
+		cout << "\n";
+		max = SoDuongNhoNhat_Hang(a, n, i);
+		for (j = 0; j < n; j++)
+		{
+			min = SoAmLonNhat_Cot(a, n, j);
+			cout << setw(10) << setprecision(3);
+			max == -1.0 ? cout << "Khong" : cout << max;
+			cout << " | ";
+			min == 1.0 ? cout << "Khong" : cout << min;
+		}
+	}
+}
 
