@@ -3,7 +3,9 @@
 typedef int MaTranVuong[SIZE][SIZE];
 
 void NhapMaTran(MaTranVuong a, int n, char kt);
+void NhapMaTran_TD(MaTranVuong a, int n);
 void XuatMaTran(MaTranVuong a, int n);
+void TinhTong_2_MaTran(MaTranVuong a, MaTranVuong b, MaTranVuong c, int n);
 
 void NhapMaTran(MaTranVuong a, int n, char kt)
 {
@@ -16,6 +18,14 @@ void NhapMaTran(MaTranVuong a, int n, char kt)
 		}
 }
 
+void NhapMaTran_TD(MaTranVuong a, int n)
+{
+	int i, j;
+	for (i = 0; i < n; i++)
+		for (j = 0; j < n; j++)
+			a[i][j] = rand() % 10;
+}
+
 void XuatMaTran(MaTranVuong a, int n)
 {
 	int i, j;
@@ -25,6 +35,14 @@ void XuatMaTran(MaTranVuong a, int n)
 		for (j = 0; j < n; j++)
 			cout << setw(4) << a[i][j];
 	}
+}
+
+void TinhTong_2_MaTran(MaTranVuong a, MaTranVuong b, MaTranVuong c, int n)
+{
+	int i, j;
+	for (i = 0; i < n; i++)
+		for (j = 0; j < n; j++)
+			c[i][j] = a[i][j] + b[i][j];
 }
 
 
