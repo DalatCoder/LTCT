@@ -5,6 +5,7 @@ typedef double MaTranVuong[SIZE][SIZE];
 void NhapMaTran_TD(MaTranVuong a, int n);
 void XuatMaTran(MaTranVuong a, int n);
 void NhapMaTran(MaTranVuong a, int n);
+double SoDuongNhoNhat_Hang(MaTranVuong a, int n, int i);
 
 double fRand(double fMin, double fMax)
 {
@@ -18,7 +19,7 @@ void NhapMaTran_TD(MaTranVuong a, int n)
 	int i, j;
 	for (i = 0; i < n; i++)
 		for (j = 0; j < n; j++)
-			a[i][j] = fRand(1.0, 10.0);
+			a[i][j] = fRand(-10.0, 10.0);
 }
 
 void NhapMaTran(MaTranVuong a, int n)
@@ -44,4 +45,18 @@ void XuatMaTran(MaTranVuong a, int n)
 	cout << "\n";
 }
 
+double SoDuongNhoNhat_Hang(MaTranVuong a, int n, int i)
+{
+	int kq = -1, j;
+
+	for (j = 0; j < n; j++)
+		if (a[i][j] > 0)
+			kq = a[i][j];
+
+	for (j; j < n; j++)
+		if (a[i][j] > 0 && kq > a[i][j])
+			kq = a[i][j];
+
+	return kq;
+}
 
