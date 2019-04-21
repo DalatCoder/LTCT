@@ -78,6 +78,38 @@ int DemSoLanXuatHien_Min(DaySo a, int n)
 	return dem;
 }
 
+int TinhMax(DaySo a, int n)
+{
+	int i, max = a[0];
+	for (i = 1; i < n; i++)
+		if (a[i] > max)
+			max = a[i];
+	return max;
+}
+
+/*
+	Input: 
+		- Day so a
+		- So luong phan tu n
+		- Vi tri cua phan tu can xoa
+*/
+void Xoa_1_PhanTu(DaySo a, int &n, int vt)
+{
+	int i;
+	for (i = vt; i < n - 1; i++)
+		a[i] = a[i + 1];
+	n = n - 1;
+}
+
+void Xoa_TatCa_PhanTu(DaySo a, int &n)
+{
+	int i, max;
+
+	max = TinhMax(a, n);
+	for (i = 0; i < n; i++)
+		if (a[i] == max)
+			Xoa_1_PhanTu(a, n, i);
+}
 
 
 
