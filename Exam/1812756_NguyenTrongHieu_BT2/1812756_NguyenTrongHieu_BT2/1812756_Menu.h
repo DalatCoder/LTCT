@@ -29,6 +29,7 @@ int ChonMenu(int soMenu)
 void XuLyMenu(int menu, DaySo a, int n)
 {
 	system("cls");
+	int kq;
 	switch (menu)
 	{
 		case 0:
@@ -40,6 +41,10 @@ void XuLyMenu(int menu, DaySo a, int n)
 			break;
 		case 2:
 			cout << "\n2. Tinh tong cac phan tu khac nhau trong day";
+			kq = Tong_GT_PhanBiet(a, n);
+			cout << "\nTong cac gia tri phan biet trong day la : " << kq;
+			cout << "\nXem lai mang hien hanh de kiem tra:\n";
+			XuatMang(a, n);
 			break;
 		case 3:
 			cout << "\n3. Xuat so lan xuat hien cua gia tri MIN";
