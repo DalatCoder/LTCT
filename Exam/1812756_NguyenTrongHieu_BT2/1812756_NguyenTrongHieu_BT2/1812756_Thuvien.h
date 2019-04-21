@@ -18,10 +18,12 @@ void SapXep(DaySo a, int n);
 void NhapMang(DaySo a, int n)
 {
 	int i;
+	int max = 10, min = -10;
+
+	srand((unsigned)time(NULL));
 	for (i = 0; i < n; i++)
 	{
-		cout << "\nNhap a[" << i << "] = ";
-		cin >> a[i];
+		a[i] = rand() % (max - min) + min;
 	}
 }
 
@@ -130,9 +132,7 @@ void SapXep(DaySo a, int n)
 		for (j = i + 1; j < n; j++)
 		{
 			mc = (a[i] < 0 && a[j] < 0 && a[i] < a[j]) ||
-				(a[i] == 0 && a[j] < 0) ||
-				(a[i] > 0 && a[j] < 0) ||
-				(a[i] > 0 && a[j] > 0 && a[i] > a[j]);
+				(a[i] >= 0 && a[j] >= 0 && a[i] > a[j]);
 			if (mc)
 			{
 				int tam = a[i];
