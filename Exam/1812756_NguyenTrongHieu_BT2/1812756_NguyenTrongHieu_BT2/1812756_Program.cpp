@@ -19,22 +19,19 @@ void ChayChuongTrinh()
 	int soMenu = 5, menu, n;
 	DaySo a;
 
-	cout << "\nNhap vao kich thuoc cua mang: ";
-	cin >> n;
+	do
+	{
+		cout << "\nNhap vao kich thuoc cua mang : ";
+		cin >> n;
+	} while (n <= 0);
 
 	NhapMang(a, n);
-	XuatMang(a, n);
-	cout << endl;
-	Tong_GT_PhanBiet(a, n);
 
-	_getch();
 	do
 	{
 		menu = ChonMenu(soMenu);
 		XuLyMenu(menu, a, n);
 	} while (menu > 0);
-
-	_getch();
 }
 
 
