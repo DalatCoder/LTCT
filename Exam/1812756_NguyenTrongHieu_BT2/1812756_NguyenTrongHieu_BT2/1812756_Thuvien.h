@@ -47,7 +47,7 @@ int Tong_GT_PhanBiet(DaySo a, int n)
 	DaySo b;
 	int i, j, m = 0, dau;
 
-	for (i = 1; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
 		dau = true;
 		for (j = 0; j < m; j++)
@@ -115,7 +115,10 @@ void Xoa_TatCa_PhanTu(DaySo a, int &n)
 	max = TinhMax(a, n);
 	for (i = 0; i < n; i++)
 		if (a[i] == max)
+		{
 			Xoa_1_PhanTu(a, n, i);
+			i--;
+		}
 }
 
 void SapXep(DaySo a, int n)

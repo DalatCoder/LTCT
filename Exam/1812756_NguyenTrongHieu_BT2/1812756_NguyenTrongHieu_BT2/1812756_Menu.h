@@ -61,6 +61,8 @@ void XuLyMenu(int menu, DaySo a, int &n)
 		case 4:
 			cout << "\n4. Xoa tat ca cac phan tu co gia tri bang MAX";
 			cout << "\nMang ban dau :\n";
+			XuatMang(a, n);
+
 			Xoa_TatCa_PhanTu(a, n);
 			cout << "\nPhan tu lon nhat: " << TinhMax(a, n);
 			cout << "\nMang sau khi xoa phan tu lon nhat: \n";
