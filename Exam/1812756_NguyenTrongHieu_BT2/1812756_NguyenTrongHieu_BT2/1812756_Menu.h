@@ -48,6 +48,9 @@ void XuLyMenu(int menu, DaySo a, int n)
 			break;
 		case 3:
 			cout << "\n3. Xuat so lan xuat hien cua gia tri MIN";
+			kq = DemSoLanXuatHien_Min(a, n);
+			cout << "\nPhan tu nho nhat trong day la : " << TinhMin(a, n);
+			cout << "\nSo lan xuat hien cua phan tu nay la : " << kq;
 			break;
 		case 4:
 			cout << "\n4. Xoa tat ca cac phan tu co gia tri bang MAX";

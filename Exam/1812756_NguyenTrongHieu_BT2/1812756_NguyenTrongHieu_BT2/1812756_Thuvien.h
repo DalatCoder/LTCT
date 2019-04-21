@@ -66,7 +66,17 @@ int TinhMin(DaySo a, int n)
 	return min;
 }
 
+int DemSoLanXuatHien_Min(DaySo a, int n)
+{
+	int min = TinhMin(a, n);
+	int i, dem = 0;
+	
+	for (i = 0; i < n; i++)
+		if (a[i] == min)
+			dem++;
 
+	return dem;
+}
 
 
 
