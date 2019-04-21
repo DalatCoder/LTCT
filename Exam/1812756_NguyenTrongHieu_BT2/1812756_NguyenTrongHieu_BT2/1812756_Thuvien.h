@@ -7,6 +7,13 @@ void NhapMang(DaySo a, int n);
 void XuatMang(DaySo a, int n);
 int Tong_GT_PhanBiet(DaySo a, int n);
 int TinhTong(DaySo a, int n);
+int Tong_GT_PhanBiet(DaySo a, int n);
+int TinhMin(DaySo a, int n);
+int DemSoLanXuatHien_Min(DaySo a, int n);
+int TinhMax(DaySo a, int n);
+void Xoa_1_PhanTu(DaySo a, int &n, int vt);
+void Xoa_TatCa_PhanTu(DaySo a, int &n);
+void SapXep(DaySo a, int n);
 
 void NhapMang(DaySo a, int n)
 {

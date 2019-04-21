@@ -1,4 +1,8 @@
 
+void XuatMenu();
+int ChonMenu(int soMenu);
+void XuLyMenu(int menu, DaySo a, int &n);
+
 void XuatMenu()
 {
 	cout << "\n================== CHON CHUC NANG ====================\n";
@@ -26,7 +30,7 @@ int ChonMenu(int soMenu)
 	return stt;
 }
 
-void XuLyMenu(int menu, DaySo a, int n)
+void XuLyMenu(int menu, DaySo a, int &n)
 {
 	system("cls");
 	int kq;
@@ -36,7 +40,7 @@ void XuLyMenu(int menu, DaySo a, int n)
 			cout << "\n0. Thoat chuong trinh";
 			break;
 		case 1:
-			cout << "\n1. Xuat day so ra man hinh";
+			cout << "\n1. Xuat day so ra man hinh:\n";
 			XuatMang(a, n);
 			break;
 		case 2:
@@ -50,13 +54,25 @@ void XuLyMenu(int menu, DaySo a, int n)
 			cout << "\n3. Xuat so lan xuat hien cua gia tri MIN";
 			kq = DemSoLanXuatHien_Min(a, n);
 			cout << "\nPhan tu nho nhat trong day la : " << TinhMin(a, n);
-			cout << "\nSo lan xuat hien cua phan tu nay la : " << kq;
+			cout << "\nSo lan xuat hien cua phan tu nay la : " << kq; 
+			cout << "\nXem mang hien hanh de kiem tra:\n";
+			XuatMang(a, n);
 			break;
 		case 4:
 			cout << "\n4. Xoa tat ca cac phan tu co gia tri bang MAX";
+			cout << "\nMang ban dau :\n";
+			Xoa_TatCa_PhanTu(a, n);
+			cout << "\nPhan tu lon nhat: " << TinhMax(a, n);
+			cout << "\nMang sau khi xoa phan tu lon nhat: \n";
+			XuatMang(a, n);
 			break;
 		case 5:
 			cout << "\n5. Sap xep mang theo yeu cau";
+			cout << "\nMang ban dau truoc khi sap xep:\n";
+			XuatMang(a, n);
+			SapXep(a, n);
+			cout << "\nMang sau khi sap xep theo yeu cau:\n";
+			XuatMang(a, n);
 			break;
 	}
 
