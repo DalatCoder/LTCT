@@ -132,6 +132,8 @@ void SapXep(DaySo a, int n)
 		for (j = i + 1; j < n; j++)
 		{
 			mc = (a[i] < 0 && a[j] < 0 && a[i] < a[j]) ||
+				(a[i] == 0 && a[j] < 0) ||
+				(a[i] > 0 && a[j] == 0) || 
 				(a[i] >= 0 && a[j] >= 0 && a[i] > a[j]);
 			if (mc)
 			{
