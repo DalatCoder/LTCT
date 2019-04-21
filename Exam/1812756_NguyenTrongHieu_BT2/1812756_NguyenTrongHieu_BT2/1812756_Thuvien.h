@@ -111,6 +111,28 @@ void Xoa_TatCa_PhanTu(DaySo a, int &n)
 			Xoa_1_PhanTu(a, n, i);
 }
 
+void SapXep(DaySo a, int n)
+{
+	int i, j, mc;
+
+	for (i = 0; i < n - 1; i++)
+	{
+		for (j = i + 1; j < n; j++)
+		{
+			mc = (a[i] < 0 && a[j] < 0 && a[i] < a[j]) ||
+				(a[i] == 0 && a[j] < 0) ||
+				(a[i] > 0 && a[j] < 0) ||
+				(a[i] > 0 && a[j] > 0 && a[i] > a[j]);
+			if (mc)
+			{
+				int tam = a[i];
+				a[i] = a[j];
+				a[j] = tam;
+			}
+		}
+	}
+}
+
 
 
 
