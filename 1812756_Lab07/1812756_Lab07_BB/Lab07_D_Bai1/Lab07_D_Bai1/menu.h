@@ -84,12 +84,39 @@ void XuLyMenu(int menu, String a, String b)
 
 		case 4:
 			cout << "\n4. strcat_s_Noi chuoi sau vao sau chuoi truoc";
+			cout << "\nChuoi truoc: a = ";
+			XuatChuoi(a);
+			cout << "\nChuoi sau: b = ";
+			XuatChuoi(b);
+			strcat_s_Noi_ChuoiSau_VaoSau_ChuoiTruoc(a, b);
+			cout << "\nChuoi truoc sau khi noi: a = ";
+			XuatChuoi(a);
 			break;
+
 		case 5:
 			cout << "\n5. strcpy_s_Chep chuoi sau vao chuoi truoc";
+			cout << "\nChuoi sau: b = ";
+			XuatChuoi(b);
+
+			strcpy_s_Chep_ChuoiSau_Qua_ChuoiTruoc(a, b);
+			cout << "\nChuoi truoc a, do b chep qua: a = ";
+			XuatChuoi(a);
 			break;
 		case 6:
 			cout << "\n6. _strcmpi_So sanh chuoi_Khong phan biet KT thuong, HOA";
+			cout << "\nChuoi a: ";
+			XuatChuoi(a);
+			cout << "\nChuoi b: ";
+			XuatChuoi(b);
+
+			kq = _strcmpi_SoSanhChuoi_KPB(a, b);
+			if (kq > 0)
+				cout << "\na > b";
+			else
+				if (kq < 0)
+					cout << "\na < b";
+				else
+					cout << "\na == b";
 			break;
 		case 7:
 			cout << "\n7. strcmp_So sanh chuoi_Phan biet KT thuong, HOA";
