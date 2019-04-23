@@ -10,6 +10,8 @@ void strcat_s_Noi_ChuoiSau_VaoSau_ChuoiTruoc(String a, String b);
 void strcpy_s_Chep_ChuoiSau_Qua_ChuoiTruoc(String a, String b);
 int _strcmpi_SoSanhChuoi_KPB(String a, String b);
 int strcmp_SoSanhChuoi_PB(String a, String b);
+void Noi_ChuoiSau_VaoSau_ChuoiTruoc(String a, String b);
+void Chep_ChuoiSau_Qua_ChuoiTruoc(String a, String b);
 
 void gets_s_NhapChuoi(String a, char kt)
 {
@@ -52,6 +54,20 @@ int strcmp_SoSanhChuoi_PB(String a, String b)
 	return strcmp(a, b);
 }
 
+void Chep_ChuoiSau_Qua_ChuoiTruoc(String a, String b)
+{
+	int i;
+	for (i = 0; (a[i] == b[i]) != NULL; i++);
+}
+
+void Noi_ChuoiSau_VaoSau_ChuoiTruoc(String a, String b)
+{
+	int i, l;
+	l = strlen_TinhChieuDaiCuaChuoi(a);
+	for (i = 0; b[i] != NULL; i++)
+		a[l++] = b[i];
+	a[l] = NULL;
+}
 
 
 
