@@ -73,7 +73,15 @@ void XuLyMenu(int menu, String a, String b)
 
 		case 3:
 			cout << "\n3. strlen_Tinh chieu dai cua chuoi";
+			cout << "\nChuoi a: ";
+			XuatChuoi(a);
+			cout << "\nChieu dai chuoi a: l = " << strlen_TinhChieuDaiCuaChuoi(a);
+			cout << "\nChuoi b: ";
+			XuatChuoi(b);
+			cout << "\nChieu dai chuoi b: l = " << strlen_TinhChieuDaiCuaChuoi(b);
+			cout << "\nNhan phim bat ky de tiep tuc";
 			break;
+
 		case 4:
 			cout << "\n4. strcat_s_Noi chuoi sau vao sau chuoi truoc";
 			break;
