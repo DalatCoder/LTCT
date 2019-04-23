@@ -79,7 +79,7 @@ int DemSoLanXuatHien_Min(DaySo a, int n)
 {
 	int min = TinhMin(a, n);
 	int i, dem = 0;
-	
+
 	for (i = 0; i < n; i++)
 		if (a[i] == min)
 			dem++;
@@ -97,10 +97,10 @@ int TinhMax(DaySo a, int n)
 }
 
 /*
-	Input: 
-		- Day so a
-		- So luong phan tu n
-		- Vi tri cua phan tu can xoa
+Input:
+- Day so a
+- So luong phan tu n
+- Vi tri cua phan tu can xoa
 */
 void Xoa_1_PhanTu(DaySo a, int &n, int vt)
 {
@@ -131,10 +131,10 @@ void SapXep(DaySo a, int n)
 	{
 		for (j = i + 1; j < n; j++)
 		{
-			mc = (a[i] > 0 && a[j] > 0 && a[i] > a[j]) ||
+			mc = (a[i] < 0 && a[j] < 0 && a[i] < a[j]) ||
 				(a[i] == 0 && a[j] < 0) ||
-				(a[i] > 0 && a[j] < 0) ||
-				(a[i] < 0 && a[j] < 0 && a[i] < a[j]);
+				(a[i] > 0 && a[j] == 0) ||
+				(a[i] >= 0 && a[j] >= 0 && a[i] > a[j]);
 			if (mc)
 			{
 				int tam = a[i];
@@ -144,9 +144,4 @@ void SapXep(DaySo a, int n)
 		}
 	}
 }
-
-
-
-
-
 
