@@ -15,3 +15,13 @@ char Chuyen_KT_Hoa(char x)
 		x = x - 32;
 	return x;
 }
+
+void ChenCuoi(char b[MAX], char kt)
+{
+	int i;
+	for (i = 0; b[i] != NULL; i++);
+	b[i++] = kt;
+	b[i] = NULL;
+}
+
+
