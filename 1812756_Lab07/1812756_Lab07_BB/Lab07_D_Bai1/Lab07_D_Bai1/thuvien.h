@@ -14,6 +14,7 @@ void Noi_ChuoiSau_VaoSau_ChuoiTruoc(String a, String b);
 void Chep_ChuoiSau_Qua_ChuoiTruoc(String a, String b);
 int SoSanhChuoi_KPB(String a, String b);
 char Chuyen_KT_Hoa(char x);
+int SoSanhChuoi_PB(String a, String b);
 
 void gets_s_NhapChuoi(String a, char kt)
 {
@@ -95,6 +96,22 @@ char Chuyen_KT_Hoa(char x)
 	return x;
 }
 
+int SoSanhChuoi_PB(String a, String b)
+{
+	int i;
+	for (i = 0; a[i] != NULL && b[i] != NULL; i++)
+	{
+		if (a[i] < b[i])
+			return -1;
+		if (a[i] > b[i])
+			return 1;
+	}
+	if (a[i] != NULL)
+		return 1;
+	if (b[i] != NULL)
+		return -1;
+	return 0;
+}
 
 
 

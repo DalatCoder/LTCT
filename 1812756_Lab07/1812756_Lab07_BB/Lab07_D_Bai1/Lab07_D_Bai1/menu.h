@@ -175,6 +175,19 @@ void XuLyMenu(int menu, String a, String b)
 
 		case 11:
 			cout << "\n11. So sanh chuoi_Phan biet KT thuong, HOA";
+			cout << "\nChuoi a = ";
+			XuatChuoi(a);
+			cout << "\nChuoi b = ";
+			XuatChuoi(b);
+
+			kq = SoSanhChuoi_PB(a, b);
+			if (kq == 1)
+				cout << "\na > b";
+			else
+				if (kq == -1)
+					cout << "\na < b";
+				else
+					cout << "\na == b";
 			break;
 	}
 
