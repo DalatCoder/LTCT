@@ -1,6 +1,5 @@
 #include <iostream>
 #include <conio.h>
-#include <cstdlib>
 
 using namespace std;
 
@@ -11,6 +10,7 @@ void ChayChuongTrinh();
 
 int main()
 {
+	
 	ChayChuongTrinh();
 	return 0;
 }
@@ -18,13 +18,15 @@ int main()
 void ChayChuongTrinh()
 {
 	int menu, soMenu = 11;
-	String a, b;
+	String a;
+	String b;
+
 	do
 	{
 		system("cls");
 		menu = ChonMenu(soMenu);
 		XuLyMenu(menu, a, b);
 	} while (menu > 0);
-	_getch();
+	
 }
 

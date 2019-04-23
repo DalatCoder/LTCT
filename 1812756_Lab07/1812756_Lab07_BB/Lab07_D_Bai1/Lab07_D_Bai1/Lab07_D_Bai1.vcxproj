@@ -146,6 +146,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="menu.h" />
+    <ClInclude Include="thuvien.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="program.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
