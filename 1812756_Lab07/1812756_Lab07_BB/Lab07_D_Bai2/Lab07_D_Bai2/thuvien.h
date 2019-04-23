@@ -2,6 +2,11 @@
 #define MAX 100
 #define CACH ' '
 
+char Chuyen_KT_Thuong(char x);
+char Chuyen_KT_Hoa(char x);
+void ChenCuoi(char b[MAX], char kt);
+void NanTen(char a[MAX]);
+
 char Chuyen_KT_Thuong(char x)
 {
 	if ('A' <= x && x <= 'Z')
