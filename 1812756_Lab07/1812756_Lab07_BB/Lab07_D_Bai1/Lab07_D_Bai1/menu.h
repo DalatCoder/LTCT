@@ -120,6 +120,19 @@ void XuLyMenu(int menu, String a, String b)
 			break;
 		case 7:
 			cout << "\n7. strcmp_So sanh chuoi_Phan biet KT thuong, HOA";
+			cout << "\nChuoi a: ";
+			XuatChuoi(a);
+			cout << "\nChuoi b: ";
+			XuatChuoi(b);
+
+			kq = strcmp_SoSanhChuoi_PB(a, b);
+			if (kq > 0)
+				cout << "\na > b";
+			else
+				if (kq < 0)
+					cout << "\na < b";
+				else
+					cout << "\na == b";
 			break;
 		case 8:
 			cout << "\n8. Noi chuoi sau vao sau chuoi truoc";
