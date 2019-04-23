@@ -12,6 +12,8 @@ int _strcmpi_SoSanhChuoi_KPB(String a, String b);
 int strcmp_SoSanhChuoi_PB(String a, String b);
 void Noi_ChuoiSau_VaoSau_ChuoiTruoc(String a, String b);
 void Chep_ChuoiSau_Qua_ChuoiTruoc(String a, String b);
+int SoSanhChuoi_KPB(String a, String b);
+char Chuyen_KT_Hoa(char x);
 
 void gets_s_NhapChuoi(String a, char kt)
 {
@@ -57,7 +59,7 @@ int strcmp_SoSanhChuoi_PB(String a, String b)
 void Chep_ChuoiSau_Qua_ChuoiTruoc(String a, String b)
 {
 	int i;
-	for (i = 0; (a[i] == b[i]) != NULL; i++);
+	for (i = 0; (a[i] = b[i]) != NULL; i++);
 }
 
 void Noi_ChuoiSau_VaoSau_ChuoiTruoc(String a, String b)
@@ -68,6 +70,31 @@ void Noi_ChuoiSau_VaoSau_ChuoiTruoc(String a, String b)
 		a[l++] = b[i];
 	a[l] = NULL;
 }
+
+int SoSanhChuoi_KPB(String a, String b)
+{
+	int i;
+	for (i = 0; a[i] != NULL && b[i] != NULL; i++)
+	{
+		if (Chuyen_KT_Hoa(a[i]) < Chuyen_KT_Hoa(b[i]))
+			return -1;
+		if (Chuyen_KT_Hoa(a[i]) > Chuyen_KT_Hoa(b[i]))
+			return 1;
+	}
+	if (a[i] != NULL)
+		return 1;
+	if (b[i] != NULL)
+		return -1;
+	return 0;
+}
+
+char Chuyen_KT_Hoa(char x)
+{
+	if ('a' <= x && x <= 'z')
+		x = x - 32;
+	return x;
+}
+
 
 
 

@@ -148,10 +148,31 @@ void XuLyMenu(int menu, String a, String b)
 
 		case 9:
 			cout << "\n9. Chep chuoi sau qua chuoi truoc";
+			cout << "\nChuoi sau: b = ";
+			XuatChuoi(b);
+
+			Chep_ChuoiSau_Qua_ChuoiTruoc(a, b);
+			cout << "\nChuoi truoc a, do b chep qua: a = ";
+			XuatChuoi(a);
 			break;
+
 		case 10:
 			cout << "\n10. So sanh chuoi_Khong phan biet KT thuong, HOA";
+			cout << "\nChuoi a = ";
+			XuatChuoi(a);
+			cout << "\nChuoi b = ";
+			XuatChuoi(b);
+
+			kq = SoSanhChuoi_KPB(a, b);
+			if (kq == 1)
+				cout << "\na > b";
+			else
+				if (kq == -1)
+					cout << "\na < b";
+				else
+					cout << "\na == b";
 			break;
+
 		case 11:
 			cout << "\n11. So sanh chuoi_Phan biet KT thuong, HOA";
 			break;
