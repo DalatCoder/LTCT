@@ -3,12 +3,24 @@
 
 typedef int maTran[MAX][MAX];
 
+int NhapThang();
 void KhoiTao(maTran lich);
 int TimThuTrongTuan(int m, int y);
 int NamNhuan(int y);
 int SoNgayTrongThang(int m, int y);
 void TaoLich(maTran lich, int m, int y);
 void XuatLich(maTran lich, int m);
+
+int NhapThang()
+{
+	int kq;
+	do
+	{
+		cout << "\nNhap 1 thang trong nam (1..12) : ";
+		cin >> kq;
+	} while (kq < 1 || kq > 12);
+	return kq;
+}
 
 // Khoi tao tat ca phan tu cua ma tran ban dau bang 0
 void KhoiTao(maTran lich)

@@ -8,6 +8,10 @@ using namespace std;
 
 int main()
 {
+	int m, y;
+	maTran lich;
+
+	
 
 	return 0;
 }
