@@ -91,6 +91,7 @@ int SoNgayTrongThang(int m, int y)
 			soNgay = 28;
 		break;
 	}
+	return soNgay;
 }
 
 void TaoLich(maTran lich, int m, int y)
@@ -112,11 +113,11 @@ void TaoLich(maTran lich, int m, int y)
 	{
 		for (j = 0; j < MAX; j++)
 		{
-			dem++;
 			if (dem > soNgay)
 				break;
 			else
 				lich[i][j] = dem;
+			dem++;
 		}
 	}
 }

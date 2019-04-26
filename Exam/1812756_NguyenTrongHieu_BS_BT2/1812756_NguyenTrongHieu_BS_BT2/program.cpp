@@ -8,10 +8,14 @@ using namespace std;
 
 int main()
 {
-	int m, y;
+	int thang, nam;
 	maTran lich;
 
-	m = NhapThang();
+	thang = NhapThang();
+	nam = NhapNam();
+
+	TaoLich(lich, thang, nam);
+	XuatLich(lich, thang);
 
 	return 0;
 }
