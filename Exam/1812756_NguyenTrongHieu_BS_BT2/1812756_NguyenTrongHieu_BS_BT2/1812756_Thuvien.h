@@ -4,6 +4,7 @@
 typedef int maTran[MAX][MAX];
 
 int NhapThang();
+int NhapNam();
 void KhoiTao(maTran lich);
 int TimThuTrongTuan(int m, int y);
 int NamNhuan(int y);
@@ -19,6 +20,17 @@ int NhapThang()
 		cout << "\nNhap 1 thang trong nam (1..12) : ";
 		cin >> kq;
 	} while (kq < 1 || kq > 12);
+	return kq;
+}
+
+int NhapNam()
+{
+	int kq;
+	do
+	{
+		cout << "\nNhap 1 nam bat ky bat dau tu 0 : ";
+		cin >> kq;
+	} while (kq < 0);
 	return kq;
 }
 

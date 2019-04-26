@@ -11,7 +11,7 @@ int main()
 	int m, y;
 	maTran lich;
 
-	
+	m = NhapThang();
 
 	return 0;
 }
