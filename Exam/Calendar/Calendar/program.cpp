@@ -10,9 +10,10 @@ int dayOfMonth(int mm, int yy);
 void displayDay(int n);
 void displayMonth(int startDay, int month);
 
+int calendar[MAX][MAX];
+
 int main()
 {
-	int calendar[MAX][MAX];
 	int n = dayOfWeek(1, 04, 2019);
 	displayDay(n);
 	_getch();
@@ -92,7 +93,20 @@ int dayOfMonth(int mm, int yy)
 
 void createMatrix(int startDay, int month, int year)
 {
-	int i, j, maxDays;
+	int i, j, maxDays, dem;
+	
+	dem = 0;
+	// First row
+	for (j = startDay; j < MAX; j++)
+		calendar[0][j] = ++dem;
+
+	for (i = 1; i < MAX; i++)
+		for (j = 0; j < MAX; j++)
+		{
+			calendar[i][j] = ++dem;
+			if (dem > maxDays)
+				break;
+		}
 }
 
 void displayMonth(int startDay, int month, int year)
