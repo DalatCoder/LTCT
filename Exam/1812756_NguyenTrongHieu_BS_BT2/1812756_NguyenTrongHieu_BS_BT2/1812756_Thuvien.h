@@ -10,7 +10,8 @@ int TimThuTrongTuan(int m, int y);
 int NamNhuan(int y);
 int SoNgayTrongThang(int m, int y);
 void TaoLich(maTran lich, int m, int y);
-void XuatLich(maTran lich, int m);
+void XuatLich_CN(maTran lich, int m);
+void XuatLich_T2(maTran lich, int m);
 
 int NhapThang()
 {
@@ -122,7 +123,7 @@ void TaoLich(maTran lich, int m, int y)
 	}
 }
 
-void XuatLich(maTran lich, int m)
+void XuatLich_CN(maTran lich, int m)
 {
 	int i, j;
 
@@ -151,4 +152,35 @@ void XuatLich(maTran lich, int m)
 	}
 }
 
+void XuatLich_T2(maTran lich, int m)
+{
+	int i, j;
 
+	setiosflags(ios::left);
+
+	cout << endl;
+	cout << setw(7) << "Mon"
+		<< setw(7) << "Tue"
+		<< setw(7) << "Wed"
+		<< setw(7) << "Thu"
+		<< setw(7) << "Fri"
+		<< setw(7) << "Sat"
+		<< setw(7) << "Sun";
+	cout << endl;
+
+	for (i = 0; i < MAX; i++)
+	{
+		for (j = 1; j < MAX; j++)
+		{
+			if (lich[i][j] != 0)
+				cout << setw(7) << lich[i][j];
+			else
+				cout << setw(7) << " ";
+		}
+
+		// Chu nhat luon xuat hien o cot cuoi cung
+		cout << setw(7) << lich[i][MAX - 1];
+
+		cout << endl;
+	}
+}
