@@ -7,6 +7,8 @@ void KhoiTao(maTran lich);
 int TimThuTrongTuan(int m, int y);
 int NamNhuan(int y);
 int SoNgayTrongThang(int m, int y);
+void TaoLich(maTran lich, int m, int y);
+void XuatLich(maTran lich, int m);
 
 // Khoi tao tat ca phan tu cua ma tran ban dau bang 0
 void KhoiTao(maTran lich)
@@ -94,4 +96,34 @@ void TaoLich(maTran lich, int m, int y)
 		}
 	}
 }
+
+void XuatLich(maTran lich, int m)
+{
+	int i, j;
+
+	setiosflags(ios::left);
+
+	cout << endl;
+	cout << setw(7) << "Sun"
+		<< setw(7) << "Mon"
+		<< setw(7) << "Tue"
+		<< setw(7) << "Wed"
+		<< setw(7) << "Thu"
+		<< setw(7) << "Fri"
+		<< setw(7) << "Sat";
+	cout << endl;
+
+	for (i = 0; i < MAX; i++)
+	{
+		for (j = 0; j < MAX; j++)
+		{
+			if (lich[i][j] != 0)
+				cout << setw(7) << lich[i][j];
+			else
+				cout << setw(7) << " ";
+		}
+		cout << endl;
+	}
+}
+
 
