@@ -6,6 +6,7 @@ typedef int maTran[MAX][MAX];
 void KhoiTao(maTran lich);
 int TimThuTrongTuan(int m, int y);
 int NamNhuan(int y);
+int SoNgayTrongThang(int m, int y);
 
 // Khoi tao tat ca phan tu cua ma tran ban dau bang 0
 void KhoiTao(maTran lich)
@@ -34,6 +35,36 @@ int NamNhuan(int y)
 		kq = 1;
 
 	return kq;
+}
+
+int SoNgayTrongThang(int m, int y)
+{
+	int soNgay;
+
+	switch (m)
+	{
+	case 1:
+	case 3:
+	case 5:
+	case 7:
+	case 8:
+	case 10:
+	case 12:
+		soNgay = 31;
+		break;
+	case 4:
+	case 6:
+	case 9:
+	case 11:
+		soNgay = 30;
+		break;
+	case 2:
+		if (NamNhuan(y))
+			soNgay = 29;
+		else
+			soNgay = 28;
+		break;
+	}
 }
 
 
