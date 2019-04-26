@@ -67,4 +67,31 @@ int SoNgayTrongThang(int m, int y)
 	}
 }
 
+void TaoLich(maTran lich, int m, int y)
+{
+	int thu, dem, soNgay, i, j;
+
+	thu = TimThuTrongTuan(m, y);
+	soNgay = SoNgayTrongThang(m, y);
+	KhoiTao(lich);
+
+	dem = 1;
+	
+	// Hang dau tien cua lich
+	for (j = thu; j < MAX; j++)
+		lich[0][j] = dem++;
+
+	// Cac hang tiep theo
+	for (i = 1; i < MAX; i++)
+	{
+		for (j = 0; j < MAX; j++)
+		{
+			dem++;
+			if (dem > soNgay)
+				break;
+			else
+				lich[i][j] = dem;
+		}
+	}
+}
 
