@@ -15,7 +15,10 @@ int main()
 	nam = NhapNam();
 
 	TaoLich(lich, thang, nam);
-	XuatLich(lich, thang);
+	XuatLich_T2(lich, thang);
+
+	cout << endl;
+	XuatLich_CN(lich, thang);
 
 	return 0;
 }

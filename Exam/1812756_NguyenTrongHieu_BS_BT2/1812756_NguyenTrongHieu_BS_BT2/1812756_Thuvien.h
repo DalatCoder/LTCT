@@ -168,6 +168,10 @@ void XuatLich_T2(maTran lich, int m)
 		<< setw(7) << "Sun";
 	cout << endl;
 
+	if (lich[0][0] == 0)
+		for (i = 0; i < MAX - 1; i++)
+			lich[i][0] = lich[i + 1][0];
+
 	for (i = 0; i < MAX; i++)
 	{
 		for (j = 1; j < MAX; j++)
@@ -179,7 +183,10 @@ void XuatLich_T2(maTran lich, int m)
 		}
 
 		// Chu nhat luon xuat hien o cot cuoi cung
-		cout << setw(7) << lich[i][MAX - 1];
+		if (lich[i][0] != 0)
+			cout << setw(7) << lich[i][0];
+		else
+			cout << setw(7) << " ";
 
 		cout << endl;
 	}
