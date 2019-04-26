@@ -126,7 +126,19 @@ void displayMonth(int month)
 	for (int i = 0; i < MAX; i++)
 	{
 		for (int j = 0; j < MAX; j++)
-			cout << setw(3) << calendar[i][j];
+		{
+			if (calendar[i][j] != 0)
+				cout << setw(3) << calendar[i][j];
+			else
+				cout << setw(3) << " ";
+		}
 		cout << endl;
 	}
+}
+
+void init()
+{
+	for (int i = 0; i < MAX; i++)
+		for (int j = 0; j < MAX; j++)
+			calendar[i][j] = 0;
 }
