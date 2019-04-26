@@ -196,43 +196,44 @@ void XuatLich_T2(maTran lich, int m)
 void XuatTieuDe(int m, int y)
 {
 	cout << endl;
+	cout << "    ";
 	switch (m)
 	{
 		case 1:
-			cout << "January";
+			cout << setw(7) << "January";
 			break;
 		case 2:
-			cout << "February";
+			cout << setw(7) << "February";
 			break;
 		case 3:
-			cout << "March";
+			cout << setw(7) << "March";
 			break;
 		case 4:
-			cout << "April";
+			cout << setw(7) << "April";
 			break;
 		case 5:
-			cout << "May";
+			cout << setw(7) << "May";
 			break;
 		case 6:
-			cout << "June";
+			cout << setw(7) << "June";
 			break;
 		case 7:
-			cout << "July";
+			cout << setw(7) << "July";
 			break;
 		case 8: 
-			cout << "August";
+			cout << setw(7) << "August";
 			break;
 		case 9:
-			cout << "September";
+			cout << setw(7) << "September";
 			break;
 		case 10:
-			cout << "October";
+			cout << setw(7) << "October";
 			break;
 		case 11:
-			cout << "November";
+			cout << setw(7) << "November";
 			break;
 		case 12:
-			cout << "December";
+			cout << setw(7) << "December";
 			break;
 		}
 		cout << " " << y << endl;

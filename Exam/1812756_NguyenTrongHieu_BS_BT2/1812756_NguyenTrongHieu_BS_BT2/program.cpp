@@ -13,12 +13,16 @@ int main()
 
 	thang = NhapThang();
 	nam = NhapNam();
+	
+	system("cls");
 
 	TaoLich(lich, thang, nam);
-	XuatLich_T2(lich, thang);
 
-	cout << endl;
+	XuatTieuDe(thang, nam);
 	XuatLich_CN(lich, thang);
+
+	XuatTieuDe(thang, nam);
+	XuatLich_T2(lich, thang);
 
 	return 0;
 }
