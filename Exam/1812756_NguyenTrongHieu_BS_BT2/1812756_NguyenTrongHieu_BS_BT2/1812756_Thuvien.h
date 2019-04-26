@@ -200,40 +200,40 @@ void XuatTieuDe(int m, int y)
 	switch (m)
 	{
 		case 1:
-			cout << setw(7) << "January";
+			cout << "January";
 			break;
 		case 2:
-			cout << setw(7) << "February";
+			cout << "February";
 			break;
 		case 3:
-			cout << setw(7) << "March";
+			cout << "March";
 			break;
 		case 4:
-			cout << setw(7) << "April";
+			cout << "April";
 			break;
 		case 5:
-			cout << setw(7) << "May";
+			cout << "May";
 			break;
 		case 6:
-			cout << setw(7) << "June";
+			cout << "June";
 			break;
 		case 7:
-			cout << setw(7) << "July";
+			cout << "July";
 			break;
 		case 8: 
-			cout << setw(7) << "August";
+			cout << "August";
 			break;
 		case 9:
-			cout << setw(7) << "September";
+			cout << "September";
 			break;
 		case 10:
-			cout << setw(7) << "October";
+			cout << "October";
 			break;
 		case 11:
-			cout << setw(7) << "November";
+			cout << "November";
 			break;
 		case 12:
-			cout << setw(7) << "December";
+			cout << "December";
 			break;
 		}
 		cout << " " << y << endl;
