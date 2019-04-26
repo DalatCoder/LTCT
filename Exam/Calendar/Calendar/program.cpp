@@ -1,5 +1,6 @@
 #include <iostream>
 #include <conio.h>
+#include <iomanip>
 
 using namespace std;
 
@@ -109,8 +110,23 @@ void createMatrix(int startDay, int month, int year)
 		}
 }
 
-void displayMonth(int startDay, int month, int year)
+void displayMonth(int month)
 {
-	int maxDays = dayOfMonth(month, year);
-	
+	setiosflags(ios::left);
+
+	cout << "\n -------------- " << month << " ----------------\n";
+	cout << setw(3) << "Sunday"
+		<< setw(3) << "Monday"
+		<< setw(3) << "Tuesday"
+		<< setw(3) << "Wednesday"
+		<< setw(3) << "Thursday"
+		<< setw(3) << "Friday"
+		<< setw(3) << "Saturday";
+
+	for (int i = 0; i < MAX; i++)
+	{
+		for (int j = 0; j < MAX; j++)
+			cout << setw(3) << calendar[i][j];
+		cout << endl;
+	}
 }
