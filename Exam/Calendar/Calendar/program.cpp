@@ -17,10 +17,16 @@ int calendar[MAX][MAX];
 
 int main()
 {
-	int n = dayOfWeek(1, 04, 2019);
-	init();
-	createMatrix(n, 4, 2019);
-	displayMonth(4);
+	int n;
+
+	for (int month = 1; month <= 12; month++)
+	{
+		init();
+		n = dayOfWeek(1, month, 2019);
+		createMatrix(n, month, 2019);
+		displayMonth(month);
+	}
+
 	_getch();
 	return 0;
 }
@@ -100,17 +106,17 @@ void createMatrix(int startDay, int month, int year)
 {
 	int i, j, maxDays, dem;
 	
-	dem = 1;
+	dem = 0;
 	maxDays = dayOfMonth(month, year);
 
 	// First row
 	for (j = startDay; j < MAX; j++)
-		calendar[0][j] = dem++;
+		calendar[0][j] = ++dem;
 
 	for (i = 1; i < MAX; i++)
 		for (j = 0; j < MAX; j++)
 		{
-			dem++;
+			++dem;
 			if (dem > maxDays)
 				break;
 			else
