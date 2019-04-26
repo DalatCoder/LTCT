@@ -5,6 +5,7 @@ typedef int maTran[MAX][MAX];
 
 void KhoiTao(maTran lich);
 int TimThuTrongTuan(int m, int y);
+int NamNhuan(int y);
 
 // Khoi tao tat ca phan tu cua ma tran ban dau bang 0
 void KhoiTao(maTran lich)
@@ -25,5 +26,14 @@ int TimThuTrongTuan(int m, int y)
 	return w;
 }
 
+int NamNhuan(int y)
+{
+	int kq = 0;
+
+	if (kq % 400 == 0 || (y % 4 == 0 && y % 100 != 0))
+		kq = 1;
+
+	return kq;
+}
 
 
