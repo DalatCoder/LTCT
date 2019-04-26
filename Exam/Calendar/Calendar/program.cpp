@@ -9,14 +9,18 @@ using namespace std;
 int dayOfWeek(int dd, int mm, int yy);
 int dayOfMonth(int mm, int yy);
 void displayDay(int n);
-void displayMonth(int startDay, int month);
+void displayMonth(int month);
+void createMatrix(int startDay, int month, int year);
+void init();
 
 int calendar[MAX][MAX];
 
 int main()
 {
 	int n = dayOfWeek(1, 04, 2019);
-	displayDay(n);
+	init();
+	createMatrix(n, 4, 2019);
+	displayMonth(4);
 	_getch();
 	return 0;
 }
@@ -96,17 +100,21 @@ void createMatrix(int startDay, int month, int year)
 {
 	int i, j, maxDays, dem;
 	
-	dem = 0;
+	dem = 1;
+	maxDays = dayOfMonth(month, year);
+
 	// First row
 	for (j = startDay; j < MAX; j++)
-		calendar[0][j] = ++dem;
+		calendar[0][j] = dem++;
 
 	for (i = 1; i < MAX; i++)
 		for (j = 0; j < MAX; j++)
 		{
-			calendar[i][j] = ++dem;
+			dem++;
 			if (dem > maxDays)
 				break;
+			else
+				calendar[i][j] = dem;
 		}
 }
 
@@ -115,22 +123,23 @@ void displayMonth(int month)
 	setiosflags(ios::left);
 
 	cout << "\n -------------- " << month << " ----------------\n";
-	cout << setw(3) << "Sunday"
-		<< setw(3) << "Monday"
-		<< setw(3) << "Tuesday"
-		<< setw(3) << "Wednesday"
-		<< setw(3) << "Thursday"
-		<< setw(3) << "Friday"
-		<< setw(3) << "Saturday";
+	cout << setw(7) << "Sun"
+		<< setw(7) << "Mon"
+		<< setw(7) << "Tue"
+		<< setw(7) << "Wed"
+		<< setw(7) << "Thu"
+		<< setw(7) << "Fri"
+		<< setw(7) << "Sat";
 
+	cout << endl;
 	for (int i = 0; i < MAX; i++)
 	{
 		for (int j = 0; j < MAX; j++)
 		{
 			if (calendar[i][j] != 0)
-				cout << setw(3) << calendar[i][j];
+				cout << setw(7) << calendar[i][j];
 			else
-				cout << setw(3) << " ";
+				cout << setw(7) << " ";
 		}
 		cout << endl;
 	}
