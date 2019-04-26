@@ -8,6 +8,7 @@ using namespace std;
 int dayOfWeek(int dd, int mm, int yy);
 int dayOfMonth(int mm, int yy);
 void displayDay(int n);
+void displayMonth(int startDay, int month);
 
 int main()
 {
@@ -89,3 +90,13 @@ int dayOfMonth(int mm, int yy)
 	return days;
 }
 
+void createMatrix(int startDay, int month, int year)
+{
+	int i, j, maxDays;
+}
+
+void displayMonth(int startDay, int month, int year)
+{
+	int maxDays = dayOfMonth(month, year);
+	
+}
