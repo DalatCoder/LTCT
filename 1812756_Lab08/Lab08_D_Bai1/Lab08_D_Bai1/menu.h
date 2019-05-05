@@ -19,6 +19,9 @@ void XuatMenu()
 	cout << "\n10. Tinh tong luong thang";
 	cout << "\n11. Liet ke cac nhan vien co luong >= x (nhap tu ban phim)";
 	cout << "\n12. Liet ke cac nhan vien co nam sinh trong khoang [u,v]";
+	cout << "\n=======================================================================";
+	cout << "\n (Du lieu da duoc khoi tao, chon 1 neu muon tao lai du lieu) ";
+	cout << "\n=======================================================================";
 }
 
 int ChonMenu(int soMenu)
@@ -38,6 +41,7 @@ int ChonMenu(int soMenu)
 
 void XuLyMenu(int menu, NhanVien a[MAX], int &n)
 {
+	system("cls");
 	switch (menu)
 	{
 		case 0:
@@ -45,9 +49,15 @@ void XuLyMenu(int menu, NhanVien a[MAX], int &n)
 			break;
 		case 1:
 			cout << "\n1. Nhap danh sach nhan vien";
+			Nhap_DSNV(a, n);
+			system("cls");
+			Xuat_DSNV(a, n);
+			cout << "\nSo nhan vien trong danh sach: n = " << n;
 			break;
 		case 2:
 			cout << "\n2. Xem danh sach nhan vien";
+			Xuat_DSNV(a, n);
+			cout << "\nSo nhan vien trong danh sach: n = " << n;
 			break;
 		case 3:
 			cout << "\n3. Them mot nhan vien vao cuoi danh sach";
