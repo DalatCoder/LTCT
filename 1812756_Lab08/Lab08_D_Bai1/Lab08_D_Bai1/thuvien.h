@@ -31,6 +31,7 @@ void ThemNhanVien_Cuoi(NhanVien a[MAX], int &n, NhanVien p);
 void XoaNhanVien_MaNV(NhanVien a[MAX], int &n, char maNV[8]);
 void SuaNhanVien_MaNV(NhanVien a[MAX], int &n, char maNV[8]);
 int TimNhanVien_MaNV(NhanVien a[MAX], int n, char MaNV[8]);
+void TimNhanVien_Ten(NhanVien a[MAX], int n, char ten[7]);
 
 void Nhap_1NV(NhanVien &p)
 {
@@ -257,7 +258,27 @@ int TimNhanVien_MaNV(NhanVien a[MAX], int n, char MaNV[8])
 	return kq;
 }
 
-
+void TimNhanVien_Ten(NhanVien a[MAX], int n, char ten[7])
+{
+	int i, dem = 0;
+	for (i = 0; i < n; i++)
+		if (_strcmpi(a[i].ten, ten) == 0)
+			dem++;
+	if (!dem)
+		cout << "\nTrong danh sach khong co nhan vien nao co ten la : " << ten;
+	else
+	{
+		cout << "\nCo " << dem << " nhan vien ten " << ten << ", voi thong tin chi tiet nhu sau:\n";
+		XuatTieuDe();
+		for (i = 0; i < n;i++)
+			if (_strcmpi(a[i].ten, ten) == 0)
+			{
+				cout << endl;
+				Xuat_1NV(a[i]);
+			}
+		XuatKeNgang();
+	}
+}
 
 
 
