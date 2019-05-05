@@ -36,6 +36,7 @@ void SapTang_MaNV(NhanVien a[MAX], int n);
 void HoanVi(NhanVien &p, NhanVien &q);
 void SapTang_Ten_Ho_Luong(NhanVien a[MAX], int n);
 double TinhTongLuong(NhanVien a[MAX], int n);
+void Xuat_DSNV_Luong_KhongNhoHon_X(NhanVien a[MAX], int n, double x);
 
 void Nhap_1NV(NhanVien &p)
 {
@@ -335,6 +336,30 @@ double TinhTongLuong(NhanVien a[MAX], int n)
 		tong += a[i].luong;
 	return tong;
 }
+
+void Xuat_DSNV_Luong_KhongNhoHon_X(NhanVien a[MAX], int n, double x)
+{
+	int i, kq = 0;
+	for (i = 0; i < n; i++)
+		if (a[i].luong >= x)
+			kq++;
+	if (!kq)
+		cout << "\nKhong co nhan vien nao co luong >= " << x;
+	else
+	{
+		cout << "\n\nCo " << kq << " nhan vien co luong >= " << x << ", voi thong tin chi tiet nhu sau: ";
+		XuatTieuDe();
+		for (i = 0; i < n; i++)
+			if (a[i].luong >= x)
+			{
+				cout << endl;
+				Xuat_1NV(a[i]);
+			}
+		XuatKeNgang();
+	}
+}
+
+
 
 
 
