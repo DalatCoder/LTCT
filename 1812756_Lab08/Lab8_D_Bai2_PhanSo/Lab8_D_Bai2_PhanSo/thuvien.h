@@ -19,3 +19,37 @@ PhanSo Nhap_PS()
 	return a;
 }
 
+void Xuat_PS(PhanSo a)
+{
+	if (a.tu == 0)
+	{
+		cout << 0;
+		return;
+	}
+	if (a.mau == 1)
+	{
+		cout << a.tu;
+		return;
+	}
+	cout << a.tu << '/' << a.mau;
+}
+
+unsigned int Tinh_GTTD(int x)
+{
+	return (x >= 0 ? x : -x);
+}
+
+unsigned int UCLN(unsigned int a, unsigned int b)
+{
+	unsigned int r;
+	while (b > 0)
+	{
+		r = a % b;
+		a = b;
+		b = r;
+	}
+	return a;
+}
+
+
+
