@@ -30,6 +30,7 @@ void Xuat_DSNV(NhanVien a[MAX], int n);
 void ThemNhanVien_Cuoi(NhanVien a[MAX], int &n, NhanVien p);
 void XoaNhanVien_MaNV(NhanVien a[MAX], int &n, char maNV[8]);
 void SuaNhanVien_MaNV(NhanVien a[MAX], int &n, char maNV[8]);
+int TimNhanVien_MaNV(NhanVien a[MAX], int n, char MaNV[8]);
 
 void Nhap_1NV(NhanVien &p)
 {
@@ -243,4 +244,34 @@ void SuaNhanVien_MaNV(NhanVien a[MAX], int &n, char maNV[8])
 		cin >> a[i].luong;
 	}
 }
+
+int TimNhanVien_MaNV(NhanVien a[MAX], int n, char MaNV[8])
+{
+	int i, kq = -1;
+	for (i = 0; i < n; i++)
+		if (strcmp(a[i].maNV, MaNV) == 0)
+		{
+			kq = i;
+			break;
+		}
+	return kq;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

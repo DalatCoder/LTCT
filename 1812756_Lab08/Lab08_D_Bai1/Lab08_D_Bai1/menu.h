@@ -43,7 +43,10 @@ void XuLyMenu(int menu, NhanVien a[MAX], int &n)
 {
 	NhanVien p;
 	char maNV[8];
+	int kq;
+
 	system("cls");
+
 	switch (menu)
 	{
 		case 0:
@@ -103,9 +106,27 @@ void XuLyMenu(int menu, NhanVien a[MAX], int &n)
 			cout << "\nDanh sach ket qua:\n";
 			Xuat_DSNV(a, n);
 			break;
+
 		case 6:
 			cout << "\n6. Tim nhan vien theo ma so";
+			cout << "\nDanh sach hien hanh:\n";
+			Xuat_DSNV(a, n);
+			cout << "\nNhap ma nhan vien can tim: ";
+			cin >> maNV;
+			kq = TimNhanVien_MaNV(a, n, maNV);
+
+			if (kq == -1)
+				cout << "\nKhong co nhan vien nao trong danh sach co ma so: " << maNV;
+			else
+			{
+				cout << "\nThong tin nhan vien co ma so: " << maNV << " : \n";
+				XuatTieuDe();
+				cout << endl;
+				Xuat_1NV(a[kq]);
+				XuatKeNgang();
+			}
 			break;
+
 		case 7:
 			cout << "\n7. Tim nhan vien theo ten";
 			break; 
