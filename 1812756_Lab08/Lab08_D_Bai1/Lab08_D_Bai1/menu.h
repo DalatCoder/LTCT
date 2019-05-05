@@ -41,12 +41,15 @@ int ChonMenu(int soMenu)
 
 void XuLyMenu(int menu, NhanVien a[MAX], int &n)
 {
+	NhanVien p;
+	char maNV[8];
 	system("cls");
 	switch (menu)
 	{
 		case 0:
 			cout << "\n0. Thoat chuong trinh";
 			break;
+
 		case 1:
 			cout << "\n1. Nhap danh sach nhan vien";
 			Nhap_DSNV(a, n);
@@ -54,17 +57,41 @@ void XuLyMenu(int menu, NhanVien a[MAX], int &n)
 			Xuat_DSNV(a, n);
 			cout << "\nSo nhan vien trong danh sach: n = " << n;
 			break;
+
 		case 2:
 			cout << "\n2. Xem danh sach nhan vien";
 			Xuat_DSNV(a, n);
 			cout << "\nSo nhan vien trong danh sach: n = " << n;
 			break;
+
 		case 3:
 			cout << "\n3. Them mot nhan vien vao cuoi danh sach";
+			cout << "\nNhap thong tin nhan vien can chen vao cuoi danh sach:\n";
+			Nhap_1NV(p);
+			system("cls");
+			cout << "\nDanh sach ban dau:\n";
+			Xuat_DSNV(a, n);
+			cout << "\nSo nhan vien trong danh sach, n = " << n;
+			ThemNhanVien_Cuoi(a, n, p);
+			cout << "\nDanh sach ket qua:\n";
+			Xuat_DSNV(a, n);
+			cout << "\nSo nhan vien trong danh sach sau khi them: n = " << n;
 			break;
+
 		case 4:
 			cout << "\n4. Xoa mot nhan vien theo ma nhan vien";
+			cout << "\nNhap ma nhan vien can xoa: ";
+			cin >> maNV;
+			cout << "\nDanh sach hien hanh:\n";
+			Xuat_DSNV(a, n);
+			cout << "\nSo nhan vien trong danh sach, n = " << n;
+			XoaNhanVien_MaNV(a, n, maNV);
+
+			cout << "\nDanh sach ket qua:\n";
+			Xuat_DSNV(a, n);
+			cout << "\nSo nhan vien trong danh sach sau khi xoa: n = " << n;
 			break;
+
 		case 5:
 			cout << "\n5. Sua thong tin nhan vien theo ma nhan vien";
 			break;

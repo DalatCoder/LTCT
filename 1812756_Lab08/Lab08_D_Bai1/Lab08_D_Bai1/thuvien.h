@@ -28,6 +28,8 @@ void XuatKeNgang();
 void XuatTieuDe();
 void Xuat_1NV(NhanVien p);
 void Xuat_DSNV(NhanVien a[MAX], int n);
+void ThemNhanVien_Cuoi(NhanVien a[MAX], int &n, NhanVien p);
+void XoaNhanVien_MaNV(NhanVien a[MAX], int &n, char maNV[8]);
 
 void Nhap_1NV(NhanVien &p)
 {
@@ -134,7 +136,26 @@ void Xuat_DSNV(NhanVien a[MAX], int n)
 	XuatKeNgang();
 }
 
+void ThemNhanVien_Cuoi(NhanVien a[MAX], int &n, NhanVien p)
+{
+	a[n++] = p;
+}
 
+void XoaNhanVien_MaNV(NhanVien a[MAX], int &n, char maNV[8])
+{
+	int i, j;
+	for (i = 0; i < n; i++)
+		if (strcmp(a[i].maNV, maNV) == 0)
+			break;
+	if (i == n)
+	{
+		cout << "\nKhong co nhan vien nao trong danh sach co ma so " << maNV;
+		return;
+	}
+	for (j = i + 1; j < n; j++)
+		a[j - 1] = a[j];
+	n--;
+}
 
 
 
