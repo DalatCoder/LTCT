@@ -94,6 +94,14 @@ void XuLyMenu(int menu, NhanVien a[MAX], int &n)
 
 		case 5:
 			cout << "\n5. Sua thong tin nhan vien theo ma nhan vien";
+			cout << "\nDanh sach nhan vien hien hanh:\n";
+			Xuat_DSNV(a, n);
+			cout << "\nNhap ma nhan vien can sua: ";
+			cin >> maNV;
+			SuaNhanVien_MaNV(a, n, maNV);
+
+			cout << "\nDanh sach ket qua:\n";
+			Xuat_DSNV(a, n);
 			break;
 		case 6:
 			cout << "\n6. Tim nhan vien theo ma so";

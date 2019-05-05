@@ -21,7 +21,6 @@ struct NhanVien
 	double luong;
 };
 
-
 void Nhap_1NV(NhanVien &p);
 void Nhap_DSNV(NhanVien a[MAX], int &n);
 void XuatKeNgang();
@@ -30,6 +29,7 @@ void Xuat_1NV(NhanVien p);
 void Xuat_DSNV(NhanVien a[MAX], int n);
 void ThemNhanVien_Cuoi(NhanVien a[MAX], int &n, NhanVien p);
 void XoaNhanVien_MaNV(NhanVien a[MAX], int &n, char maNV[8]);
+void SuaNhanVien_MaNV(NhanVien a[MAX], int &n, char maNV[8]);
 
 void Nhap_1NV(NhanVien &p)
 {
@@ -157,5 +157,90 @@ void XoaNhanVien_MaNV(NhanVien a[MAX], int &n, char maNV[8])
 	n--;
 }
 
+void SuaNhanVien_MaNV(NhanVien a[MAX], int &n, char maNV[8])
+{
+	int i;
+	char tl;
+	for (i = 0; i < n; i++)
+		if (strcmp(a[i].maNV, maNV) == 0)
+			break;
+	if (i == n)
+	{
+		cout << "\nKhong co nhan vien nao trong danh sach co ma so " << maNV;
+		return;
+	}
 
+	cout << "\nSua thong tin nhan vien co ma so: " << maNV;
+	cout << "\nCo sua ma nhan vien khong? nhan k neu khong";
+	tl = _getch();
+	if (tl != 'k' && tl != 'K')
+	{
+		cout << "\nMa nhan vien: ";
+		cin.ignore(MAX, '\n');
+		gets_s(a[i].maNV, 8);
+	}
+
+	cout << "\nCo sua ho va chu lot khong? nhan k neu khong";
+	tl = _getch();
+	if (tl != 'k' && tl != 'K')
+	{
+		cout << "\nHo va chu lot: ";
+		//cin.ignore(MAX, '\n');
+		gets_s(a[i].hoLot, 21);
+	}
+
+	cout << "\nCo sua ten khong? nhan k neu khong";
+	tl = _getch();
+	if (tl != 'k' && tl != 'K')
+	{
+		cout << "\nTen nhan vien: ";
+		//cin.ignore(MAX, '\n');
+		gets_s(a[i].ten, 8);
+	}
+
+	cout << "\nCo sua ngay sinh khong? nhan k neu khong";
+	tl = _getch();
+	if (tl != 'k' && tl != 'K')
+	{
+		cout << "\nNgay sinh: ";
+		//cin.ignore(MAX, '\n');
+		cin >> a[i].ntns.ngaySinh;
+	}
+
+	cout << "\nCo sua thang sinh khong? nhan k neu khong";
+	tl = _getch();
+	if (tl != 'k' && tl != 'K')
+	{
+		cout << "\nThang sinh: ";
+		//cin.ignore(MAX, '\n');
+		cin >> a[i].ntns.thangSinh;
+	}
+
+	cout << "\nCo sua nam sinh khong? nhan k neu khong";
+	tl = _getch();
+	if (tl != 'k' && tl != 'K')
+	{
+		cout << "\nNam sinh: ";
+		//cin.ignore(MAX, '\n');
+		cin >> a[i].ntns.namSinh;
+	}
+
+	cout << "\nCo sua dia chi khong? nhan k neu khong";
+	tl = _getch();
+	if (tl != 'k' && tl != 'K')
+	{
+		cout << "\nNhap dia chi: ";
+		cin.ignore(MAX, '\n');
+		gets_s(a[i].diaChi, 20);
+	}
+
+	cout << "\nCo sua luong khong? nhan k neu khong";
+	tl = _getch();
+	if (tl != 'k' && tl != 'K')
+	{
+		cout << "\nNhap luong: ";
+		//cin.ignore(MAX, '\n');
+		cin >> a[i].luong;
+	}
+}
 
