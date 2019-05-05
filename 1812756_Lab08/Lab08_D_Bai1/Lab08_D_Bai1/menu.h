@@ -147,7 +147,13 @@ void XuLyMenu(int menu, NhanVien a[MAX], int &n)
 
 		case 9:
 			cout << "\n9. Sap danh sach nhan vien tang dan theo ten-ho-luong";
+			cout << "\nDanh sach ban dau:\n";
+			Xuat_DSNV(a, n);
+			SapTang_Ten_Ho_Luong(a, n);
+			cout << "\nDanh sach ket qua:\n";
+			Xuat_DSNV(a, n);
 			break;
+
 		case 10:
 			cout << "\n10. Tinh tong luong thang";
 			break;

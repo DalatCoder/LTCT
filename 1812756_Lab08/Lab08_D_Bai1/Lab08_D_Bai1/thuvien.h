@@ -34,6 +34,7 @@ int TimNhanVien_MaNV(NhanVien a[MAX], int n, char MaNV[8]);
 void TimNhanVien_Ten(NhanVien a[MAX], int n, char ten[7]);
 void SapTang_MaNV(NhanVien a[MAX], int n);
 void HoanVi(NhanVien &p, NhanVien &q);
+void SapTang_Ten_Ho_Luong(NhanVien a[MAX], int n);
 
 void Nhap_1NV(NhanVien &p)
 {
@@ -301,7 +302,29 @@ void HoanVi(NhanVien &p, NhanVien &q)
 	q = t;
 }
 
+void SapTang_Ten_Ho_Luong(NhanVien a[MAX], int n)
+{
+	int i, j;
 
+	// Tang theo ten
+	for (i = 0; i < n - 1; i++)
+		for (j = i + 1; j < n; j++)
+			if (_strcmpi(a[i].ten, a[j].ten) > 0)
+				HoanVi(a[i], a[j]);
+
+	// Tang theo ho
+	for (i = 0; i < n - 1; i++)
+		for (j = i + 1; j < n; j++)
+			if (_strcmpi(a[i].hoLot, a[j].hoLot) > 0)
+				HoanVi(a[i], a[j]);
+
+	// Ten va ho trung, tang theo luong
+	for (i = 0; i < n - 1; i++)
+		for (j = i + 1; j < n; j++)
+			if(_strcmpi(a[i].ten, a[j].ten) == 0 && _strcmpi(a[i].hoLot, a[j].hoLot) == 0)
+				if (a[i].luong > a[j].luong)
+					HoanVi(a[i], a[j]);
+}
 
 
 
