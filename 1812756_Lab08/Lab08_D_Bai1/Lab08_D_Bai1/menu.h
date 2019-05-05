@@ -45,6 +45,7 @@ void XuLyMenu(int menu, NhanVien a[MAX], int &n)
 	char maNV[8], ten[7];
 	int kq;
 	double x;
+	unsigned int u, v;
 
 	system("cls");
 
@@ -172,6 +173,14 @@ void XuLyMenu(int menu, NhanVien a[MAX], int &n)
 			break;
 		case 12:
 			cout << "\n12. Liet ke cac nhan vien co nam sinh trong khoang [u,v]";
+			cout << "\nNhap u: ";
+			cin >> u;
+			cout << "\nNhap v: ";
+			cin >> v;
+			system("cls");
+			cout << "\nDanh sach hien hanh:\n";
+			Xuat_DSNV(a, n);
+			Xuat_DSNV_NamSinh_u_v(a, n, u, v);
 			break;
 	}
 	_getch();
