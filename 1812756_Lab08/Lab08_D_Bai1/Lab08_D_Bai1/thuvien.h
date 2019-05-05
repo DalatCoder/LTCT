@@ -35,6 +35,7 @@ void TimNhanVien_Ten(NhanVien a[MAX], int n, char ten[7]);
 void SapTang_MaNV(NhanVien a[MAX], int n);
 void HoanVi(NhanVien &p, NhanVien &q);
 void SapTang_Ten_Ho_Luong(NhanVien a[MAX], int n);
+double TinhTongLuong(NhanVien a[MAX], int n);
 
 void Nhap_1NV(NhanVien &p)
 {
@@ -326,6 +327,14 @@ void SapTang_Ten_Ho_Luong(NhanVien a[MAX], int n)
 					HoanVi(a[i], a[j]);
 }
 
+double TinhTongLuong(NhanVien a[MAX], int n)
+{
+	int i;
+	double tong = 0;
+	for (i = 0; i < n; i++)
+		tong += a[i].luong;
+	return tong;
+}
 
 
 
