@@ -51,5 +51,19 @@ unsigned int UCLN(unsigned int a, unsigned int b)
 	return a;
 }
 
+unsigned int BCNN(unsigned int a, unsigned int b)
+{
+	return (a * b) / UCLN(a, b);
+}
+
+void RutGon(PhanSo &a)
+{
+	unsigned int d;
+	d = UCLN(Tinh_GTTD(a.tu), a.mau);
+	a.mau /= d;
+	a.tu = a.tu / (int)d;
+}
+
+
 
 
