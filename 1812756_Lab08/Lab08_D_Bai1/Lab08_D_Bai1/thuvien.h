@@ -32,6 +32,8 @@ void XoaNhanVien_MaNV(NhanVien a[MAX], int &n, char maNV[8]);
 void SuaNhanVien_MaNV(NhanVien a[MAX], int &n, char maNV[8]);
 int TimNhanVien_MaNV(NhanVien a[MAX], int n, char MaNV[8]);
 void TimNhanVien_Ten(NhanVien a[MAX], int n, char ten[7]);
+void SapTang_MaNV(NhanVien a[MAX], int n);
+void HoanVi(NhanVien &p, NhanVien &q);
 
 void Nhap_1NV(NhanVien &p)
 {
@@ -278,6 +280,25 @@ void TimNhanVien_Ten(NhanVien a[MAX], int n, char ten[7])
 			}
 		XuatKeNgang();
 	}
+}
+
+void SapTang_MaNV(NhanVien a[MAX], int n)
+{
+	int i, j;
+	for (i = 0; i < n-1; i++)
+		for (j = i + 1; j < n;j++)
+			if (_strcmpi(a[i].maNV, a[j].maNV) > 0)
+			{
+				HoanVi(a[i], a[j]);
+			}
+}
+
+void HoanVi(NhanVien &p, NhanVien &q)
+{
+	NhanVien t;
+	t = p;
+	p = q;
+	q = t;
 }
 
 
