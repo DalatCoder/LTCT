@@ -64,6 +64,17 @@ void RutGon(PhanSo &a)
 	a.tu = a.tu / (int)d;
 }
 
+void QuyDong_PS(PhanSo &a, PhanSo &b)
+{
+	unsigned int d;
+	RutGon(a);
+	RutGon(b);
+	d = BCNN(a.mau, b.mau);
+	a.tu = a.tu * (d / a.mau);
+	b.tu = b.tu * (d / b.mau);
+	a.mau = b.mau = d;
+}
+
 
 
 
