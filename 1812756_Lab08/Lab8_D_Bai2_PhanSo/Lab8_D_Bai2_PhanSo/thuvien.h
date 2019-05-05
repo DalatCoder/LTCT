@@ -75,6 +75,64 @@ void QuyDong_PS(PhanSo &a, PhanSo &b)
 	a.mau = b.mau = d;
 }
 
+PhanSo CongPhanSo(PhanSo a, PhanSo b)
+{
+	PhanSo c;
+	QuyDong_PS(a, b);
+	c.tu = a.tu + b.tu;
+	c.mau = a.mau;
+	RutGon(c);
+	return c;
+}
+
+PhanSo TruPhanSo(PhanSo a, PhanSo b)
+{
+	PhanSo c;
+	QuyDong_PS(a, b);
+	c.tu = a.tu - b.tu;
+	c.mau = a.mau;
+	RutGon(c);
+	return c;
+}
+
+PhanSo NhanPhanSo(PhanSo a, PhanSo b)
+{
+	PhanSo c;
+	RutGon(a);
+	RutGon(b);
+	c.tu = a.tu * b.tu;
+	c.mau = a.mau * b.mau;
+	RutGon(c);
+	return c;
+}
+
+PhanSo chiaPhanSo(PhanSo a, PhanSo b)
+{
+	PhanSo c;
+	RutGon(a);
+	RutGon(b);
+	int tu;
+	int mau;
+	tu = a.tu * b.mau;
+	mau = a.mau * b.tu;
+	if (mau < 0)
+	{
+		tu = -tu;
+		mau = -mau;
+	}
+	c.tu = tu;
+	c.mau = (unsigned int)mau;
+	
+	RutGon(c);
+	return c;
+}
+
+
+
+
+
+
+
 
 
 
