@@ -118,7 +118,7 @@ PhanSo NhanPhanSo(PhanSo a, PhanSo b)
 	return c;
 }
 
-PhanSo chiaPhanSo(PhanSo a, PhanSo b)
+PhanSo ChiaPhanSo(PhanSo a, PhanSo b)
 {
 	PhanSo c;
 	RutGon(a);
