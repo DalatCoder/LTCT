@@ -6,6 +6,18 @@ struct PhanSo
 };
 
 
+PhanSo Nhap_PS();
+void Xuat_PS(PhanSo a);
+unsigned int Tinh_GTTD(int x);
+unsigned int UCLN(unsigned int a, unsigned int b);
+unsigned int BCNN(unsigned int a, unsigned int b);
+void RutGon(PhanSo &a);
+void QuyDong_PS(PhanSo &a, PhanSo &b);
+PhanSo CongPhanSo(PhanSo a, PhanSo b);
+PhanSo TruPhanSo(PhanSo a, PhanSo b);
+PhanSo NhanPhanSo(PhanSo a, PhanSo b);
+PhanSo ChiaPhanSo(PhanSo a, PhanSo b);
+
 PhanSo Nhap_PS()
 {
 	PhanSo a;
@@ -125,6 +137,20 @@ PhanSo chiaPhanSo(PhanSo a, PhanSo b)
 	
 	RutGon(c);
 	return c;
+}
+
+int SoSanhPhanSo(PhanSo a, PhanSo b)
+{
+	int kq;
+	QuyDong_PS(a, b);
+	if (a.tu < b.tu)
+		kq = -1;
+	else
+		if (a.tu == b.tu)
+			kq = 0;
+		else
+			kq = 1;
+	return kq;
 }
 
 
