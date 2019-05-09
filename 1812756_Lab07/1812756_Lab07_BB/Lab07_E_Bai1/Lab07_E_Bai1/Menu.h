@@ -40,7 +40,7 @@ void XuLyMenu(int menu, String str)
 {
 
 	int kq, vt;
-	char x;
+	char x, y;
 
 	system("cls");
 	switch (menu)
@@ -168,6 +168,17 @@ void XuLyMenu(int menu, String str)
 		break;
 	case 13:
 		cout << "\n13. Thay the tat ca ky tu x trong chuoi thanh ky tu y";
+		cout << "\n12. Xoa tat ca ky tu x cho truoc khoi chuoi";
+		cout << "\nChuoi ban dau: ";
+		XuatChuoi(str);
+		cout << "\nNhap vao ky can thay the: ";
+		cin >> x;
+		cout << "\nNhap vao ky thay the: ";
+		cin >> y;
+
+		ThayThe_X_Y(str, x, y);
+		cout << "\nChuoi sau khi xoa: ";
+		XuatChuoi(str);
 		break;
 	}
 	_getch();
