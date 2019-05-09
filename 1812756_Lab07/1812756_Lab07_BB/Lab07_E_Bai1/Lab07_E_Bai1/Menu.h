@@ -39,7 +39,7 @@ int ChonMenu(int soMenu)
 void XuLyMenu(int menu, String str)
 {
 
-	int kq;
+	int kq, vt;
 	char x;
 
 	system("cls");
@@ -89,6 +89,21 @@ void XuLyMenu(int menu, String str)
 		break;
 	case 6:
 		cout << "\n6. Chen ky tu x vao chuoi tai vi tri cho truoc";
+		cout << "\n5. Chen ky tu x vao cuoi chuoi";
+		cout << "\nNhap vao 1 ky tu de chen: ";
+		cin >> x;
+
+		do
+		{
+			cout << "\nNhap vao vi tri can chen: ";
+			cin >> vt;
+		} while (vt < 0 || vt > TinhChieuDai(str));
+
+		cout << "\nChuoi ban dau: ";
+		XuatChuoi(str);
+		ChenX_VT_BatKy(str, x, vt);
+		cout << "\nChuoi sau khi chen: ";
+		XuatChuoi(str);
 		break;
 	case 7:
 		cout << "\n7. Xoa ky tu dau chuoi";
