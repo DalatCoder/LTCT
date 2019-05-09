@@ -60,7 +60,7 @@ void XuLyMenu(int menu, String str)
 		cout << "\n4. Chuyen thanh ky tu hoa";
 		cout << "\nChuoi ban dau: ";
 		XuatChuoi(str);
-		chuyenKyTuThuong(str);
+		chuyenKyTuHoa(str);
 		cout << "\nChuoi sau khi chuyen: ";
 		XuatChuoi(str);
 		break;
