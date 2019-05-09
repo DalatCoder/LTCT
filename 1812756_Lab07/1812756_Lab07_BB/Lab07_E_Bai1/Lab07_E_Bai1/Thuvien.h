@@ -10,6 +10,8 @@ void ChenX_CuoiChuoi(String str, char x);
 void ChenX_VT_BatKy(String str, char x, int vt);
 void Xoa_DauChuoi(String str);
 void Xoa_CuoiChuoi(String str);
+void Xoa_VT_BatKy(String str, int vt);
+void CatDau_ChenCuoi(String str);
 
 void NhapChuoi(String str)
 {
@@ -76,6 +78,29 @@ void Xoa_CuoiChuoi(String str)
 	if (len > 0)
 		str[len - 1] = '\0';
 }
+
+void Xoa_VT_BatKy(String str, int vt)
+{
+	int len, i;
+	len = TinhChieuDai(str);
+
+	for (i = vt; i < len; i++)
+		str[i] = str[i + 1];
+}
+
+void CatDau_ChenCuoi(String str)
+{
+	int len, i;
+	char ch;
+
+	len = TinhChieuDai(str);
+	ch = str[0];
+
+	for (i = 0; i < len; i++)
+		str[i] = str[i + 1];
+	str[len - 1] = ch;
+}
+
 
 
 

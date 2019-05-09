@@ -89,7 +89,10 @@ void XuLyMenu(int menu, String str)
 		break;
 	case 6:
 		cout << "\n6. Chen ky tu x vao chuoi tai vi tri cho truoc";
-		cout << "\n5. Chen ky tu x vao cuoi chuoi";
+
+		cout << "\nChuoi ban dau: ";
+		XuatChuoi(str);
+
 		cout << "\nNhap vao 1 ky tu de chen: ";
 		cin >> x;
 
@@ -99,8 +102,6 @@ void XuLyMenu(int menu, String str)
 			cin >> vt;
 		} while (vt < 0 || vt > TinhChieuDai(str));
 
-		cout << "\nChuoi ban dau: ";
-		XuatChuoi(str);
 		ChenX_VT_BatKy(str, x, vt);
 		cout << "\nChuoi sau khi chen: ";
 		XuatChuoi(str);
@@ -123,8 +124,28 @@ void XuLyMenu(int menu, String str)
 		break;
 	case 9:
 		cout << "\n9. Xoa ky tu tai vi tri cho truoc";
+
+		cout << "\nChuoi ban dau: ";
+		XuatChuoi(str);
+
+		do
+		{
+			cout << "\nNhap vao vi tri can xoa: ";
+			cin >> vt;
+		} while (vt < 0 || vt >= TinhChieuDai(str));
+
+		Xoa_VT_BatKy(str, vt);
+		cout << "\nChuoi sau khi xoa: ";
+		XuatChuoi(str);
+		break;
+
 	case 10:
 		cout << "\n10. Cat ky tu dau chuoi roi chen vao vi tri cuoi chuoi";
+		cout << "\nChuoi ban dau: ";
+		XuatChuoi(str);
+		CatDau_ChenCuoi(str);
+		cout << "\nChuoi sau khi chen: ";
+		XuatChuoi(str);
 		break;
 	case 11:
 		cout << "\n11. Cat ky tu cuoi chuoi roi chen vao vi tri dau chuoi";
