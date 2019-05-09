@@ -6,6 +6,7 @@ void NhapChuoi(String str);
 void XuatChuoi(String str);
 int TinhChieuDai(String str);
 void ChenX_DauChuoi(String str, char x);
+void ChenX_CuoiChuoi(String str, char x);
 
 void NhapChuoi(String str)
 {
@@ -36,6 +37,14 @@ void ChenX_DauChuoi(String str, char x)
 	for (int i = len + 1; i > 0; i--)
 		str[i] = str[i - 1];
 	str[0] = x;
+}
+
+void ChenX_CuoiChuoi(String str, char x)
+{
+	int len;
+	len = TinhChieuDai(str);
+	str[len] = x;
+	str[len + 1] = '\0';
 }
 
 

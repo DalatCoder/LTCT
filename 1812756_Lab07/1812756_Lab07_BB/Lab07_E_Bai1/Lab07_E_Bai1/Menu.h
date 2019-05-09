@@ -78,6 +78,14 @@ void XuLyMenu(int menu, String str)
 		break;
 	case 5:
 		cout << "\n5. Chen ky tu x vao cuoi chuoi";
+		cout << "\nNhap vao 1 ky tu de chen: ";
+		cin >> x;
+
+		cout << "\nChuoi ban dau: ";
+		XuatChuoi(str);
+		ChenX_CuoiChuoi(str, x);
+		cout << "\nChuoi sau khi chen: ";
+		XuatChuoi(str);
 		break;
 	case 6:
 		cout << "\n6. Chen ky tu x vao chuoi tai vi tri cho truoc";
