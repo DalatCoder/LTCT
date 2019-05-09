@@ -9,6 +9,7 @@ void chuyenKyTuThuong(String str);
 void chuyenKyTuHoa(String str);
 void HoanVi(char &x, char &y);
 void DaoNguocChuoi(String str);
+int ChuoiDoiXung(String str);
 
 void NhapChuoi(String str)
 {
@@ -58,3 +59,18 @@ void DaoNguocChuoi(String str)
 	for (i = 0; i < mid; i++)
 		HoanVi(str[i], str[len - i - 1]);
 }
+
+int ChuoiDoiXung(String str)
+{
+	int len, mid, i, kq;
+	len = strlen(str);
+	mid = (int)(len / 2);
+	kq = true;
+
+	for (i = 0; i < mid && kq; i++)
+		if (str[i] != str[len - i - 1])
+			kq = false;
+
+	return kq;
+}
+
