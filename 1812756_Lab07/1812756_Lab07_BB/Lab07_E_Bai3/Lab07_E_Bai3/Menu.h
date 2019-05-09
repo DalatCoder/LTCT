@@ -50,9 +50,19 @@ void XuLyMenu(int menu, String str)
 		break;
 	case 3:
 		cout << "\n3. Chuyen thanh ky tu thuong";
+		cout << "\nChuoi ban dau: ";
+		XuatChuoi(str);
+		chuyenKyTuThuong(str);
+		cout << "\nChuoi sau khi chuyen: ";
+		XuatChuoi(str);
 		break;
 	case 4:
 		cout << "\n4. Chuyen thanh ky tu hoa";
+		cout << "\nChuoi ban dau: ";
+		XuatChuoi(str);
+		chuyenKyTuThuong(str);
+		cout << "\nChuoi sau khi chuyen: ";
+		XuatChuoi(str);
 		break;
 	case 5:
 		cout << "\n5. Dao nguoc chuoi";
