@@ -13,6 +13,7 @@ void Xoa_CuoiChuoi(String str);
 void Xoa_VT_BatKy(String str, int vt);
 void CatDau_ChenCuoi(String str);
 void CatCuoi_ChenDau(String str);
+void XoaTatCa_X(String str, char x);
 
 void NhapChuoi(String str)
 {
@@ -115,4 +116,16 @@ void CatCuoi_ChenDau(String str)
 	str[0] = ch;
 }
 
+void XoaTatCa_X(String str, char x)
+{
+	int len, i;
+	len = TinhChieuDai(str);
+
+	for (i = 0; i < len; i++)
+		if (str[i] == x)
+		{
+			Xoa_VT_BatKy(str, i);
+			i--;
+		}
+}
 
