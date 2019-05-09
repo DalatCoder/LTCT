@@ -16,5 +16,12 @@ int main()
 
 void ChayChuongTrinh()
 {
-	
+	int soMenu = 6, menu;
+	String str;
+
+	do
+	{
+		menu = ChonMenu(soMenu);
+		XuLyMenu(menu, str);
+	} while (menu > 0);
 }
