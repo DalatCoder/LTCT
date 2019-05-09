@@ -21,7 +21,7 @@ void ChayChuongTrinh()
 	int menu, soMenu = 9, n = 18;
 	SinhVien sv[MAX] =
 	{
-		{ "1534507", "Duong", "Qua", 1997, "CTK39", 9.0, "" },
+		{ "1534507", "Duong", "Qua", 1997, "CTK39", 9.0, "" }, 
 		{ "1405507", "Tu Ma Ngoc", "Yen", 1996, "CTK38", 6.5, "" },
 		{ "1334067", "Quach", "Tinh", 1996, "CTK37", 8.0, "" },
 		{ "1300167", "Hoang", "Dung", 1995, "CTK37", 7.2, "" },
