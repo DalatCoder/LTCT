@@ -7,7 +7,8 @@ void NhapChuoi(String str);
 void XuatChuoi(String str);
 void chuyenKyTuThuong(String str);
 void chuyenKyTuHoa(String str);
-
+void HoanVi(char &x, char &y);
+void DaoNguocChuoi(String str);
 
 void NhapChuoi(String str)
 {
@@ -39,4 +40,21 @@ void chuyenKyTuHoa(String str)
 	for (i = 0; i < len; i++)
 		if (97 <= str[i] && str[i] <= 122)
 			str[i] -= 32;
+}
+
+void HoanVi(char &x, char &y)
+{
+	char t = x;
+	x = y;
+	y = t;
+}
+
+void DaoNguocChuoi(String str)
+{
+	int len, mid, i;
+	len = strlen(str);
+
+	mid = (int)(len / 2);
+	for (i = 0; i < mid; i++)
+		HoanVi(str[i], str[len - i - 1]);
 }
