@@ -42,7 +42,7 @@ void ChenX_DauChuoi(String str, char x)
 {
 	int len, i;
 	len = TinhChieuDai(str);
-	for (int i = len + 1; i > 0; i--)
+	for (i = len + 1; i > 0; i--)
 		str[i] = str[i - 1];
 	str[0] = x;
 }
