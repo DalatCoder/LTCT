@@ -30,8 +30,10 @@ int ChonMenu(int soMenu)
 
 void XuLyMenu(int menu, ChuoiDong a)
 {
-	int kq;
+	int kq, vt;
+	char x;
 	system("cls");
+
 	switch (menu)
 	{
 	case 0:
@@ -60,7 +62,22 @@ void XuLyMenu(int menu, ChuoiDong a)
 
 	case 4:
 		cout << "\n4. Chen ky tu x vao chuoi tai vi tri cho truoc";
+		cout << "\nChuoi hien hanh: ";
+		XuatChuoi(a);
+		cout << "\nNhap vao ky tu muon chen: ";
+		cin >> x;
+		cout << "\nNhap vao vi tri muon chen: ";
+		cin >> vt;
+		kq = ChenKT_VT(a, x, vt);
+		if (kq)
+		{
+			cout << "\nChuoi sau khi chen: ";
+			XuatChuoi(a);
+		}
+		else
+			cout << "\nDa xay ra loi.";
 		break;
+
 	case 5:
 		cout << "\n5. Xoa ky tu tai vi tri cho truoc";
 		break;
