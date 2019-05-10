@@ -9,6 +9,7 @@ int TinhChieuDaiChuoi(ChuoiDong a);
 int ChenKT_VT(ChuoiDong a, char x, int vt);
 int XoaKT_VT(ChuoiDong a, int vt);
 void CatCuoiChenDau(ChuoiDong a);
+void Xoa_X(ChuoiDong a, char x);
 
 void NhapChuoi(ChuoiDong a)
 {
@@ -70,5 +71,17 @@ void CatCuoiChenDau(ChuoiDong a)
 	for (i = h - 2; i >= 0; i--)
 		*(a + i + 1) = *(a + i);
 	*(a + 0) = x;
+}
+
+void Xoa_X(ChuoiDong a, char x)
+{
+	int i, h = 0;
+	for (i = 0; *(a+i) != NULL; i++)
+		if (*(a + i) != x)
+		{
+			*(a + h) = *(a + i);
+			h++;
+		}
+	*(a + h) = NULL;
 }
 

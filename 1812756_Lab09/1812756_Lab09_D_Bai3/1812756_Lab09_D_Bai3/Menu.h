@@ -105,8 +105,16 @@ void XuLyMenu(int menu, ChuoiDong a)
 
 	case 7:
 		cout << "\n7. Xoa tat ca cac ky tu x";
+		cout << "\nChuoi hien hanh:";
+		XuatChuoi(a);
+		cout << "\nNhap ky tu can xoa: ";
+		cin >> x;
+		Xoa_X(a, x);
+		cout << "\nChuoi sau khi tat ca ky tu " << x << " : ";
+		XuatChuoi(a);
 		break;
 	}
+
 	_getch();
 }
 
