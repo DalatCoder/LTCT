@@ -69,11 +69,29 @@ void XuLyMenu(int menu, int *a, int *b, int n)
 
 	case 4:
 		cout << "\n4. Tru ma tran";
+		c = TinhHieu_2_MaTran(a, b, n);
+		cout << "\nMa tran a:";
+		XuatMaTran(a, n);
+		cout << "\nMa tran b:";
+		XuatMaTran(b, n);
+		cout << "\nHieu 2 ma tran:";
+		XuatMaTran(c, n);
+		delete[] c;
 		break;
+
 	case 5:
 		cout << "\n5. Nhan ma tran";
+		c = TinhTich_2_MaTran(a, b, n);
+		cout << "\nMa tran a:";
+		XuatMaTran(a, n);
+		cout << "\nMa tran b:";
+		XuatMaTran(b, n);
+		cout << "\nTich 2 ma tran:";
+		XuatMaTran(c, n);
+		delete[] c;
 		break;
 	}
+
 	_getch();
 }
 
