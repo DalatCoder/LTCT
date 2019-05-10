@@ -96,7 +96,13 @@ void XuLyMenu(int menu, ChuoiDong a)
 
 	case 6:
 		cout << "\n6. Cat ky tu cuoi chen vao vi tri dau";
+		cout << "\nChuoi hien hanh:";
+		XuatChuoi(a);
+		CatCuoiChenDau(a);
+		cout << "\nChuoi sau khi chen: ";
+		XuatChuoi(a);
 		break;
+
 	case 7:
 		cout << "\n7. Xoa tat ca cac ky tu x";
 		break;
