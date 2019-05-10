@@ -28,8 +28,9 @@ int ChonMenu(int soMenu)
 	return stt;
 }
 
-void XuLyMenu(int menu, int *matrix, int &n)
+void XuLyMenu(int menu, int *a, int *b, int n)
 {
+	int *c;
 	system("cls");
 	switch (menu)
 	{
@@ -38,20 +39,34 @@ void XuLyMenu(int menu, int *matrix, int &n)
 		break;
 	case 1:
 		cout << "\n1. Nhap tu dong ma tran";
-		NhapMaTran_TuDong(matrix, n);
-		cout << "\nMa tran vua nhap: \n";
-		XuatMaTran(matrix, n);
+		TaoMaTran_TuDong(a, n);
+		TaoMaTran_TuDong(b, n);
+		cout << "\nMa tran a:";
+		XuatMaTran(a, n);
+		cout << "\nMa tran b:";
+		XuatMaTran(b, n);
 		break;
 
 	case 2:
 		cout << "\n2. Xem ma tran";
-		cout << "\nMa tran hien hanh: \n";
-		XuatMaTran(matrix, n);
+		cout << "\nMa tran a:";
+		XuatMaTran(a, n);
+		cout << "\nMa tran b:";
+		XuatMaTran(b, n);
 		break;
 
 	case 3:
 		cout << "\n3. Cong ma tran";
+		c = TinhTong_2_MaTran(a, b, n);
+		cout << "\nMa tran a:";
+		XuatMaTran(a, n);
+		cout << "\nMa tran b:";
+		XuatMaTran(b, n);
+		cout << "\nTong 2 ma tran:";
+		XuatMaTran(c, n);
+		delete[] c;
 		break;
+
 	case 4:
 		cout << "\n4. Tru ma tran";
 		break;

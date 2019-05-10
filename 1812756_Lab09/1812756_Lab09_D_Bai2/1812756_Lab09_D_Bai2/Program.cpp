@@ -18,22 +18,28 @@ int main()
 void ChayChuongTrinh()
 {
 	int soMenu = 5, menu, n;
-	int *matrix;
+	int *a, *b;
 
 	do
 	{
-		cout << "\nNhap so luong phan tu cua ma tran: ";
+		cout << "\nNhap vao do dai canh ma tran vuong: ";
 		cin >> n;
 	} while (n <= 0);
 
-	matrix = new int[n*n];
+	a = new int[n*n];
+	b = new int[n*n];
+
+	// Tao ma tran mac dinh
+	TaoMaTran_TuDong(a, n);
+	TaoMaTran_TuDong(b, n);
 
 	do
 	{
 		menu = ChonMenu(soMenu);
-		XuLyMenu(menu, matrix, n);
+		XuLyMenu(menu, a, b, n);
 	} while (menu > 0);
 
-	delete[] matrix;
+	delete[] a;
+	delete[] b;
 }
 
