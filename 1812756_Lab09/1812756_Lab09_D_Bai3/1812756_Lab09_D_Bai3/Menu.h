@@ -80,7 +80,20 @@ void XuLyMenu(int menu, ChuoiDong a)
 
 	case 5:
 		cout << "\n5. Xoa ky tu tai vi tri cho truoc";
+		cout << "\nChuoi hien hanh:";
+		XuatChuoi(a);
+		cout << "\nNhap vao vi tri muon xoa: ";
+		cin >> vt;
+		kq = XoaKT_VT(a, vt);
+		if (kq)
+		{
+			cout << "\nChuoi sau khi xoa: ";
+			XuatChuoi(a);
+		}
+		else
+			cout << "\nDa xay ra loi.";
 		break;
+
 	case 6:
 		cout << "\n6. Cat ky tu cuoi chen vao vi tri dau";
 		break;
