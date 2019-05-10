@@ -30,6 +30,7 @@ int ChonMenu(int soMenu)
 
 void XuLyMenu(int menu, ChuoiDong a)
 {
+	int kq;
 	system("cls");
 	switch (menu)
 	{
@@ -51,7 +52,12 @@ void XuLyMenu(int menu, ChuoiDong a)
 
 	case 3:
 		cout << "\n3. Tinh chieu dai chuoi";
+		kq = TinhChieuDaiChuoi(a);
+		cout << "\nChuoi hien hanh: ";
+		XuatChuoi(a);
+		cout << "\nCo do dai la: " << kq;
 		break;
+
 	case 4:
 		cout << "\n4. Chen ky tu x vao chuoi tai vi tri cho truoc";
 		break;
