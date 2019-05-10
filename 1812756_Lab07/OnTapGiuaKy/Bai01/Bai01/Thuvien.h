@@ -88,7 +88,21 @@ int DemSoLanXuatHien_X(String str, char x)
 	return dem;
 }
 
+int ViTri_DauTien_X(String str, char x)
+{
+	int vt, len, i;
+	len = strlen(str);
+	vt = -1;
 
+	for (i = 0; i < len; i++)
+		if (str[i] == x)
+		{
+			vt = i;
+			break;
+		}
+
+	return vt;
+}
 
 
 

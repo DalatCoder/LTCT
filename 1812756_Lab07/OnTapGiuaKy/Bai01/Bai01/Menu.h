@@ -111,6 +111,19 @@ void XuLyMenu(int menu, String str)
 
 		case 8:
 			cout << "\n8. Tim vi tri xuat hien dau tien cua x";
+			cout << "\nChuoi da nhap: ";
+			XuatChuoi(str);
+
+			cout << "\nNhap vao 1 ky tu: ";
+			cin >> x;
+
+			kq = ViTri_DauTien_X(str, x);
+
+			if (kq == -1)
+				cout << "\nKhong tim thay ky tu " << x << " trong chuoi.";
+			else
+				cout << "\nVi tri xuat hien dau tien cua ky tu " << x << " la: " << kq;
+
 			break;
 
 		case 9:
