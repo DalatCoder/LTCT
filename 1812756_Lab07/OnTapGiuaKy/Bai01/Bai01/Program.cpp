@@ -11,9 +11,7 @@ void ChayChuongTrinh();
 
 int main()
 {
-	//ChayChuongTrinh();
-	for (int i = 0; i < 256; i++)
-		cout << i << " - " << (char)i << endl;
+	ChayChuongTrinh();
 	return 0;
 }
 

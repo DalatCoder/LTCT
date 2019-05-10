@@ -64,12 +64,31 @@ void XuLyMenu(int menu, String str)
 
 	case 4:
 		cout << "\n4. Chuyen ky tu HOA";
+		cout << "\nChuoi truoc khi chuyen : ";
+		XuatChuoi(str);
+
+		Chuyen_KT_HOA(str);
+		cout << "\nChuoi sau khi chuyen: ";
+		XuatChuoi(str);
 		break;
+
 	case 5:
 		cout << "\n5. Dao nguoc chuoi";
+		cout << "\nChuoi truoc khi dao : ";
+		XuatChuoi(str);
+
+		DaoNguocChuoi(str);
+		cout << "\nChuoi sau khi dao: ";
+		XuatChuoi(str);
 		break;
 	case 6:
 		cout << "\n6. Kiem tra chuoi doi xung";
+		cout << "\nChuoi da nhap: ";
+		XuatChuoi(str);
+		if (KiemTraDoiXung(str))
+			cout << "\nChuoi vua nhap doi xung.";
+		else
+			cout << "\nChuoi vua nhap khong doi xung.";
 		break;
 	}
 	_getch();
