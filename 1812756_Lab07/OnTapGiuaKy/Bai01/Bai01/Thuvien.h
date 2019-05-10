@@ -75,6 +75,19 @@ int KiemTraDoiXung(String str)
 	return kq;
 }
 
+int DemSoLanXuatHien_X(String str, char x)
+{
+	int dem = 0, len;
+
+	len = strlen(str);
+
+	for (int i = 0; i < len; i++)
+		if (x == str[i])
+			dem++;
+
+	return dem;
+}
+
 
 
 

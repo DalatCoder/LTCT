@@ -17,7 +17,7 @@ int main()
 
 void ChayChuongTrinh()
 {
-	int soMenu = 6, menu;
+	int soMenu = 9, menu;
 	String str;
 	do
 	{
