@@ -34,6 +34,7 @@ int ChonMenu(int soMenu)
 
 void XuLyMenu(int menu, String str)
 {
+	system("cls");
 	switch (menu)
 	{
 	case 0:
@@ -45,13 +46,22 @@ void XuLyMenu(int menu, String str)
 		cout << "\nChuoi vua nhap la : ";
 		XuatChuoi(str);
 		break;
+
 	case 2:
 		cout << "\n2. Xuat chuoi";
 		XuatChuoi(str);
 		break;
+
 	case 3:
 		cout << "\n3. Chuyen ky tu thuong";
+		cout << "\nChuoi truoc khi chuyen : ";
+		XuatChuoi(str);
+
+		Chuyen_KT_thuong(str);
+		cout << "\nChuoi sau khi chuyen: ";
+		XuatChuoi(str);
 		break;
+
 	case 4:
 		cout << "\n4. Chuyen ky tu HOA";
 		break;
