@@ -59,7 +59,20 @@ void XuLyMenu(int menu, SinhVien *a, int &n)
 
 	case 4:
 		cout << "\n4. Xem danh sach sinh vien theo lop";
+		cout << "\nDanh sach sinh vien ban dau:\n";
+		Xuat_DSSV(a, n);
+		_getch();
+
+		Xuat_DSSV_Lop(a, n, "CTK39");
+		_getch();
+		Xuat_DSSV_Lop(a, n, "CTK38");
+		_getch();
+		Xuat_DSSV_Lop(a, n, "CTK37");
+		_getch();
+		Xuat_DSSV_Lop(a, n, "CTK36");
+		_getch();
 		break;
+
 	case 5:
 		cout << "\n5. Xuat danh sach sinh vien theo lop va giam dan theo diem";
 		break;

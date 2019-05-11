@@ -191,6 +191,35 @@ void DSSV_Lop(SinhVien *a, int n, char lop[7], SinhVien *dsLop, int &h)
 	}
 }
 
+void Xuat_DSSV_Lop(SinhVien *a, int n, char lop[7])
+{
+	SinhVien *dsLop;
+	int i, h;
+	dsLop = new SinhVien[MAX];
+	DSSV_Lop(a, n, lop, dsLop, h);
+	if (h == 0)
+		cout << "\nKhong co lop " << lop << " trong DSSV";
+	else
+	{
+		cout << "\nDanh sach sinh vien thuoc lop " << lop << ":\n";
+		XuatTieuDe();
+		for (i = 0; i < h; i++)
+		{
+			cout << endl;
+			Xuat_1SV(*(dsLop + i));
+		}
+		XuatKeNgangDoi();
+		cout << "\nCo " << h << " sinh vien thuoc lop " << lop;
+	}
+	delete[] dsLop;
+}
+
+void Sap_DSSV_Lop_GiamDiem(SinhVien *a, int n, char lop[7], SinhVien *dsLop, int &h)
+{
+
+}
+
+
 
 
 
