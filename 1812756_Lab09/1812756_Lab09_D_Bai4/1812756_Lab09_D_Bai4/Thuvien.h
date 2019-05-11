@@ -216,8 +216,25 @@ void Xuat_DSSV_Lop(SinhVien *a, int n, char lop[7])
 
 void Sap_DSSV_Lop_GiamDiem(SinhVien *a, int n, char lop[7], SinhVien *dsLop, int &h)
 {
-
+	SinhVien t;
+	int i, j;
+	DSSV_Lop(a, n, lop, dsLop, h);
+	if (h == 0)
+		return; // khong co lop trong DSSV
+	else
+	{
+		for (i = 0; i < h-1; i++)
+			for (j = i+1; j <h; h++)
+				if ((dsLop + i)->diem < (dsLop + j)->diem)
+				{
+					t = *(dsLop + i);
+					*(dsLop + i) = *(dsLop + j);
+					*(dsLop + j) = t;
+				}
+	}
 }
+
+
 
 
 
