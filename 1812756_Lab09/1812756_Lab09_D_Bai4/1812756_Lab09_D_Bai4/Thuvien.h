@@ -220,11 +220,11 @@ void Sap_DSSV_Lop_GiamDiem(SinhVien *a, int n, char lop[7], SinhVien *dsLop, int
 	int i, j;
 	DSSV_Lop(a, n, lop, dsLop, h);
 	if (h == 0)
-		return; // khong co lop trong DSSV
+		return;
 	else
 	{
 		for (i = 0; i < h-1; i++)
-			for (j = i+1; j <h; h++)
+			for (j = i + 1; j < h; j++)
 				if ((dsLop + i)->diem < (dsLop + j)->diem)
 				{
 					t = *(dsLop + i);
@@ -233,6 +233,32 @@ void Sap_DSSV_Lop_GiamDiem(SinhVien *a, int n, char lop[7], SinhVien *dsLop, int
 				}
 	}
 }
+
+
+void Xuat_DSSV_Lop_Giam_Diem(SinhVien *a, int n, char lop[7])
+{
+	SinhVien *dsLop;
+	int i, h;
+	dsLop = new SinhVien[MAX];
+	Sap_DSSV_Lop_GiamDiem(a, n, lop, dsLop, h);
+	if (h == 0)
+		cout << "\nKhong co lop " << lop << " trong DSSV.";
+	else
+	{
+		cout << "\nDanh sach sinh vien thuoc lop " << lop << " giam dan theo diem:\n";
+		XuatTieuDe();
+		for (i = 0; i < h; i++)
+		{
+			cout << endl;
+			Xuat_1SV(*(dsLop + i));
+		}
+		XuatKeNgangDoi();
+		cout << "\nCo " << h << " sinh vien thuoc lop " << lop;
+	}
+
+	delete[] dsLop;
+}
+
 
 
 
