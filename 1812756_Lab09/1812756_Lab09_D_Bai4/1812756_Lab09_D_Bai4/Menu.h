@@ -50,7 +50,13 @@ void XuLyMenu(int menu, SinhVien *a, int &n)
 		break;
 	case 3:
 		cout << "\n3. Xuat danh sach sinh vien giam dan theo diem";
+		cout << "\nDanh sach sinh vien hien hanh:\n";
+		Xuat_DSSV(a, n);
+		Sap_DSSV_GiamDiem(a, n);
+		cout << "\nDanh sach sinh vien sau khi sap xep:\n";
+		Xuat_DSSV(a, n);
 		break;
+
 	case 4:
 		cout << "\n4. Xem danh sach sinh vien theo lop";
 		break;

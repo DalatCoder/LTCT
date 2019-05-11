@@ -142,6 +142,57 @@ void Xuat_DSSV(SinhVien *a, int n)
 	XuatKeNgangDoi();
 }
 
+void Sap_DSSV_GiamDiem(SinhVien *a, int n)
+{
+	SinhVien t;
+	int i, j;
+	if (n == 0)
+	{
+		cout << "\nDS rong!";
+		return;
+	}
+	else
+	{
+		for (i = 0; i < n - 1; i++)
+			for (j = i + 1; j < n; j++)
+				if ((a + i)->diem < (a + j)->diem)
+				{
+					t = *(a + i);
+					*(a + i) = *(a + j);
+					*(a + j) = t;
+				}
+	}
+}
+
+void DSSV_Lop(SinhVien *a, int n, char lop[7], SinhVien *dsLop, int &h)
+{
+	int kq = n; 
+	int i;
+
+	for (i = 0; i < n; i++)
+		if (_strcmpi((a + i)->lop, lop) == 0)
+		{
+			kq = i;
+			break;
+		}
+
+	if (kq == n)
+		h = 0;
+
+	else
+	{
+		h = 0;
+		for (i = kq; i < n; i++)
+			if (_strcmpi((a + i)->lop, lop) == 0)
+			{
+				*(dsLop + h) = *(a + i);
+				h++;
+			}
+	}
+}
+
+
+
 
 
 

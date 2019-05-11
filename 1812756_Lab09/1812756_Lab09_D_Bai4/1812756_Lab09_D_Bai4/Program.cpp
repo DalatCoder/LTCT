@@ -10,35 +10,9 @@ using namespace std;
 
 void ChayChuongTrinh();
 
-void Test(int &n)
-{
-	cout << "Dia chi trong ham TEST: " << n << endl;
-	//cout << "n trong ham TEST co gia tri: " << n << endl;
-	//cout << "\nDia chi cua n trong ham TEST " << &n << endl;
-}
-
 int main()
 {
-	int n = 10;
-	int *p = &n;
-
-	cout << "\nDia chi cua n trong main: " << &n << endl;
-	cout << "\nDia chi cua con tro p: " << p << endl;
-	Test(n);
-
-	//cout << "\nn trong main co gia tri : " << n << endl;
-
-	//*p = 50;
-	//cout << "\nn trong main co gia tri: " << n << endl;
-
-	//Test(n);
-	//cout << "\nn trong main co gia tri: " << n << endl;
-
-
-	// cout << "\nn trong ham main co gia tri: " << n << endl;
-	//cout << "Dia chi cua bien n trong ham main " << &n << endl;
-	//Test(n);
-	// cout << "\nn trong ham main co gia tri: " << n << endl;
+	ChayChuongTrinh();
 	return 0;
 }
 
