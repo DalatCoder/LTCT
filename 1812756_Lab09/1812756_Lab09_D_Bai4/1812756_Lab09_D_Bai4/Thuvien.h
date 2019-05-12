@@ -259,6 +259,54 @@ void Xuat_DSSV_Lop_Giam_Diem(SinhVien *a, int n, char lop[7])
 	delete[] dsLop;
 }
 
+void ThongKe_ChatLuong(SinhVien *a, int n, char lop[7])
+{
+	SinhVien *dsLop;
+	int h = 0;
+	dsLop = new SinhVien[MAX];
+	DSSV_Lop(a, n, lop, dsLop, h);
+	int i;
+	int kem = 0,
+		yeu = 0,
+		trungBinh = 0,
+		kha = 0,
+		gioi = 0;
+	if (h == 0)
+	{
+		cout << "\nDanh sach " << lop << " rong!";
+		_getch();
+	}
+	else
+	{
+		for (i = 0; i < h; i++)
+		{
+			if ((dsLop + i)->diem >= 8.5)
+				gioi++;
+			else if ((dsLop + i)->diem >= 7)
+				kha++;
+			else if ((dsLop + i)->diem >= 5.5)
+				trungBinh++;
+			else if ((dsLop + i)->diem >= 4)
+				yeu++;
+			else
+				kem++;
+		}
+
+		Xuat_DSSV_Lop(a, n, lop);
+		cout << "\nThong ke chat luong lop " << lop << ":\n";
+		cout << "\nSo sinh vien gioi: Gioi = " << gioi << ", ti le (%): ti le = "
+			<< setiosflags(ios::fixed) << setprecision(1) << (double)gioi / h;
+		cout << "\nSo sinh vien kha: Kha = " << kha << ", ti le (%): ti le = "
+			<< setiosflags(ios::fixed) << setprecision(1) << (double)kha / h;
+		cout << "\nSo sinh vien trung binh: Trung binh = " << trungBinh << ", ti le (%): ti le = "
+			<< setiosflags(ios::fixed) << setprecision(1) << (double)trungBinh / h;
+		cout << "\nSo sinh vien yeu: yeu = " << yeu << ", ti le (%): ti le = "
+			<< setiosflags(ios::fixed) << setprecision(1) << (double)yeu / h;
+		cout << "\nSo sinh vien kem: kem = " << kem << ", ti le (%): ti le = "
+			<< setiosflags(ios::fixed) << setprecision(1) << (double)kem / h;
+	}
+}
+
 
 
 

@@ -91,6 +91,15 @@ void XuLyMenu(int menu, SinhVien *a, int &n)
 
 	case 6:
 		cout << "\n6. Thong ke chat luong hoc tap sinh vien theo lop";
+		ThongKe_ChatLuong(a, n, "CTK39");
+		_getch();
+		ThongKe_ChatLuong(a, n, "CTK38");
+		_getch();
+		ThongKe_ChatLuong(a, n, "CTK37");
+		_getch();
+		ThongKe_ChatLuong(a, n, "CTK36");
+		_getch();
+
 		break;
 	}
 	_getch();
