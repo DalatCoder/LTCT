@@ -33,6 +33,7 @@ void XuLyMenu(int menu, char a[MAX])
 {
 	system("cls");
 	int kq;
+	char x;
 
 	switch (menu)
 	{
@@ -55,7 +56,7 @@ void XuLyMenu(int menu, char a[MAX])
 	case 3:
 		cout << "\n3. Dao nguoc chuoi";
 		cout << "\nChuoi ban dau: ";
-		XuatChuoi(a);
+		XuatChuoi(a);		
 
 		DaoNguocChuoi(a);
 		cout << "\nChuoi sau khi dao nguoc: ";
@@ -75,10 +76,26 @@ void XuLyMenu(int menu, char a[MAX])
 
 	case 5:
 		cout << "\n5. Dem so lan xuat hien cua X";
+
+		cout << "\nNhap vao ky tu x: ";
+		cin >> x;
+		kq = DemSoLanXuatHien_X(a, x);
+		cout << "\nSo lan xuat hien cua phan tu x trong a la " << kq;
 		break;
+				
 	case 6:
 		cout << "\n6. Vi tri xuat hien dau tien cua X";
+
+		cout << "\nNhap vao ky tu x: ";
+		cin >> x;
+		kq = VT_XuatHien_DauTien(a, x);
+		if (kq == -1)
+			cout << "\nKy tu x khong xuat hien trong chuoi a.";
+		else
+			cout << "\nVi tri xuat hien dau tien cua ky tu x la : " << kq;
+
 		break;
+
 	}
 	_getch();
 }

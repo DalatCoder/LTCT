@@ -1,6 +1,5 @@
 #include <iostream>
 #include <conio.h>
-#include <string.h>
 
 using namespace std;
 
@@ -11,22 +10,14 @@ void ChayChuongTrinh();
 
 int main()
 {
-	char *a = new char[100];
-	char *b = new char[100];
-
-	b = gets_s(a, 100);
-
-	cout << a << endl;
-	cout << b << endl;
-
-	delete[] a;
+	ChayChuongTrinh();
 	return 0;
 }
 
 void ChayChuongTrinh()
 {
-	int soMenu = 6, menu;
-	char a[MAX];
+	int soMenu = 5, menu;
+	String a;
 
 	do
 	{

@@ -53,8 +53,48 @@ int ChuoiDoiXung(char a[MAX])
 	return kq;
 }
 
+int DemSoLanXuatHien_X(char a[MAX], char x)
+{
+	int i, dem;
+	dem = 0;
+	for (i = 0; a[i] != NULL; i++)
+		if (a[i] == x)
+			dem++;
 
+	return dem;
+}
 
+int VT_XuatHien_DauTien(char a[MAX], char x)
+{
+	int i, vt;
+	vt = -1;
 
+	for (i = 0; a[i] != NULL; i++)
+		if (a[i] == x)
+		{
+			vt = i;
+			break;
+		}
 
+	return vt;
+}
+
+int ChenKT_VT(char a[MAX], char x, int vt)
+{
+	int i, len, kq;
+	len = strlen(a);
+	kq = 1;
+
+	if (vt < 0 || vt > len)
+		kq = 0;
+	else
+	{
+		len++;
+		for (i = len; i > vt; i--)
+			a[i] = a[i-1];
+		a[vt] = x;
+	}
+
+	return kq;
+}
 

@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{1408D61A-8581-4591-B19C-C5A1F4721A62}</ProjectGuid>
+    <ProjectGuid>{93F8B24E-8CBE-4292-B039-658E4C5618E7}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My1812831_HoangVinhQuang_BT2</RootNamespace>
+    <RootNamespace>ThiGiuaKy_Nhom01</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -146,11 +146,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="1812831_program.cpp" />
+    <ClCompile Include="Program.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="1812831_menu.h" />
-    <ClInclude Include="1812831_thuvien.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="Thuvien.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
