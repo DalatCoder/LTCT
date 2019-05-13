@@ -63,10 +63,7 @@ void ChuyenXauKyTu(String a)
 	a[0] = Chuyen_KT_Thuong(a[0]);
 
 	for (i = 1; a[i] != NULL; i++)
-		if (i % 2 == 0)
-			a[i] = Chuyen_KT_Thuong(a[i]);
-		else
-			a[i] = Chuyen_KT_HOA(a[i]);
+		a[i] = (i % 2 == 0) ? Chuyen_KT_Thuong(a[i]) : Chuyen_KT_HOA(a[i]);
 }
 
 
