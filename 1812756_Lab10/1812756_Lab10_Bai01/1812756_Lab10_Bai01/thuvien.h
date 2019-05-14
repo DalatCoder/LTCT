@@ -5,6 +5,7 @@ typedef int *DayDong;
 void NhapTuDong(DayDong a, int n);
 void XuatMang(DayDong a, int n);
 int TinhTong(DayDong a, int n);
+int TinhTich(DayDong a, int n);
 
 void NhapTuDong(DayDong a, int n)
 {
@@ -32,5 +33,14 @@ int TinhTong(DayDong a, int n)
 	return kq;
 }
 
-
+int TinhTich(DayDong a, int n)
+{
+	int kq;
+	if (n == 1)
+		kq = *a;
+	else
+		if (n > 1)
+			kq = *(a + n - 1) * TinhTich(a, n - 1);
+	return kq;
+}
 

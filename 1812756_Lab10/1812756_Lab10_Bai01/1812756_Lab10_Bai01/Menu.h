@@ -63,7 +63,12 @@ void XuLyMenu(int menu, DayDong a, int n)
 
 	case 4:
 		cout << "\n4. Tinh tich cac phan tu trong mang";
+		cout << "\nDay so hien hanh: ";
+		XuatMang(a, n);
+		kq = TinhTich(a, n);
+		cout << "\nTich cua day so tren la: " << kq;
 		break;
+
 	case 5:
 		cout << "\n5. Tinh gia tri nho nhat cua mang";
 		break;
