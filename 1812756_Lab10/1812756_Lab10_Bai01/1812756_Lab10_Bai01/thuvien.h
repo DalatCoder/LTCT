@@ -89,4 +89,23 @@ int TinhSo_DC(DayDong a, int n)
 	return kq;
 }
 
+int KiemTra_NT(int x)
+{
+	int i, m, kq;
+	if (x < 2)
+		kq = 0;
+	else
+	{
+		m = (int)sqrt((double)x);
+		kq = 1;
+		for (i = 2; i <= m; i++)
+			if (x % i == 0)
+			{
+				kq = 0;
+				break;
+			}
+	}
+	return kq;
+}
+
 
