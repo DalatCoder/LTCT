@@ -9,6 +9,8 @@ int TinhTich(DayDong a, int n);
 int TinhMin(DayDong a, int n);
 int TinhMax(DayDong a, int n);
 int TinhSo_DC(DayDong a, int n);
+int KiemTra_NT(int x);
+int TinhTong_NT(DayDong a, int n);
 
 void NhapTuDong(DayDong a, int n)
 {
@@ -105,6 +107,23 @@ int KiemTra_NT(int x)
 				break;
 			}
 	}
+	return kq;
+}
+
+int TinhTong_NT(DayDong a, int n)
+{
+	int kq;
+	if (n == 1)
+		if (KiemTra_NT(*a))
+			kq = *a;
+		else
+			kq = 0;
+	else
+		if (n > 1)
+			if (KiemTra_NT(*(a + n - 1)))
+				kq = TinhTong_NT(a, n - 1) + *(a + n - 1);
+			else
+				kq = TinhTong_NT(a, n - 1);
 	return kq;
 }
 
