@@ -33,7 +33,7 @@ int ChonMenu(int soMenu)
 
 void XuLyMenu(int menu, DayDong a, int n)
 {
-	int kq;
+	int kq, x;
 	system("cls");
 	switch (menu)
 	{
@@ -93,8 +93,18 @@ void XuLyMenu(int menu, DayDong a, int n)
 		cout << "\nTong cac so nguyen to trong mang la : " << kq;
 		break;
 	case 8:
-		cout << "\n8. tim vi tri cuoi cung x xuat hien trong mang, neu co";
+		cout << "\n8. Tim vi tri cuoi cung x xuat hien trong mang, neu co";
+		cout << "\nDay so hien hanh: ";
+		XuatMang(a, n);
+		cout << "\nNhap vao 1 so x: ";
+		cin >> x;
+		kq = Tim_Csc(a, n, x);
+		if (kq == -1)
+			cout << "\nX khong xuat hien trong day so.";
+		else
+			cout << "\nVi tri cuoi cung phan tu x xuat hien la: " << kq;
 		break;
+
 	case 9:
 		cout << "\n9. Dem so duong chay cua mang";
 		cout << "\nDay so hien hanh: ";
