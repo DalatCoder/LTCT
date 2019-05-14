@@ -71,7 +71,12 @@ void XuLyMenu(int menu, DayDong a, int n)
 
 	case 5:
 		cout << "\n5. Tinh gia tri nho nhat cua mang";
+		cout << "\nDay so hien hanh: ";
+		XuatMang(a, n);
+		kq = TinhMin(a, n);
+		cout << "\nGia tri nho nhat trong day so la: " << kq;
 		break;
+
 	case 6:
 		cout << "\n6. Tinh gia tri lon nhat trong mang";
 		break;

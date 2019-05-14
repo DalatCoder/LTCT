@@ -6,6 +6,7 @@ void NhapTuDong(DayDong a, int n);
 void XuatMang(DayDong a, int n);
 int TinhTong(DayDong a, int n);
 int TinhTich(DayDong a, int n);
+int TinhMin(DayDong a, int n);
 
 void NhapTuDong(DayDong a, int n)
 {
@@ -41,6 +42,20 @@ int TinhTich(DayDong a, int n)
 	else
 		if (n > 1)
 			kq = *(a + n - 1) * TinhTich(a, n - 1);
+	return kq;
+}
+
+int TinhMin(DayDong a, int n)
+{
+	int kq;
+	if (n == 1)
+		kq = *(a + 0);
+	else
+		if (n > 1)
+			if (TinhMin(a, n - 1) > *(a + n - 1))
+				kq = *(a + n - 1);
+			else
+				kq = TinhMin(a, n - 1);
 	return kq;
 }
 
