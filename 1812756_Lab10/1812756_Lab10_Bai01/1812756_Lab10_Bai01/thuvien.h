@@ -4,6 +4,7 @@ typedef int *DayDong;
 
 void NhapTuDong(DayDong a, int n);
 void XuatMang(DayDong a, int n);
+int TinhTong(DayDong a, int n);
 
 void NhapTuDong(DayDong a, int n)
 {
@@ -19,5 +20,17 @@ void XuatMang(DayDong a, int n)
 	for (i = 0; i < n; i++)
 		cout << *(a + i) << TAB;
 }
+
+int TinhTong(DayDong a, int n)
+{
+	int kq;
+	if (n == 1)
+		kq = *a;
+	else
+		if (n > 1)
+			kq = TinhTong(a, n - 1) + *(a + n - 1);
+	return kq;
+}
+
 
 
