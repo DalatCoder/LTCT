@@ -11,13 +11,14 @@ void ChayChuongTrinh();
 int main()
 {
 	ChayChuongTrinh();
+	_getch();
 	return 0;
 }
 
 void ChayChuongTrinh()
 {
 	int soMenu = 5, menu;
-	String a;
+	String a = "default";
 
 	do
 	{
@@ -26,3 +27,5 @@ void ChayChuongTrinh()
 	} while (menu > 0);
 
 }
+
+

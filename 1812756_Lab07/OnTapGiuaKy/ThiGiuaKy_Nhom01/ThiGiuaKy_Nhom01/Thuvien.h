@@ -7,7 +7,6 @@ void NhapXauKyTu(String a);
 void XuatXauKyTu(String a);
 int TinhChieuDai(String a);
 int DemSoLanXuatHien_X(String a, char x);
-int KiemTra_KT_Thuong(char x);
 int Chuyen_KT_HOA(char x);
 int Chuyen_KT_Thuong(char x);
 void ChuyenXauKyTu(String a);
