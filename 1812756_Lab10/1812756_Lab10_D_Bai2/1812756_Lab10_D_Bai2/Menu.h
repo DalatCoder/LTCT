@@ -44,7 +44,12 @@ void XuLyMenu(int menu)
 
 		case 2:
 			cout << "\n2. Xuat k so fibonacci dau tien (dem tu 0): ";
+			cout << "\nNhap vao 1 so : ";
+			cin >> n;
+			cout << n << " so fibonacci dau tien la :\n";
+			Xuat_K_Fib(n);
 			break;
+
 		case 3:
 			cout << "\n3. Tinh to hop chap k trong n : ";
 			break;

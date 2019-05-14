@@ -1,4 +1,7 @@
 
+int Fib(int n);
+void Xuat_K_Fib(int k);
+
 int Fib(int n)
 {
 	int kq;
@@ -13,3 +16,9 @@ int Fib(int n)
 	return kq;
 }
 
+void Xuat_K_Fib(int k)
+{
+	int i;
+	for (i = 0; i < k; i++)
+		cout << Fib(i) << '\t';
+}
