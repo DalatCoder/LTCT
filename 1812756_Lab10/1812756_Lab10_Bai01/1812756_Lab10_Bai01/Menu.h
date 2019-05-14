@@ -93,7 +93,12 @@ void XuLyMenu(int menu, DayDong a, int n)
 		break;
 	case 9:
 		cout << "\n9. Dem so duong chay cua mang";
+		cout << "\nDay so hien hanh: ";
+		XuatMang(a, n);
+		kq = TinhSo_DC(a, n);
+		cout << "\nSo duong chay la: " << kq;
 		break;
+
 	}
 	_getch();
 }

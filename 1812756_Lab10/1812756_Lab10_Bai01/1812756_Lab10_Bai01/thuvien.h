@@ -8,6 +8,7 @@ int TinhTong(DayDong a, int n);
 int TinhTich(DayDong a, int n);
 int TinhMin(DayDong a, int n);
 int TinhMax(DayDong a, int n);
+int TinhSo_DC(DayDong a, int n);
 
 void NhapTuDong(DayDong a, int n)
 {
@@ -71,6 +72,20 @@ int TinhMax(DayDong a, int n)
 				kq = *(a + n - 1);
 			else
 				kq = TinhMax(a, n - 1);
+	return kq;
+}
+
+int TinhSo_DC(DayDong a, int n)
+{
+	int kq;
+	if (n == 1)
+		kq = 1;
+	else
+		if (n > 1)
+			if (*(a + n - 1) < *(a + n - 2))
+				kq = TinhSo_DC(a, n - 1) + 1;
+			else
+				kq = TinhSo_DC(a, n - 1);
 	return kq;
 }
 
