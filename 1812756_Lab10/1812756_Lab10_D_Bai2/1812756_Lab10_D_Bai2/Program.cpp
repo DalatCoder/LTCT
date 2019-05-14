@@ -16,6 +16,11 @@ int main()
 
 void ChayChuongTrinh()
 {
-
+	int soMenu = 4, menu;
+	do
+	{
+		menu = ChonMenu(soMenu);
+		XuLyMenu(menu);
+	} while (menu > 0);
 }
 
