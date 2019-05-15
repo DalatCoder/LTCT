@@ -22,3 +22,16 @@ void Xuat_K_Fib(int k)
 	for (i = 0; i < k; i++)
 		cout << Fib(i) << '\t';
 }
+
+int Tinh_Cnk(int n, int k)
+{
+	int kq;
+	if (k == 0 || k == n)
+		kq = 1;
+	else
+		if (0 < k && k < n)
+			kq = Tinh_Cnk(n - 1, k) + Tinh_Cnk(n - 1, k - 1);
+	return kq;
+}
+
+

@@ -28,7 +28,7 @@ int ChonMenu(int soMenu)
 
 void XuLyMenu(int menu)
 {
-	int n, kq;
+	int n, kq, k;
 	switch (menu)
 	{
 		case 0:
@@ -52,7 +52,14 @@ void XuLyMenu(int menu)
 
 		case 3:
 			cout << "\n3. Tinh to hop chap k trong n : ";
+			cout << "\nNhap n : ";
+			cin >> n;
+			cout << "\nNhap k : ";
+			cin >> k;
+			kq = Tinh_Cnk(n, k);
+			cout << "nTo hop chap k trong n la : " << kq;
 			break;
+
 		case 4:
 			cout << "\n4. Tinh min max: ";
 			break;
