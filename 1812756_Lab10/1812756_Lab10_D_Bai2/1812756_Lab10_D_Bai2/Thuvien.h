@@ -1,6 +1,10 @@
 
+#define MAX 100
+
 int Fib(int n);
 void Xuat_K_Fib(int k);
+int Tinh_Cnk(int n, int k);
+void MinMax(int a[MAX], int l, int r, int &Min, int &Max);
 
 int Fib(int n)
 {
@@ -34,4 +38,27 @@ int Tinh_Cnk(int n, int k)
 	return kq;
 }
 
+
+void MinMax(int a[MAX], int l, int r, int &Min, int &Max)
+{
+	int Min1, Min2, Max1, Max2;
+	if (l == r)
+	{
+		Min = a[l];
+		Max = a[l];
+	}
+	else
+	{
+		MinMax(a, l, (l + r) / 2, Min1, Max1);
+		MinMax(a, (l + r) / 2 + 1, r, Min2, Max2);
+		if (Min1 < Min2)
+			Min = Min1;
+		else
+			Min = Min2;
+		if (Max1 > Max2)
+			Max = Max1;
+		else
+			Max = Max2;
+	}
+}
 
