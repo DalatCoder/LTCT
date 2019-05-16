@@ -1,6 +1,9 @@
 
 #define MAX 100
 
+void Mat_File(char *filename, int a[MAX][MAX], int n);
+void File_Display(char *filename);
+
 void Mat_File(char *filename, int a[MAX][MAX], int n)
 {
 	ofstream out(filename);
@@ -29,6 +32,28 @@ void TaoMaTranNgauNhien(int a[MAX][MAX], int n)
 			a[i][j] = rand() % 10;
 }
 
+void File_Display(char *filename)
+{
+	int n, x, i, j;
+	ifstream in(filename);
+	if (!in)
+	{
+		cout << "\nLoi mo file.";
+		exit(-1);
+	}
+	in >> n;
+	cout << n;
+	for (i = 0; i < n; i++)
+	{
+		cout << endl;
+		for (j = 0; j < n; j++)
+		{
+			in >> x;
+			cout << x << '\t';
+		}
+	}
+	in.close();
+}
 
 
 

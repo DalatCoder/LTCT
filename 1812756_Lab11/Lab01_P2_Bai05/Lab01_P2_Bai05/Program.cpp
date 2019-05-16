@@ -45,6 +45,11 @@ void ChayChuongTrinh()
 		strcat_s(filename, ".txt");
 
 	Mat_File(filename, a, n);
+	_getch();
+
+	system("cls");
+	cout << "\nXem lai du lieu trong file de kiem tra: \n";
+	File_Display(filename);
 
 	_getch();
 }
