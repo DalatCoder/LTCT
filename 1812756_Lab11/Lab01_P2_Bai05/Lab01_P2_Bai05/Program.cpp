@@ -28,10 +28,11 @@ void ChayChuongTrinh()
 		cin >> n;
 	} while (n <= 0);
 
-	cout << "\nTao ma tran ngau nhien ...";
+	cout << "\nTao ma tran ngau nhien voi n = " << n << " ... \n";
 	TaoMaTranNgauNhien(a, n);
+	Matrix_Display(a, n);
 
-	cout << "\nNhap vao ten file de luu: ";
+	cout << "\n\nNhap vao ten file de luu: ";
 	cin >> filename;
 
 	int dau = 0;

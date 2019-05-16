@@ -3,6 +3,7 @@
 
 void Mat_File(char *filename, int a[MAX][MAX], int n);
 void File_Display(char *filename);
+void Matrix_Display(int a[MAX][MAX], int n);
 
 void Mat_File(char *filename, int a[MAX][MAX], int n)
 {
@@ -53,6 +54,17 @@ void File_Display(char *filename)
 		}
 	}
 	in.close();
+}
+
+void Matrix_Display(int a[MAX][MAX], int n)
+{
+	int i, j;
+	for (i = 0; i < n; i++)
+	{
+		cout << endl;
+		for (j = 0; j < n; j++)
+			cout << a[i][j] << '\t';
+	}
 }
 
 
