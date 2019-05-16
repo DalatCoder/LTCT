@@ -19,6 +19,7 @@ struct NhanVien
 };
 
 void Read_Struct(char *filename, NhanVien ds[MAX], int &n);
+void Xuat_NV(NhanVien ds[MAX], int n);
 
 void Read_Struct(char *filename, NhanVien ds[MAX], int &n)
 {
@@ -56,8 +57,30 @@ void Read_Struct(char *filename, NhanVien ds[MAX], int &n)
 		in >> diaChi; strcpy_s(ds[n].diaChi, diaChi);
 		in >> luong; ds[n].luong = luong;
 	}
-	n++;
+	
 	in.close();
+}
+
+void Xuat_NV(NhanVien ds[MAX], int n)
+{
+	cout << setiosflags(ios::left);
+	cout << setw(20) << "MS"
+		<< setw(20) << "Ho Ten"
+		<< setw(20) << "NTN sinh"
+		<< setw(20) << "Dia Chi"
+		<< setw(20) << "Luong";
+	cout << endl << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << setw(20) << ds[i].ms
+			<< setw(20) << ds[i].hoTen
+			<< setw(2) << ds[i].ntn.ngay << '/'
+			<< setw(2) << ds[i].ntn.thang << '/'
+			<< setw(14) << ds[i].ntn.nam
+			<< setw(20) << ds[i].diaChi
+			<< setiosflags(ios::fixed) << setprecision(2) << setw(20) << ds[i].luong;
+		cout << endl;
+	}
 }
 
 
