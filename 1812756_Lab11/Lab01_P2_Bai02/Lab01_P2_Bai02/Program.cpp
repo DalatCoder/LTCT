@@ -43,6 +43,11 @@ void ChayChuongTrinh()
 		strcat_s(filename, ".txt");
 
 	Write_Int(arr, n, filename);
+	_getch();
+
+	system("cls");
+	cout << "\nXem lai du lieu tu tep de kiem tra: ";
+	File_Display(filename);
 
 	_getch();
 	delete[] arr;
