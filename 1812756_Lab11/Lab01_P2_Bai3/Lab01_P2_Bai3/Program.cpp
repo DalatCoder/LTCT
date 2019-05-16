@@ -34,4 +34,11 @@ void ChayChuongTrinh()
 		strcat_s(filename, ".txt");
 
 	File_Array(filename, arr, n);
+
+	cout << "\nXem lai mang : \n";
+	Array_Display(arr, n);
+
+	_getch();
 }
+
+

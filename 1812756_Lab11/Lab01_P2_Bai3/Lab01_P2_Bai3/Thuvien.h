@@ -1,6 +1,9 @@
 
 #define MAX 100
 
+void File_Array(char *filename, int a[MAX], int &n);
+void Array_Display(int arr[MAX], int n);
+
 void File_Array(char *filename, int a[MAX], int &n)
 {
 	ifstream in(filename);
@@ -21,5 +24,9 @@ void File_Array(char *filename, int a[MAX], int &n)
 	in.close();
 }
 
-
+void Array_Display(int arr[MAX], int n)
+{
+	for (int i = 0; i < n; i++)
+		cout << arr[i] << '\t';
+}
 
