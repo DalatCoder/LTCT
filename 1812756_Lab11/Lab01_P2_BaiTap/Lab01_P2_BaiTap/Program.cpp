@@ -13,13 +13,20 @@ void ChayChuongTrinh();
 
 int main()
 {
-
+	ChayChuongTrinh();
 	return 0;
 }
 
 void ChayChuongTrinh()
 {
+	int soMenu = 3, menu, n_arr, n_ds;
+	int arr[MAX];
+	NhanVien ds[MAX];
 
-	_getch();
+	do
+	{
+		menu = ChonMenu(soMenu);
+		XuLyMenu(menu, arr, ds, n_arr, n_ds);
+	} while (menu > 0);
 }
 

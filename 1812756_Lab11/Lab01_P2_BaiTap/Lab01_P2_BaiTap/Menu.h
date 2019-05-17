@@ -1,7 +1,7 @@
 
 void XuatMenu();
 int ChonMenu(int soMenu);
-void XuLyMenu(int menu, int arr[], NhanVien[MAX], int &n);
+void XuLyMenu(int menu, int arr[], NhanVien[MAX], int &n_arr, int &n_nv);
 
 void XuatMenu()
 {
@@ -29,8 +29,9 @@ int ChonMenu(int soMenu)
 	return stt;
 }
 
-void XuLyMenu(int menu, int arr[], NhanVien[MAX], int &n)
+void XuLyMenu(int menu, int arr[], NhanVien[MAX], int &n_arr, int &n_nv)
 {
+	char filename[MAX];
 	switch (menu)
 	{
 		case 0:
@@ -38,7 +39,13 @@ void XuLyMenu(int menu, int arr[], NhanVien[MAX], int &n)
 			break;
 		case 1:
 			cout << "\n1. Chuyen du lieu vao mang";
+			cout << "\nNhap ten file de mo: ";
+			cin >> filename;
+			file_Array(filename, arr, n_arr);
+			cout << "\nDu lieu tu tap tin: \n";
+			display_Array(arr, n_arr);
 			break;
+
 		case 2:
 			cout << "\n2. Chuyen du lieu vao mang cau truc";
 			break;
