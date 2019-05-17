@@ -29,5 +29,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="text1.txt" />
+    <Text Include="text2.txt" />
   </ItemGroup>
 </Project>

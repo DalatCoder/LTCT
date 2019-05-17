@@ -22,7 +22,8 @@ struct NhanVien
 void file_Array(char *filename, int arr[MAX], int &n);
 void display_Array(int arr[MAX], int n);
 void file_NhanVien(char *filename, NhanVien ds[MAX], int &n);
-
+void display_NhanVien(NhanVien ds[MAX], int n);
+void display_NhanVien(NhanVien ds[MAX], int n);
 
 void file_Array(char *filename, int arr[MAX], int &n)
 {
@@ -88,6 +89,33 @@ void file_NhanVien(char *filename, NhanVien ds[MAX], int &n)
 	in.close();
 }
 
+void display_NhanVien(NhanVien ds[MAX], int n)
+{
+	cout << setiosflags(ios::left);
+	cout << setw(10) << "Ma NV"
+		<< setw(10) << "Ho"
+		<< setw(10) << "Ten Lot"
+		<< setw(10) << "Ten"
+		<< setw(17) << "NTN Sinh"
+		<< setw(15) << "Dia Chi"
+		<< setw(15) << "Luong";
+	cout << endl;
+
+	for (int i = 0; i < n; i++)
+	{
+		cout << setw(10) << ds[i].maNV
+			<< setw(10) << ds[i].ho
+			<< setw(10) << ds[i].tenLot
+			<< setw(10) << ds[i].ten
+			<< setw(4) << ds[i].ntn.ngay
+			<< setw(4) << ds[i].ntn.thang
+			<< setw(9) << ds[i].ntn.nam
+			<< setw(15) << ds[i].diaChi
+			<< setiosflags(ios::fixed) << setprecision(2) << setw(15) << ds[i].luong;
+		cout << endl;
+	}
+
+}
 
 
 
