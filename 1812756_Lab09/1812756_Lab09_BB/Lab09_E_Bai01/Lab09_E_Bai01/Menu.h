@@ -35,7 +35,9 @@ int ChonMenu(int soMenu)
 
 void XuLyMenu(int menu, int *arr, int &n)
 {
-	int kq;
+	int kq, x;
+	int *newArr = nullptr;
+
 	system("cls");
 	switch (menu)
 	{
@@ -73,11 +75,30 @@ void XuLyMenu(int menu, int *arr, int &n)
 
 		case 5:
 			cout << "\n5. Dem cac so duong trong day";
+			kq = DemSoDuong(arr, n);
+			newArr = TaoMangSoDuong(arr, n);
+
+			cout << "\nSo luong so duong trong mang la: " << kq;
+			cout << "\nMang so duong : \n";
+			XuatMang(newArr, kq);
+
+			cout << "\nXem lai mang de kiem tra:\n";
+			XuatMang(arr, n);
+
 			break;
+
 		case 6:
 			cout << "\n6. Dem so lan xuat hien cua x trong day";
+			cout << "\nMang hien hanh: \n";
+			XuatMang(arr, n);
+			cout << "\nNhap vao 1 phan tu de dem so lan xuat hien: ";
+			cin >> x;
+			kq = Dem_X(arr, n, x);
+			cout << "\nSo lan xuat hien cua phan tu " << x << " la : " << kq;
 			break;
 	}
+
+	delete[] newArr;
 	_getch();
 }
 
