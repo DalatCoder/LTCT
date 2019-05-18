@@ -62,8 +62,15 @@ void XuLyMenu(int menu, char *str)
 			cout << "\n3. Tim vi tri xuat hien cua chuoi t trong chuoi s";
 			cout << "\nNhap chuoi t\n";
 			NhapChuoi(t);
-
+			kq = ViTri_T_X(str, t);
+			if (kq == -1)
+				cout << "\nChuoi \"" << t << "\" khong ton tai.";
+			else
+				cout << "\nVi tri xuat hien chuoi \"" << t << "\" la : " << kq;
+			cout << "\nXem lai mang de kiem tra: \n";
+			XuatChuoi(str);
 			break;
+
 		case 4:
 			cout << "\n4. Tim vi tri xuat hien dau tien cua ky tu X";
 			break;
