@@ -65,7 +65,12 @@ void XuLyMenu(int menu, int *arr, int &n)
 
 		case 4:
 			cout << "\n4. Tinh tong cac phan tu cua mang";
+			kq = TinhTong(arr, n);
+			cout << "\nTong cac phan tu cua mang la: " << kq;
+			cout << "\nXem lai mang de kiem tra :\n";
+			XuatMang(arr, n);
 			break;
+
 		case 5:
 			cout << "\n5. Dem cac so duong trong day";
 			break;

@@ -4,6 +4,7 @@
 void TaoMangTuDong(int *arr, int &n);
 void XuatMang(int *arr, int n);
 int TinhMax(int *arr, int n);
+int TinhTong(int *arr, int n);
 
 void TaoMangTuDong(int* arr, int &n)
 {
@@ -33,4 +34,13 @@ int TinhMax(int *arr, int n)
 	return max;
 }
 
+int TinhTong(int *arr, int n)
+{
+	int sum = 0;
+
+	for (int i = 0; i < n; i++)
+		sum += arr[i];
+
+	return  sum;
+}
 
