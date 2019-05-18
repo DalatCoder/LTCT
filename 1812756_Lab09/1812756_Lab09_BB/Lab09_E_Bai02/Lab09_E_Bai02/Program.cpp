@@ -1,5 +1,6 @@
 #include <iostream>
 #include <conio.h>
+#include <string.h>
 
 using namespace std;
 
@@ -11,6 +12,7 @@ void ChayChuongTrinh();
 int main()
 {
 	ChayChuongTrinh();
+
 	return 0;
 }
 
