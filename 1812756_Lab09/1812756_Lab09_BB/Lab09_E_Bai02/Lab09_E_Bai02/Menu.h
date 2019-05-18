@@ -35,6 +35,7 @@ void XuLyMenu(int menu, char *str)
 {
 	int kq;
 	char *t = new char[MAX];
+	char x;
 
 	system("cls");
 	switch (menu)
@@ -73,7 +74,17 @@ void XuLyMenu(int menu, char *str)
 
 		case 4:
 			cout << "\n4. Tim vi tri xuat hien dau tien cua ky tu X";
+			cout << "\nXem lai mang: \n";
+			XuatChuoi(str);
+			cout << "\nNhap vao 1 ky tu: ";
+			cin >> x;
+			kq = ViTri_X(str, x);
+			if (kq == -1)
+				cout << x << " khong ton tai trong chuoi.";
+			else
+				cout << "Vi tri \'" << x << "\' xuat hien trong chuoi la: " << kq;
 			break;
+
 		case 5:
 			cout << "\n5. Dao vi tri cua tu dau va tu cuoi";
 			break;

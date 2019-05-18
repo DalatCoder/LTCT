@@ -5,6 +5,7 @@ void NhapChuoi(char *str);
 void XuatChuoi(const char *str);
 int DemKhoangTrang(const char *str);
 int ViTri_T_X(char *str, char *subStr);
+int ViTri_X(const char *str, char X);
 
 void NhapChuoi(char *str)
 {
@@ -23,7 +24,7 @@ int DemKhoangTrang(const char *str)
 	int dem, i;
 	dem = 0, i = 0;
 
-	while (str[i++] != NULL)
+	for (int i = 0; str[i] != NULL; i++)
 		str[i] == ' ' ? dem++ : dem;
 
 	return dem;
@@ -44,6 +45,19 @@ int ViTri_T_X(char *str, char *subStr)
 	return viTri;
 }
 
+int ViTri_X(const char *str, char X)
+{
+	int vt = -1;
+
+	for (int i = 0; str[i] != NULL; i++)
+		if (str[i] == X)
+		{
+			vt = i;
+			break;
+		}
+
+	return vt;
+}
 
 
 
