@@ -35,6 +35,7 @@ int ChonMenu(int soMenu)
 
 void XuLyMenu(int menu, int *arr, int &n)
 {
+	int kq;
 	system("cls");
 	switch (menu)
 	{
@@ -56,7 +57,12 @@ void XuLyMenu(int menu, int *arr, int &n)
 
 		case 3:
 			cout << "\n3. Tinh gia tri lon nhat";
+			kq = TinhMax(arr, n);
+			cout << "\nGia tri lon nhat trong mang la : " << kq;
+			cout << "\nXem lai mang hien hanh de kiem tra: \n";
+			XuatMang(arr, n);
 			break;
+
 		case 4:
 			cout << "\n4. Tinh tong cac phan tu cua mang";
 			break;
