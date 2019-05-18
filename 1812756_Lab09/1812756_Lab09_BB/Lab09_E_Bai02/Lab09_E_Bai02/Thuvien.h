@@ -7,6 +7,7 @@ int DemKhoangTrang(const char *str);
 int ViTri_T_X(char *str, char *subStr);
 int ViTri_X(const char *str, char X);
 void DaoTu(char *str);
+void ChuyenXau(char *str);
 
 void NhapChuoi(char *str)
 {
@@ -121,4 +122,22 @@ void DaoTu(char *str)
 		strcpy_s(str, MAX, tuCuoi);
 	}
 }
+
+int Hoa_Thuong(char x)
+{
+	return ('A' <= x && x <= 'Z' ? x + 32 : x);
+}
+
+int Thuong_Hoa(char x)
+{
+	return ('a' <= x && x <= 'z' ? x - 32 : x);
+}
+
+void ChuyenXau(char *str)
+{
+	str[0] = Thuong_Hoa(str[0]);
+	for (int i = 1; str[i] != NULL; i++)
+		str[i] = Hoa_Thuong(str[i]);
+}
+
 
