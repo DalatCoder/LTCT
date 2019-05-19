@@ -108,7 +108,11 @@ void XuLyMenu(int menu, char *str)
 			break;
 
 		case 8:
-			cout << "\n8. Dem so tu trong chuoi s";
+			cout << "\n8. Dem so tu trong chuoi";
+			kq = Dem_So_Tu(str);
+			cout << "\nSo tu trong chuoi la : " << kq;
+			cout << "\nXem lai mang de kiem tra: \n";
+			XuatChuoi(str);
 			break;
 	}
 	_getch();

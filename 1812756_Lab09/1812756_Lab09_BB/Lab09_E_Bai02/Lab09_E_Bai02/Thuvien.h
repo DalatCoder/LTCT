@@ -9,6 +9,7 @@ int ViTri_X(const char *str, char X);
 void DaoTu(char *str);
 void ChuyenXau(char *str);
 void LietKe_KyTu(char *str);
+int Dem_So_Tu(const char *str);
 
 void NhapChuoi(char *str)
 {
@@ -172,6 +173,17 @@ void LietKe_KyTu(char *str)
 		cout << t[i] << " - " << dem[i] << endl;
 	cout << "\nXem lai chuoi de kiem tra: \n";
 	XuatChuoi(str);
+}
+
+int Dem_So_Tu(char *str)
+{
+	BoKhoangTrang(str);
+	int dem = 0;
+	int i = 0;
+	while (str[i++] != NULL)
+		str[i] == ' ' ? dem++ : dem;
+
+	return dem + 1;
 }
 
 
