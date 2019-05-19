@@ -26,5 +26,17 @@ struct TaiLieu
 };
 
 
+void Tao_1_TaiLieu(char *maTL, char *tuaDe, Loai loai, unsigned int namXB, HoTen hoten, double gia, TaiLieu *ds, int &n);
+
+void Tao_1_TaiLieu(char *maTL, char *tuaDe, Loai loai, unsigned int namXB, HoTen hoten, double gia, TaiLieu *ds, int &n)
+{
+	strcpy_s((ds + n)->maTL, 10, maTL);
+	strcpy_s((ds + n)->tuaDe, 30, tuaDe);
+	(ds + n)->loai = loai;
+	(ds + n)->namXB = namXB;
+	(ds + n)->hoTen = hoten;
+	(ds + n)->gia = gia;
+}
+
 
 
