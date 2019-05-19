@@ -22,8 +22,6 @@ void ChayChuongTrinh()
 	TaiLieu *ds;
 	ds = new TaiLieu[MAX];
 	Tao_DS_TaiLieu(ds, n);
-	XuatTieuDe();
-	Xuat_1_TaiLieu(ds[0]);
 
 	_getch();
 	do

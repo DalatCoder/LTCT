@@ -21,6 +21,9 @@ struct TaiLieu
 
 void Tao_1_TaiLieu(char *maTL, char *tuaDe, char* loai, unsigned int namXB, char *nhaXB, HoTen hoten, double gia, TaiLieu *ds, int &n);
 void Tao_DS_TaiLieu(TaiLieu *ds, int &n);
+void XuatTieuDe();
+void Xuat_1_TaiLieu(TaiLieu taiLieu);
+void XuatDongKeNgang(char ch);
 
 void Tao_1_TaiLieu(char *maTL, char *tuaDe, char* loai, unsigned int namXB, char *nhaXB, HoTen hoten, double gia, TaiLieu *ds, int &n)
 {
@@ -78,8 +81,17 @@ void XuatTieuDe()
 		<< '|'
 		<< setw(25) << "Ho va ten"
 		<< '|'
-		<< setw(10) << "Gia tien";
+		<< setw(10) << "Gia tien"
+		<< '|';
 	cout << endl;
+}
+
+void XuatDongKeNgang(char ch)
+{
+	cout << setiosflags(ios::left) << '|';
+	for (int i = 1; i <= 118; i++)
+		cout << ch;
+	cout << '|' << endl;
 }
 
 void Xuat_1_TaiLieu(TaiLieu taiLieu)
@@ -99,7 +111,8 @@ void Xuat_1_TaiLieu(TaiLieu taiLieu)
 		<< setw(15) << taiLieu.hoTen.hoLot
 		<< setw(10) << taiLieu.hoTen.ten
 		<< '|'
-		<< setiosflags(ios::fixed) << setprecision(2) << setw(10) << taiLieu.gia;
+		<< setiosflags(ios::fixed) << setprecision(2) << setw(10) << taiLieu.gia
+		<< '|';
 	cout << endl;
 }
 
