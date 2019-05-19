@@ -12,31 +12,60 @@ enum Loai
 struct HoTen
 {
 	char hoLot[20];
-	char ten[7];
+	char ten[10];
 };
 
 struct TaiLieu
 {
 	char maTL[10];
-	char tuaDe[30];
+	char tuaDe[50];
 	Loai loai;
 	int namXB;
 	HoTen hoTen;
+	char nhaXB[15];
 	double gia;
 };
 
 
-void Tao_1_TaiLieu(char *maTL, char *tuaDe, Loai loai, unsigned int namXB, HoTen hoten, double gia, TaiLieu *ds, int &n);
+void Tao_1_TaiLieu(char *maTL, char *tuaDe, Loai loai, unsigned int namXB, char *nhaXB, HoTen hoten, double gia, TaiLieu *ds, int &n);
 
-void Tao_1_TaiLieu(char *maTL, char *tuaDe, Loai loai, unsigned int namXB, HoTen hoten, double gia, TaiLieu *ds, int &n)
+void Tao_1_TaiLieu(char *maTL, char *tuaDe, Loai loai, unsigned int namXB, char *nhaXB, HoTen hoten, double gia, TaiLieu *ds, int &n)
 {
-	strcpy_s((ds + n)->maTL, 10, maTL);
-	strcpy_s((ds + n)->tuaDe, 30, tuaDe);
-	(ds + n)->loai = loai;
-	(ds + n)->namXB = namXB;
-	(ds + n)->hoTen = hoten;
-	(ds + n)->gia = gia;
+	if (n < MAX)
+	{
+		strcpy_s((ds + n)->maTL, 10, maTL);
+		strcpy_s((ds + n)->tuaDe, 50, tuaDe);
+		(ds + n)->loai = loai;
+		(ds + n)->namXB = namXB;
+		strcpy_s((ds + n)->nhaXB, 15, nhaXB);
+		(ds + n)->hoTen = hoten;
+		(ds + n)->gia = gia;
+		
+		if (loai == LuanVan)
+			strcpy_s((ds + n)->nhaXB, "");
+		if (loai == TapChi)
+			(ds + n)->hoTen = { "" ,"" };
+
+		n++;
+	}
 }
 
+void Tao_DS_TaiLieu(TaiLieu *ds, int &n)
+{
+	Tao_1_TaiLieu("S6490159", "5 Phuong trinh lam thay doi the gioi", Sach, 2014, "NXB Tre", { "Michael", "Guillen" }, 115000, ds, n);
+	Tao_1_TaiLieu("S8432092", "Luoc su thoi gian", Sach, 2018, "NXB Tre", { "Stephen","Hawking" }, 87000, ds, n);
+	Tao_1_TaiLieu("S2164870", "Nha gia kim", Sach, 2016, "NXB Tre", { "Paulo", "Coelho" }, 59000, ds, n);
 
+	Tao_1_TaiLieu("T4861018", "Tap chi van hoc ki 2 so 5", TapChi, 2014, "NXB Van Hoa", { }, 115, ds, n);
+	Tao_1_TaiLieu("T2866535", "Tap chi khoa hoc ki 1 so 6", TapChi, 2013, "NXB Khoa Hoc", { }, 115, ds, n);
+	Tao_1_TaiLieu("T3016261", "Tap chi nghe thuat ki 3 so 7", TapChi, 2015, "NXB Nghe Thuat", { }, 115, ds, n);
+
+	Tao_1_TaiLieu("L4534032", "Luan van tot nghiep khoa CNTT K39", LuanVan, 2019, "", { "Kieu", "Phong" }, 70000, ds, n);
+	Tao_1_TaiLieu("L4939863", "Luan van tot nghiep khoa QTKD K39", LuanVan, 2019, "", { "Hu", "Truc" }, 50000, ds, n);
+	Tao_1_TaiLieu("L3516002", "Luan van tot nghiep khoa CNTT K39", LuanVan, 2019, "", { "Doan", "Du" }, 70000, ds, n);
+
+	Tao_1_TaiLieu("B4357002", "Nho khong hoc lon lam nha bao - P1", BaoKH, 2019, "NXB NinjaLead", { "Tao", "Thao" }, 69000, ds, n);
+	Tao_1_TaiLieu("B8122123", "Nho khong hoc lon lam nha bao - P2", BaoKH, 2019, "NXB NinjaLead", { "Tao", "Thuc" }, 69.500, ds, n);
+	Tao_1_TaiLieu("B6653496", "Nho khong hoc lon lam nha bao - P3", BaoKH, 2019, "NXB NinjaLead", { "Tao", "Phi" }, 69.696, ds, n);
+}
 
