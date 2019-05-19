@@ -12,7 +12,6 @@ void ChayChuongTrinh();
 int main()
 {
 	ChayChuongTrinh();
-
 	return 0;
 }
 

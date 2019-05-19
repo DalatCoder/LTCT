@@ -3,11 +3,12 @@
 
 void NhapChuoi(char *str);
 void XuatChuoi(const char *str);
-int DemKhoangTrang(const char *str);
+int Dem_X(const char *str, const char x);
 int ViTri_T_X(char *str, char *subStr);
 int ViTri_X(const char *str, char X);
 void DaoTu(char *str);
 void ChuyenXau(char *str);
+void LietKe_KyTu(char *str);
 
 void NhapChuoi(char *str)
 {
@@ -21,13 +22,13 @@ void XuatChuoi(const char *str)
 	cout << str << endl;
 }
 
-int DemKhoangTrang(const char *str)
+int Dem_X(const char *str, const char x)
 {
 	int dem, i;
 	dem = 0, i = 0;
 
 	for (int i = 0; str[i] != NULL; i++)
-		str[i] == ' ' ? dem++ : dem;
+		str[i] == x ? dem++ : dem;
 
 	return dem;
 }
@@ -99,7 +100,7 @@ void DaoTu(char *str)
 	char tuDau[MAX], tuCuoi[MAX];
 	int m = 0;
 
-	int soKhoangTrang = DemKhoangTrang(str);
+	int soKhoangTrang = Dem_X(str, ' ');
 	if (soKhoangTrang > 1)
 	{
 		while (str[0] != ' ')
@@ -139,5 +140,39 @@ void ChuyenXau(char *str)
 	for (int i = 1; str[i] != NULL; i++)
 		str[i] = Hoa_Thuong(str[i]);
 }
+
+void LietKe_KyTu(char *str)
+{
+	char t[MAX];
+	int dem[MAX];
+	int i, dau, m;
+	m = 0;
+
+	for (i = 0; str[i] != NULL; i++)
+	{
+		dau = 1;
+		str[i] = Hoa_Thuong(str[i]);
+		for (int j = 0; j < m; j++)
+		{
+			if (str[i] == t[j])
+			{
+				dau = 0;
+				break;
+			}
+		}
+		if (dau)
+			t[m++] = str[i];
+	}
+	t[m] = NULL;
+	for (int i = 0; i < m; i++)
+		dem[i] = Dem_X(str, t[i]);
+
+	cout << "\nSo lan xuat hien cua tung ky tu trong chuoi.\n";
+	for (int i = 0; i < m; i++)
+		cout << t[i] << " - " << dem[i] << endl;
+	cout << "\nXem lai chuoi de kiem tra: \n";
+	XuatChuoi(str);
+}
+
 
 

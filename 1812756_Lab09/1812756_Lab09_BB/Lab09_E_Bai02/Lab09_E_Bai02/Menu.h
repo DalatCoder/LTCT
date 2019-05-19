@@ -53,7 +53,7 @@ void XuLyMenu(int menu, char *str)
 
 		case 2:
 			cout << "\n2. Dem so khoang trang";
-			kq = DemKhoangTrang(str);
+			kq = Dem_X(str, ' ');
 			cout << "\nSo khoang trang trong chuoi: " << kq;
 			cout << "\nXem lai mang de kiem tra: ";
 			XuatChuoi(str);
@@ -104,7 +104,9 @@ void XuLyMenu(int menu, char *str)
 			break;
 		case 7:
 			cout << "\n7. Liet ke tung ky tu va so lan xuat hien";
+			LietKe_KyTu(str);
 			break;
+
 		case 8:
 			cout << "\n8. Dem so tu trong chuoi s";
 			break;
