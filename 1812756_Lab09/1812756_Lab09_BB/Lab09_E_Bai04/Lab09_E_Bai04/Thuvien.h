@@ -24,6 +24,7 @@ void Tao_DS_TaiLieu(TaiLieu *ds, int &n);
 void XuatTieuDe();
 void Xuat_1_TaiLieu(TaiLieu taiLieu);
 void XuatDongKeNgang(char ch);
+void Xuat_DS_TaiLieu(TaiLieu *ds, int n);
 
 void Tao_1_TaiLieu(char *maTL, char *tuaDe, char* loai, unsigned int namXB, char *nhaXB, HoTen hoten, double gia, TaiLieu *ds, int &n)
 {
@@ -67,6 +68,7 @@ void Tao_DS_TaiLieu(TaiLieu *ds, int &n)
 
 void XuatTieuDe()
 {
+	XuatDongKeNgang('=');
 	cout << setiosflags(ios::left)
 		<< '|'
 		<< setw(10) << "Ma TL"
@@ -77,19 +79,20 @@ void XuatTieuDe()
 		<< '|'
 		<< setw(7) << "Nam XB"
 		<< '|'
-		<< setw(10) << "Nha XB"
+		<< setw(15) << "Nha XB"
 		<< '|'
 		<< setw(25) << "Ho va ten"
 		<< '|'
 		<< setw(10) << "Gia tien"
 		<< '|';
 	cout << endl;
+	XuatDongKeNgang('=');
 }
 
 void XuatDongKeNgang(char ch)
 {
 	cout << setiosflags(ios::left) << '|';
-	for (int i = 1; i <= 118; i++)
+	for (int i = 1; i <= 123; i++)
 		cout << ch;
 	cout << '|' << endl;
 }
@@ -106,7 +109,7 @@ void Xuat_1_TaiLieu(TaiLieu taiLieu)
 		<< '|'
 		<< setw(7) << taiLieu.namXB
 		<< '|'
-		<< setw(10) << taiLieu.nhaXB
+		<< setw(15) << taiLieu.nhaXB
 		<< '|'
 		<< setw(15) << taiLieu.hoTen.hoLot
 		<< setw(10) << taiLieu.hoTen.ten
@@ -115,4 +118,19 @@ void Xuat_1_TaiLieu(TaiLieu taiLieu)
 		<< '|';
 	cout << endl;
 }
+
+void Xuat_DS_TaiLieu(TaiLieu *ds, int n)
+{
+	XuatTieuDe();
+	for (int i = 0; i < n; i++)
+	{
+		Xuat_1_TaiLieu(ds[i]);
+		if ((i + 1) % 3 == 0)
+			XuatDongKeNgang('-');
+	}
+	XuatDongKeNgang('=');
+	cout << endl;
+}
+
+
 

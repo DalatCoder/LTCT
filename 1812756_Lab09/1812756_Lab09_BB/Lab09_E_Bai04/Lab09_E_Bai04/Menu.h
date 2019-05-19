@@ -42,7 +42,11 @@ void XuLyMenu(int menu, TaiLieu *ds, int &n)
 			break;
 		case 1:
 			cout << "\n1. Nhap danh sach tai lieu";
+			Tao_DS_TaiLieu(ds, n);
+			cout << "\nXem lai danh sach tai lieu:\n";
+			Xuat_DS_TaiLieu(ds, n);
 			break;
+
 		case 2:
 			cout << "\n2. Xem danh sach tai lieu";
 			break;

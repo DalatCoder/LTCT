@@ -21,9 +21,7 @@ void ChayChuongTrinh()
 	int soMenu = 9, menu, n = 0;
 	TaiLieu *ds;
 	ds = new TaiLieu[MAX];
-	Tao_DS_TaiLieu(ds, n);
 
-	_getch();
 	do
 	{
 		menu = ChonMenu(soMenu);
