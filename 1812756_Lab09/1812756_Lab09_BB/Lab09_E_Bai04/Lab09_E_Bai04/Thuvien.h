@@ -62,6 +62,26 @@ void Tao_DS_TaiLieu(TaiLieu *ds, int &n)
 	Tao_1_TaiLieu("B6653496", "Nho khong hoc lon lam nha bao - P3", "Bao KH", 2019, "NXB NinjaLead", { "Tao", "Phi" }, 69.696, ds, n);
 }
 
+void XuatTieuDe()
+{
+	cout << setiosflags(ios::left)
+		<< '|'
+		<< setw(10) << "Ma TL"
+		<< '|'
+		<< setw(40) << "Tieu de tai lieu"
+		<< '|'
+		<< setw(10) << "Loai"
+		<< '|'
+		<< setw(7) << "Nam XB"
+		<< '|'
+		<< setw(10) << "Nha XB"
+		<< '|'
+		<< setw(25) << "Ho va ten"
+		<< '|'
+		<< setw(10) << "Gia tien";
+	cout << endl;
+}
+
 void Xuat_1_TaiLieu(TaiLieu taiLieu)
 {
 	cout << setiosflags(ios::left)
@@ -70,9 +90,9 @@ void Xuat_1_TaiLieu(TaiLieu taiLieu)
 		<< '|'
 		<< setw(40) << taiLieu.tuaDe
 		<< '|'
-		<< setw(7) << taiLieu.loai
+		<< setw(10) << taiLieu.loai
 		<< '|'
-		<< setw(5) << taiLieu.namXB
+		<< setw(7) << taiLieu.namXB
 		<< '|'
 		<< setw(10) << taiLieu.nhaXB
 		<< '|'
