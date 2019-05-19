@@ -34,7 +34,8 @@ int ChonMenu(int soMenu)
 
 void XuLyMenu(int menu, TaiLieu *ds, int &n)
 {
-	char nhaXB[MAX];
+	char nhaXB[15];
+	HoTen hoTen;
 	int namXB;
 	double kq;
 
@@ -75,7 +76,16 @@ void XuLyMenu(int menu, TaiLieu *ds, int &n)
 
 		case 5:
 			cout << "\n5. Tim sach theo tac gia";
+			cout << "\nNhap ho va ten lot: ";
+			cin.ignore(MAX, '\n');
+			gets_s(hoTen.hoLot, 20);
+			cout << "\nNhap ten tac gia: ";
+			cin >> hoTen.ten;
+			TimTaiLieu_TacGia(ds, n, hoTen);
+			cout << "\nXem lai danh sach tai lieu de kiem tra: \n";
+			Xuat_DS_TaiLieu(ds, n);
 			break;
+
 		case 6:
 			cout << "\n6. Thong ke so luong sach theo moi loai";
 			break;

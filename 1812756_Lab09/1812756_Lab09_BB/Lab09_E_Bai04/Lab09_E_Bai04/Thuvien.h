@@ -27,6 +27,7 @@ void XuatDongKeNgang(char ch);
 void Xuat_DS_TaiLieu(TaiLieu *ds, int n);
 int TinhTong_Gia(TaiLieu *taiLieu, int n);
 void TimTaiLieu_nhaXB(TaiLieu *ds, int n, char *nhaXB, int namXB);
+void TimTaiLieu_TacGia(TaiLieu *ds, int n, HoTen hoTen);
 
 void Tao_1_TaiLieu(char *maTL, char *tuaDe, char* loai, unsigned int namXB, char *nhaXB, HoTen hoten, double gia, TaiLieu *ds, int &n)
 {
@@ -170,3 +171,42 @@ void TimTaiLieu_nhaXB(TaiLieu *ds, int n, char *nhaXB, int namXB)
 		XuatDongKeNgang('=');
 	}
 }
+
+int SoSanhTen(HoTen a, HoTen b)
+{
+	int kq = 1;
+
+	if (strcmp(a.hoLot, b.hoLot) != 0 || strcmp(a.ten, b.ten) != 0)
+		kq = 0;
+
+	return kq;
+}
+
+void TimTaiLieu_TacGia(TaiLieu *ds, int n, HoTen hoTen)
+{
+	int dem, viTri[MAX], j;
+	dem = 0;
+	j = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		if (SoSanhTen(ds[i].hoTen, hoTen))
+		{
+			dem++;
+			viTri[j++] = i;
+		}
+	}
+
+	if (dem == 0)
+		cout << "Khong tim thay ket qua. Vui long kiem tra lai thong tin vua nhap." << endl;
+	else
+	{
+		cout << "Tim duoc " << dem << " tai lieu tu tac gia\n";
+		XuatTieuDe();
+		for (int i = 0; i < j; i++)
+			Xuat_1_TaiLieu(ds[viTri[i]]);
+		XuatDongKeNgang('=');
+	}
+}
+
+
