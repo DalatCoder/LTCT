@@ -28,6 +28,7 @@ void Xuat_DS_TaiLieu(TaiLieu *ds, int n);
 int TinhTong_Gia(TaiLieu *taiLieu, int n);
 void TimTaiLieu_nhaXB(TaiLieu *ds, int n, char *nhaXB, int namXB);
 void TimTaiLieu_TacGia(TaiLieu *ds, int n, HoTen hoTen);
+int Dem_TaiLieu(TaiLieu *ds, int n, char *loai);
 
 void Tao_1_TaiLieu(char *maTL, char *tuaDe, char* loai, unsigned int namXB, char *nhaXB, HoTen hoten, double gia, TaiLieu *ds, int &n)
 {
@@ -207,6 +208,17 @@ void TimTaiLieu_TacGia(TaiLieu *ds, int n, HoTen hoTen)
 			Xuat_1_TaiLieu(ds[viTri[i]]);
 		XuatDongKeNgang('=');
 	}
+}
+
+int Dem_TaiLieu(TaiLieu *ds, int n, char *loai)
+{
+	int dem = 0;
+
+	for (int i = 0; i < n; i++)
+		if (strcmp(ds[i].loai, loai) == 0)
+			dem++;
+
+	return dem;
 }
 
 

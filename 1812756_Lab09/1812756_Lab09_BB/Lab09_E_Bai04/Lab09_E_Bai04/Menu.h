@@ -88,7 +88,14 @@ void XuLyMenu(int menu, TaiLieu *ds, int &n)
 
 		case 6:
 			cout << "\n6. Thong ke so luong sach theo moi loai";
+			cout << "\nSo luong tai lieu thuoc loai \"Sach\" la: " << Dem_TaiLieu(ds, n, "Sach");
+			cout << "\nSo luong tai lieu thuoc loai \"Bao Khoa Hoc\" la: " << Dem_TaiLieu(ds, n, "Bao KH");
+			cout << "\nSo luong tai lieu thuoc loai \"Tap Chi\" la: " << Dem_TaiLieu(ds, n, "Tap Chi");
+			cout << "\nSo luong tai lieu thuoc loai \"Luan Van\" la: " << Dem_TaiLieu(ds, n, "Luan Van");
+			cout << "\nXem lai danh sach tai lieu de kiem tra: \n";
+			Xuat_DS_TaiLieu(ds, n);
 			break;
+
 		case 7:
 			cout << "\n7. Liet ke tai lieu theo nam xb";
 			break;
