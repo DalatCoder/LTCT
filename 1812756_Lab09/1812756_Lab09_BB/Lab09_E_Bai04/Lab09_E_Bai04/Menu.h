@@ -34,7 +34,10 @@ int ChonMenu(int soMenu)
 
 void XuLyMenu(int menu, TaiLieu *ds, int &n)
 {
+	char nhaXB[MAX];
+	int namXB;
 	double kq;
+
 	system("cls");
 	switch (menu)
 	{
@@ -60,7 +63,16 @@ void XuLyMenu(int menu, TaiLieu *ds, int &n)
 			break;
 		case 4:
 			cout << "\n4. Tim sach theo nxb va nam xb";
+			cout << "\nNhap vao nha xuat ban can tim: ";
+			cin.ignore(MAX, '\n');
+			gets_s(nhaXB, 15);
+			cout << "\nNhap vao nam xuat ban: ";
+			cin >> namXB;
+			TimTaiLieu_nhaXB(ds, n, nhaXB, namXB);
+			cout << "\nXem lai danh sach tai lieu de kiem tra: \n";
+			Xuat_DS_TaiLieu(ds, n);
 			break;
+
 		case 5:
 			cout << "\n5. Tim sach theo tac gia";
 			break;

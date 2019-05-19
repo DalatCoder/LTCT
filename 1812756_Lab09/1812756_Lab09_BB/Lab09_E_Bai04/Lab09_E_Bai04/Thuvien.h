@@ -26,6 +26,7 @@ void Xuat_1_TaiLieu(TaiLieu taiLieu);
 void XuatDongKeNgang(char ch);
 void Xuat_DS_TaiLieu(TaiLieu *ds, int n);
 int TinhTong_Gia(TaiLieu *taiLieu, int n);
+void TimTaiLieu_nhaXB(TaiLieu *ds, int n, char *nhaXB, int namXB);
 
 void Tao_1_TaiLieu(char *maTL, char *tuaDe, char* loai, unsigned int namXB, char *nhaXB, HoTen hoten, double gia, TaiLieu *ds, int &n)
 {
@@ -143,3 +144,29 @@ int TinhTong_Gia(TaiLieu *taiLieu, int n)
 	return sum;
 }
 
+void TimTaiLieu_nhaXB(TaiLieu *ds, int n, char *nhaXB, int namXB)
+{
+	int dem, viTri[MAX], j;
+	dem = 0;
+	j = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		if (strcmp(ds[i].nhaXB, nhaXB) == 0 && ds[i].namXB == namXB)
+		{
+			dem++;
+			viTri[j++] = i;
+		}
+	}
+
+	if (dem == 0)
+		cout << "Khong tim thay ket qua. Vui long kiem tra lai thong tin vua nhap." << endl;
+	else
+	{
+		cout << "Co " << dem << " tai lieu tu nha xuat ban " << nhaXB << " vao nam " << namXB << endl;
+		XuatTieuDe();
+		for (int i = 0; i < j; i++)
+			Xuat_1_TaiLieu(ds[viTri[i]]);
+		XuatDongKeNgang('=');
+	}
+}
