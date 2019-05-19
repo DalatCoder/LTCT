@@ -34,6 +34,7 @@ int ChonMenu(int soMenu)
 
 void XuLyMenu(int menu, TaiLieu *ds, int &n)
 {
+	double kq;
 	system("cls");
 	switch (menu)
 	{
@@ -49,9 +50,13 @@ void XuLyMenu(int menu, TaiLieu *ds, int &n)
 
 		case 2:
 			cout << "\n2. Xem danh sach tai lieu";
+			Xuat_DS_TaiLieu(ds, n);
 			break;
+
 		case 3:
 			cout << "\n3. Tinh tong gia tat ca cac tai lieu";
+			kq = TinhTong_Gia(ds, n);
+			cout << "\nTong gia cua tat ca tai lieu la : " << kq << endl;
 			break;
 		case 4:
 			cout << "\n4. Tim sach theo nxb va nam xb";

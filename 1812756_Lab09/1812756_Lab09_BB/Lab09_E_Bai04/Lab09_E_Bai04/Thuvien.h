@@ -25,6 +25,7 @@ void XuatTieuDe();
 void Xuat_1_TaiLieu(TaiLieu taiLieu);
 void XuatDongKeNgang(char ch);
 void Xuat_DS_TaiLieu(TaiLieu *ds, int n);
+int TinhTong_Gia(TaiLieu *taiLieu, int n);
 
 void Tao_1_TaiLieu(char *maTL, char *tuaDe, char* loai, unsigned int namXB, char *nhaXB, HoTen hoten, double gia, TaiLieu *ds, int &n)
 {
@@ -132,5 +133,13 @@ void Xuat_DS_TaiLieu(TaiLieu *ds, int n)
 	cout << endl;
 }
 
+int TinhTong_Gia(TaiLieu *taiLieu, int n)
+{
+	int sum = 0;
 
+	for (int i = 0; i < n; i++)
+		sum += taiLieu->gia;
+
+	return sum;
+}
 
