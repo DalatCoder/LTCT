@@ -9,13 +9,22 @@ void ChayChuongTrinh();
 
 int main()
 {
-
+    ChayChuongTrinh();
     return 0;
 }
 
 void ChayChuongTrinh()
 {
+    int soMenu = 3, menu, n;
+    NhanVien nv[MAX];
 
-
+    do
+    {
+        menu = ChonMenu(soMenu);
+        XuLyMenu(menu, nv, n);
+    } while (menu > 0);
+    
 }
+
+
 
