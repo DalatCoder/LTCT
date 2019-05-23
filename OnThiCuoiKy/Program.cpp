@@ -18,7 +18,7 @@ int main()
 
 void ChayChuongTrinh()
 {
-    int soMenu = 5, menu, n;
+    int soMenu = 6, menu, n;
     NhanVien nv[MAX];
 
     do

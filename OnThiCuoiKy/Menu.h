@@ -12,6 +12,7 @@ void XuatMenu()
     cout << "\n3. Tim thong tin nhan vien theo ma so";
     cout << "\n4. Liet ke nhan vien co luong >= X";
     cout << "\n5. Liet ke nhan vien co nam sinh trong khoang [u..v]";
+    cout << "\n6. Tinh tong luong thang";
     cout << "\n===================================================\n";
 }
 
@@ -36,6 +37,7 @@ void XuLyMenu(int menu, NhanVien nv[MAX], int &n)
 {
     char *filename = new char[MAX];
     int kq, ms, x, u, v;
+    double luong;
 
     switch (menu)
     {
@@ -93,6 +95,15 @@ void XuLyMenu(int menu, NhanVien nv[MAX], int &n)
         cout << "\nNhap nam ket thuc: ";
         cin >> v;
         LietKe_NV_NamSinh(nv, n, u, v);
+        cin.get();
+        break;
+
+    case 6:
+        cout << "\n6. Tinh tong luong thang cua toan bo nhan vien";
+        luong = TinhTongLuong(nv, n);
+        cout << "\nTong luong cua nhan vien la : " << setiosflags(ios::fixed) << setprecision(2) << luong;
+        cout << "\nXem lai danh sach nhan vien de kiem tra: \n";
+        Xuat_DS_NV(nv, n);
         cin.get();
         break;
     }
