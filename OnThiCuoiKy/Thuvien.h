@@ -16,6 +16,12 @@ struct NhanVien
     double luong;
 };
 
+// Khai bao nguyen mau ham
+int Doc_ThongTin_NhanVien(char *filename, NhanVien nv[MAX], int &n);
+void XuatDongKeNgang();
+void XuatTieuDe();
+
+// Dinh nghia ham chuc nang
 int Doc_ThongTin_NhanVien(char *filename, NhanVien nv[MAX], int &n)
 {
     ifstream in(filename);
@@ -65,4 +71,25 @@ int Doc_ThongTin_NhanVien(char *filename, NhanVien nv[MAX], int &n)
     }
     n++;
     in.close();
+}
+
+void XuatDongKeNgang()
+{
+    cout << '|';
+    for (int i = 0; i < 91; i++)
+        cout << '=';
+    cout << '|' << endl;
+}
+
+void XuatTieuDe()
+{
+    XuatDongKeNgang();
+    cout << setiosflags(ios::left);
+    cout << setw(10) << "MS"
+         << setw(25) << "Ho va ten"
+         << setw(15) << "NTN sinh"
+         << setw(20) << "Dia chi"
+         << setiosflags(ios::fixed) << setprecision(2) << setw(20) << "Luong";
+    cout << endl;
+    XuatDongKeNgang();
 }
