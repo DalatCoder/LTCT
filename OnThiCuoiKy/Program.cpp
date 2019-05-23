@@ -18,6 +18,12 @@ int main()
 
 void ChayChuongTrinh()
 {
+    int soMenu = 2, menu, n;
+    NhanVien nv[MAX];
 
-
+    do
+    {
+        menu = ChonMenu(soMenu);
+        XuLyMenu(menu, nv, n);
+    } while (menu > 0);
 }

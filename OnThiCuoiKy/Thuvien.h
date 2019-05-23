@@ -20,6 +20,7 @@ struct NhanVien
 int Doc_ThongTin_NhanVien(char *filename, NhanVien nv[MAX], int &n);
 void XuatDongKeNgang();
 void XuatTieuDe();
+void Xuat_1_NV(NhanVien nv);
 
 // Dinh nghia ham chuc nang
 int Doc_ThongTin_NhanVien(char *filename, NhanVien nv[MAX], int &n)
@@ -89,7 +90,21 @@ void XuatTieuDe()
          << setw(25) << "Ho va ten"
          << setw(15) << "NTN sinh"
          << setw(20) << "Dia chi"
-         << setiosflags(ios::fixed) << setprecision(2) << setw(20) << "Luong";
+         << setw(20) << "Luong";
     cout << endl;
     XuatDongKeNgang();
+}
+
+void Xuat_1_NV(NhanVien nv)
+{
+    cout << setiosflags(ios::left);
+    cout << '|'
+         << setw(10) << nv.ms
+         << setw(25) << nv.hoTen
+         << setw(4) << nv.date.ngay << '/'
+         << setw(4) << nv.date.thang << '/'
+         << setw(7) << nv.date.nam
+         << setw(20) << nv.diaChi
+         << setiosflags(ios::fixed) << setprecision(2) << setw(20) << nv.luong;
+    cout << endl;
 }
