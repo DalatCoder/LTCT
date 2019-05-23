@@ -18,7 +18,7 @@ int ChonMenu(int soMenu)
     int stt;
 
     for (;;)
-    { 
+    {
         system("clear");
         XuatMenu();
         cout << "\nChon chuc nang tuong ung tu 1 .. " << soMenu << " : ";
@@ -38,11 +38,6 @@ void XuLyMenu(int menu, NhanVien nv[MAX], int &n)
             cout << "\n0. Thoat chuong trinh";
             break;
     }
+
     cin.get();
 }
-
-
-
-
-
-

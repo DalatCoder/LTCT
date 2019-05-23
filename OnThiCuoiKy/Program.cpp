@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <string.h>
 
 using namespace std;
 
@@ -23,8 +25,5 @@ void ChayChuongTrinh()
         menu = ChonMenu(soMenu);
         XuLyMenu(menu, nv, n);
     } while (menu > 0);
-    
+
 }
-
-
-
