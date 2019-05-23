@@ -10,6 +10,7 @@ void XuatMenu()
     cout << "\n1. Doc du lieu nhan vien";
     cout << "\n2. Xuat du lieu nhan vien";
     cout << "\n3. Tim thong tin nhan vien theo ma so";
+    cout << "\n4. Liet ke nhan vien co luong >= X";
     cout << "\n===================================================\n";
 }
 
@@ -33,7 +34,7 @@ int ChonMenu(int soMenu)
 void XuLyMenu(int menu, NhanVien nv[MAX], int &n)
 {
     char *filename = new char[MAX];
-    int kq, ms;
+    int kq, ms, x;
 
     switch (menu)
     {
@@ -75,6 +76,15 @@ void XuLyMenu(int menu, NhanVien nv[MAX], int &n)
 
         cin.get();
         break;
+
+    case 4:
+        cout << "\n4. Liet ke danh sach nhan vien co luong >= X";
+        cout << "\nNhap vao muc luong toi thieu: ";
+        cin >> x;
+        LietKe_NV_Luong(nv, n, x);
+        cin.get();
+        break;
     }
+
     cin.get(); // _getch()
 }

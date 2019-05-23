@@ -23,6 +23,7 @@ void XuatTieuDe();
 void Xuat_1_NV(NhanVien nv);
 void Xuat_DS_NV(NhanVien nv[MAX], int n);
 int Tim_NV_MaSo(NhanVien nv[MAX], int n, int ms);
+void LietKe_NV_Luong(NhanVien nv[MAX], int n, int X);
 
 // Dinh nghia ham chuc nang
 int Doc_ThongTin_NhanVien(char *filename, NhanVien nv[MAX], int &n)
@@ -132,4 +133,32 @@ int Tim_NV_MaSo(NhanVien nv[MAX], int n, int ms)
         }
 
     return kq;
+}
+
+void LietKe_NV_Luong(NhanVien nv[MAX], int n, int X)
+{
+    int i;
+    int VT[MAX]; // Luu lai vi tri cua nhan vien co luong >= x
+    int m;       // Chieu dai cua mang VT
+
+    m = 0;
+    for (i = 0; i < n; i++)
+    {
+        if (nv[i].luong >= X)
+        {
+            VT[m] = i;
+            m++;
+        }
+    }
+
+    if (m == 0)
+        cout << "\nKhong co nhan vien nao co luong >= " << X;
+    else
+    {
+        cout << "\nDANH SACH NHAN VIEN CO LUONG >= " << X << endl;
+        XuatTieuDe();
+        for (i = 0; i < m; i++)
+            Xuat_1_NV(nv[VT[i]]);
+        XuatDongKeNgang();
+    }
 }
