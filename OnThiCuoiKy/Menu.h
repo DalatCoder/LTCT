@@ -1,16 +1,10 @@
-
-void XuatMenu();
-int ChonMenu(int soMenu);
-void XuLyMenu(int menu, NhanVien nv[MAX], int &n);
-
 void XuatMenu()
 {
-    cout << "\n============= HE THONG CHUC NANG ==============\n";
+    cout << "\n=============== HE THONG CHUC NANG ================\n";
     cout << "\n0. Thoat chuong trinh";
-    cout << "\n1. Tao danh sach nhan vien";
-    cout << "\n2. Xem danh sach nhan vien";
-    cout << "\n3. Tim nhan vien theo ma so";
-    cout << "\n===============================================\n";
+    cout << "\n1. Doc du lieu nhan vien";
+    cout << "\n2. Xuat du lieu nhan vien";
+    cout << "\n===================================================\n";
 }
 
 int ChonMenu(int soMenu)
@@ -19,7 +13,7 @@ int ChonMenu(int soMenu)
 
     for (;;)
     {
-        system("clear");
+        system("clear"); // Linux
         XuatMenu();
         cout << "\nChon chuc nang tuong ung tu 1 .. " << soMenu << " : ";
         cin >> stt;
@@ -35,9 +29,14 @@ void XuLyMenu(int menu, NhanVien nv[MAX], int &n)
     switch (menu)
     {
         case 0:
-            cout << "\n0. Thoat chuong trinh";
+            cout << "\n0. Thoat chuong trinh.";
+            break;
+        case 1:
+            cout << "\n1. Doc du lieu nhan vien tu tep.";
+            break;
+        case 2:
+            cout << "\n2. Xem du thong tin nhan vien.";
             break;
     }
-
-    cin.get();
+    cin.get(); // _getch()
 }

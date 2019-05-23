@@ -1,11 +1,6 @@
 #include <iostream>
-#include <fstream>
-#include <string.h>
 
 using namespace std;
-
-#include "Thuvien.h"
-#include "Menu.h"
 
 void ChayChuongTrinh();
 
@@ -17,13 +12,6 @@ int main()
 
 void ChayChuongTrinh()
 {
-    int soMenu = 3, menu, n;
-    NhanVien nv[MAX];
 
-    do
-    {
-        menu = ChonMenu(soMenu);
-        XuLyMenu(menu, nv, n);
-    } while (menu > 0);
 
 }
