@@ -26,6 +26,8 @@ int Tim_NV_MaSo(NhanVien nv[MAX], int n, int ms);
 void LietKe_NV_Luong(NhanVien nv[MAX], int n, int X);
 void LietKe_NV_NamSinh(NhanVien nv[MAX], int n, int u, int v);
 int TinhTongLuong(NhanVien nv[MAX], int n);
+void HoanVi(NhanVien &a, NhanVien &b);
+void SapXep_TangDan_MaSo(NhanVien nv[MAX], int n);
 
 // Dinh nghia ham chuc nang
 int Doc_ThongTin_NhanVien(char *filename, NhanVien nv[MAX], int &n)
@@ -204,4 +206,20 @@ int TinhTongLuong(NhanVien nv[MAX], int n)
     }
 
     return sum;
+}
+
+void HoanVi(NhanVien &a, NhanVien &b)
+{
+    NhanVien t = a;
+    a = b;
+    b = t;
+}
+
+void SapXep_TangDan_MaSo(NhanVien nv[MAX], int n)
+{
+    int i, j;
+    for (i = 0; i < n - 1; i++)
+        for (j = i + 1; j < n; j++)
+            if (nv[i].ms > nv[j].ms)
+                HoanVi(nv[i], nv[j]);
 }
