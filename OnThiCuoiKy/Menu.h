@@ -1,3 +1,8 @@
+
+void XuatMenu();
+int ChonMenu(int soMenu);
+void XuLyMenu(int menu, NhanVien nv[MAX], int &n);
+
 void XuatMenu()
 {
     cout << "\n=============== HE THONG CHUC NANG ================\n";
