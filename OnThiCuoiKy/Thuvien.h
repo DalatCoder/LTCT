@@ -22,6 +22,7 @@ void XuatDongKeNgang();
 void XuatTieuDe();
 void Xuat_1_NV(NhanVien nv);
 void Xuat_DS_NV(NhanVien nv[MAX], int n);
+int Tim_NV_MaSo(NhanVien nv[MAX], int n, int ms);
 
 // Dinh nghia ham chuc nang
 int Doc_ThongTin_NhanVien(char *filename, NhanVien nv[MAX], int &n)
@@ -117,4 +118,18 @@ void Xuat_DS_NV(NhanVien nv[MAX], int n)
     for (int i = 0; i < n; i++)
         Xuat_1_NV(nv[i]);
     XuatDongKeNgang();
+}
+
+int Tim_NV_MaSo(NhanVien nv[MAX], int n, int ms)
+{
+    int kq = -1; // Khong tim thay nhan vien co ms
+
+    for (int i = 0; i < n; i++)
+        if (nv[i].ms == ms)
+        {
+            kq = i;
+            break;
+        }
+
+    return kq;
 }

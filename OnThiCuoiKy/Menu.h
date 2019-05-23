@@ -9,6 +9,7 @@ void XuatMenu()
     cout << "\n0. Thoat chuong trinh";
     cout << "\n1. Doc du lieu nhan vien";
     cout << "\n2. Xuat du lieu nhan vien";
+    cout << "\n3. Tim thong tin nhan vien theo ma so";
     cout << "\n===================================================\n";
 }
 
@@ -32,29 +33,48 @@ int ChonMenu(int soMenu)
 void XuLyMenu(int menu, NhanVien nv[MAX], int &n)
 {
     char *filename = new char[MAX];
+    int kq, ms;
+
     switch (menu)
     {
-        case 0:
-            cout << "\n0. Thoat chuong trinh.";
-            delete[] filename;
-            break;
-        case 1:
-            cout << "\n1. Doc du lieu nhan vien tu tep.";
-            cout << "\nNhap ten file de mo: ";
-            cin >> filename;
-            cout << "\nTen tap tin: " << filename;
-            Doc_ThongTin_NhanVien(filename, nv, n);
-            cout << "\nDanh sach thong tin nhan vien tu tep \"" << filename << "\": \n";
-            Xuat_DS_NV(nv, n);
-            cin.get();
-            break;
+    case 0:
+        cout << "\n0. Thoat chuong trinh.";
+        delete[] filename;
+        break;
+    case 1:
+        cout << "\n1. Doc du lieu nhan vien tu tep.";
+        cout << "\nNhap ten file de mo: ";
+        cin >> filename;
+        cout << "\nTen tap tin: " << filename;
+        Doc_ThongTin_NhanVien(filename, nv, n);
+        cout << "\nDanh sach thong tin nhan vien tu tep \"" << filename << "\": \n";
+        Xuat_DS_NV(nv, n);
+        cin.get();
+        break;
 
-        case 2:
-            cout << "\n2. Xem du thong tin nhan vien.";
-            cout << "\nDanh sach thong tin nhan vien:\n";
-            Xuat_DS_NV(nv, n);
-            cin.get();
-            break;
+    case 2:
+        cout << "\n2. Xem du thong tin nhan vien.";
+        cout << "\nDanh sach thong tin nhan vien:\n";
+        Xuat_DS_NV(nv, n);
+        cin.get();
+        break;
+
+    case 3:
+        cout << "\n3. Tim thong tin nhan vien theo ma so.";
+        cout << "\nNhap ma so nhan vien can tim : ";
+        cin >> ms;
+        kq = Tim_NV_MaSo(nv, n, ms);
+        if (kq == -1)
+            cout << "\nKhong co nhan vien ma so " << ms << " trong danh sach.";
+        else
+        {
+            XuatTieuDe();
+            Xuat_1_NV(nv[kq]);
+            XuatDongKeNgang();
+        }
+
+        cin.get();
+        break;
     }
     cin.get(); // _getch()
 }
