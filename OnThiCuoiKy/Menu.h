@@ -31,16 +31,29 @@ int ChonMenu(int soMenu)
 
 void XuLyMenu(int menu, NhanVien nv[MAX], int &n)
 {
+    char *filename = new char[MAX];
     switch (menu)
     {
         case 0:
             cout << "\n0. Thoat chuong trinh.";
+            delete[] filename;
             break;
         case 1:
             cout << "\n1. Doc du lieu nhan vien tu tep.";
+            cout << "\nNhap ten file de mo: ";
+            cin >> filename;
+            cout << "\nTen tap tin: " << filename;
+            Doc_ThongTin_NhanVien(filename, nv, n);
+            cout << "\nDanh sach thong tin nhan vien tu tep \"" << filename << "\": \n";
+            Xuat_DS_NV(nv, n);
+            cin.get();
             break;
+
         case 2:
             cout << "\n2. Xem du thong tin nhan vien.";
+            cout << "\nDanh sach thong tin nhan vien:\n";
+            Xuat_DS_NV(nv, n);
+            cin.get();
             break;
     }
     cin.get(); // _getch()

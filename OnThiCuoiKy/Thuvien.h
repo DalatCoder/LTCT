@@ -21,6 +21,7 @@ int Doc_ThongTin_NhanVien(char *filename, NhanVien nv[MAX], int &n);
 void XuatDongKeNgang();
 void XuatTieuDe();
 void Xuat_1_NV(NhanVien nv);
+void Xuat_DS_NV(NhanVien nv[MAX], int n);
 
 // Dinh nghia ham chuc nang
 int Doc_ThongTin_NhanVien(char *filename, NhanVien nv[MAX], int &n)
@@ -77,7 +78,7 @@ int Doc_ThongTin_NhanVien(char *filename, NhanVien nv[MAX], int &n)
 void XuatDongKeNgang()
 {
     cout << '|';
-    for (int i = 0; i < 91; i++)
+    for (int i = 0; i < 86; i++)
         cout << '=';
     cout << '|' << endl;
 }
@@ -86,12 +87,13 @@ void XuatTieuDe()
 {
     XuatDongKeNgang();
     cout << setiosflags(ios::left);
+    cout << '|';
     cout << setw(10) << "MS"
          << setw(25) << "Ho va ten"
-         << setw(15) << "NTN sinh"
+         << setw(16) << "NTN sinh"
          << setw(20) << "Dia chi"
-         << setw(20) << "Luong";
-    cout << endl;
+         << setw(15) << "Luong";
+    cout << '|' << endl;
     XuatDongKeNgang();
 }
 
@@ -101,10 +103,18 @@ void Xuat_1_NV(NhanVien nv)
     cout << '|'
          << setw(10) << nv.ms
          << setw(25) << nv.hoTen
-         << setw(4) << nv.date.ngay << '/'
-         << setw(4) << nv.date.thang << '/'
-         << setw(7) << nv.date.nam
+         << setw(2) << nv.date.ngay << '/'
+         << setw(2) << nv.date.thang << '/'
+         << setw(10) << nv.date.nam
          << setw(20) << nv.diaChi
-         << setiosflags(ios::fixed) << setprecision(2) << setw(20) << nv.luong;
-    cout << endl;
+         << setiosflags(ios::fixed) << setprecision(2) << setw(15) << nv.luong;
+    cout << '|' << endl;
+}
+
+void Xuat_DS_NV(NhanVien nv[MAX], int n)
+{
+    XuatTieuDe();
+    for (int i = 0; i < n; i++)
+        Xuat_1_NV(nv[i]);
+    XuatDongKeNgang();
 }
