@@ -24,6 +24,7 @@ void Xuat_1_NV(NhanVien nv);
 void Xuat_DS_NV(NhanVien nv[MAX], int n);
 int Tim_NV_MaSo(NhanVien nv[MAX], int n, int ms);
 void LietKe_NV_Luong(NhanVien nv[MAX], int n, int X);
+void LietKe_NV_NamSinh(NhanVien nv[MAX], int n, int u, int v);
 
 // Dinh nghia ham chuc nang
 int Doc_ThongTin_NhanVien(char *filename, NhanVien nv[MAX], int &n)
@@ -161,4 +162,33 @@ void LietKe_NV_Luong(NhanVien nv[MAX], int n, int X)
             Xuat_1_NV(nv[VT[i]]);
         XuatDongKeNgang();
     }
+}
+
+void LietKe_NV_NamSinh(NhanVien nv[MAX], int n, int u, int v)
+{
+    int i;
+    int VT[MAX];
+    int m;
+
+    m = 0;
+
+    for (i = 0; i < n; i++)
+    {
+        if (u <= nv[i].date.nam && nv[n].date.nam <= v)
+        {
+            VT[m] = i;
+            m++;
+        }
+    }
+
+    if (m == 0)
+        cout << "\nKhong co nhan vien nao sinh trong khoang [" << u << " .. " << v << "].";
+        else
+        {
+            cout << "\nCo " << m << " nhan vien sinh trong khoang [" << u << " .. " << v << "]." << endl;
+            XuatTieuDe();
+            for (i = 0; i < m; i++)
+                Xuat_1_NV(nv[VT[i]]);
+            XuatDongKeNgang();
+        }
 }

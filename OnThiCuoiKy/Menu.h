@@ -11,6 +11,7 @@ void XuatMenu()
     cout << "\n2. Xuat du lieu nhan vien";
     cout << "\n3. Tim thong tin nhan vien theo ma so";
     cout << "\n4. Liet ke nhan vien co luong >= X";
+    cout << "\n5. Liet ke nhan vien co nam sinh trong khoang [u..v]";
     cout << "\n===================================================\n";
 }
 
@@ -34,7 +35,7 @@ int ChonMenu(int soMenu)
 void XuLyMenu(int menu, NhanVien nv[MAX], int &n)
 {
     char *filename = new char[MAX];
-    int kq, ms, x;
+    int kq, ms, x, u, v;
 
     switch (menu)
     {
@@ -82,6 +83,16 @@ void XuLyMenu(int menu, NhanVien nv[MAX], int &n)
         cout << "\nNhap vao muc luong toi thieu: ";
         cin >> x;
         LietKe_NV_Luong(nv, n, x);
+        cin.get();
+        break;
+
+    case 5:
+        cout << "\n5. Liet ke nhan vien co nam sinh trong khoang [u..v] cho truoc";
+        cout << "\nNhap nam bat dau: ";
+        cin >> u;
+        cout << "\nNhap nam ket thuc: ";
+        cin >> v;
+        LietKe_NV_NamSinh(nv, n, u, v);
         cin.get();
         break;
     }
