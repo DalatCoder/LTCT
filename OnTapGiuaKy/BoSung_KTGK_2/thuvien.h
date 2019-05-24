@@ -10,6 +10,7 @@ int TinhBieuThuc(int a[MAX], int n);
 void NhapTuDong(int a[MAX], int &n)
 {
     int i;
+    srand((unsigned)time(NULL));
     cout << "\nNhap vao so luong phan tu cua mang : ";
     cin >> n;
 
@@ -60,9 +61,11 @@ int TinhMin(int a[MAX], int n)
 
 int TinhBieuThuc(int a[MAX], int n)
 {
-    int s, u, v;
+    int s, u, v, max, min;
     u = TinhTong(a, n);
-    v = TinhMax(a, n) * TinhMin(a, n);
+    max = TinhMax(a, n);
+    min = TinhMin(a, n);
+    v = min * max;
     s = u - v;
     return s;
 }

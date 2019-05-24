@@ -1,16 +1,25 @@
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
 
 using namespace std;
 
 #include "thuvien.h"
 
+void ChayChuongTrinh();
+
 int main()
+{
+    ChayChuongTrinh();
+    return 0;
+}
+
+void ChayChuongTrinh()
 {
     int a[MAX], n, kq;
     NhapTuDong(a, n);
-    cout << "\nMang duoc tao ngau nhien: \n";
+    cout << "\nMang ngau nhien vua duoc tao: \n";
     XuatMang(a, n);
     kq = TinhBieuThuc(a, n);
-    cout << "\nKet qua cua bieu thuc la : " << kq;
-    return 0;
+    cout << "\nKet qua cua bieu thuc s = u - v la : " << kq;
 }
