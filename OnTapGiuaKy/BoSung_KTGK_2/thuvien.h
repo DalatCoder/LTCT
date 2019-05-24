@@ -3,6 +3,7 @@
 void NhapTuDong(int a[MAX], int &n);
 void XuatMang(int a[MAX], int n);
 int TinhTong(int a[MAX], int n);
+int KiemTra_SNT(int a);
 int TinhMax(int a[MAX], int n);
 int TinhMin(int a[MAX], int n);
 int TinhBieuThuc(int a[MAX], int n);
@@ -30,7 +31,8 @@ int TinhTong(int a[MAX], int n)
     kq = 0;
 
     for (i = 0; i < n; i++)
-        kq += a[i];
+        if(KiemTra_SNT(a[i]))
+            kq += a[i];
 
     return kq;
 }
@@ -68,4 +70,18 @@ int TinhBieuThuc(int a[MAX], int n)
     v = min * max;
     s = u - v;
     return s;
+}
+
+int KiemTra_SNT(int a)
+{
+    int kq = 1;
+
+    for (int i = 2; i < a; i++)
+        if (a % i == 0)
+        {
+            kq = 0;
+            break;
+        }
+
+    return kq;
 }
