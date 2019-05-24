@@ -65,8 +65,11 @@ int TinhBieuThuc(int a[MAX], int n)
 {
     int s, u, v, max, min;
     u = TinhTong(a, n);
+    cout << endl;
+    cout << " u = " << u << endl;
     max = TinhMax(a, n);
     min = TinhMin(a, n);
+    cout << max << " - " << min << " - " << max * min << endl;
     v = min * max;
     s = u - v;
     return s;
@@ -74,7 +77,7 @@ int TinhBieuThuc(int a[MAX], int n)
 
 int KiemTra_SNT(int a)
 {
-    if (a <= 0)
+    if (a < 2)
         return 0;
 
     int kq = 1;
