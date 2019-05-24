@@ -74,6 +74,9 @@ int TinhBieuThuc(int a[MAX], int n)
 
 int KiemTra_SNT(int a)
 {
+    if (a <= 0)
+        return 0;
+
     int kq = 1;
 
     for (int i = 2; i < a; i++)
