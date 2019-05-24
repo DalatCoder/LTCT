@@ -22,4 +22,5 @@ void ChayChuongTrinh()
     XuatMang(a, n);
     kq = TinhBieuThuc(a, n);
     cout << "\nKet qua cua bieu thuc s = u - v la : " << kq;
+    cin.get();
 }
