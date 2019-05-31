@@ -36,7 +36,7 @@ int ChonMenu(int soMenu)
 
 void XuLyMenu(int menu, NhanVien nv[MAX], int &n)
 {
-    char *filename = new char[MAX];
+    char filename[MAX];
     int kq, ms, x, u, v;
     double luong;
 
@@ -44,8 +44,8 @@ void XuLyMenu(int menu, NhanVien nv[MAX], int &n)
     {
     case 0:
         cout << "\n0. Thoat chuong trinh.";
-        delete[] filename;
         break;
+
     case 1:
         cout << "\n1. Doc du lieu nhan vien tu tep.";
         cout << "\nNhap ten file de mo: ";

@@ -17,7 +17,7 @@ struct NhanVien
 };
 
 // Khai bao nguyen mau ham
-int Doc_ThongTin_NhanVien(char *filename, NhanVien nv[MAX], int &n);
+int Doc_ThongTin_NhanVien(char filename[MAX], NhanVien nv[MAX], int &n);
 void XuatDongKeNgang();
 void XuatTieuDe();
 void Xuat_1_NV(NhanVien nv);
@@ -30,7 +30,7 @@ void HoanVi(NhanVien &a, NhanVien &b);
 void SapXep_TangDan_MaSo(NhanVien nv[MAX], int n);
 
 // Dinh nghia ham chuc nang
-int Doc_ThongTin_NhanVien(char *filename, NhanVien nv[MAX], int &n)
+int Doc_ThongTin_NhanVien(char filename[MAX], NhanVien nv[MAX], int &n)
 {
     ifstream in(filename);
     if (!in)
