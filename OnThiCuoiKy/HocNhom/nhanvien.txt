@@ -1,0 +1,12 @@
+252348	Vo_Minh_Duong		3	1	1980	Da_Lat		15000543
+113454	Hoang_Hoa_Tra		12	12	1987	Khanh_Hoa	18183210
+213000	Truong_Thanh_Hang	2	2	1980	Phu_Yen		15000543
+121234	Nguyen_Thi_Hang		10	8	1987	Binh_Dinh	20232343
+222345	Le_Van_Trong		12	5	1991	Hue			18183210
+200320	Van_Minh_Duong		10	10	1988	Da_Lat		18183210
+150034	Tran_Hoang_Hoa		15	10	1996	Binh_Dinh	18183210
+213400	Ly_Thi_Hang			18	7	1988	Khanh_Hoa	20232343
+203000	Dinh_Thai_Duong		21	12	1980	Da_Lat		15000543
+201145	Le_Van_Tam			25	6	1988	Hue			18183210
+202220	Trinh_Hoai_Duong	19	10	1991	Da_Lat		18183210
+165234	Nguyen_Minh_Tam		22	9	1980	Binh_Dinh	20232343
