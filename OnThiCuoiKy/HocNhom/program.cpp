@@ -1,35 +1,34 @@
 
 #include <iostream>
+#include <conio.h>
 #include <fstream>
 #include <iomanip>
+#include <string.h>
 
 using namespace std;
 
-#include "thuvien.h"
-#include "menu.h"
+#include "Thuvien.h"
+#include "Menu.h"
 
 void ChayChuongTrinh();
 
 int main()
 {
-  ChayChuongTrinh();
+	ChayChuongTrinh();
 
-  return 0;
+	return 0;
 }
 
 void ChayChuongTrinh()
 {
-  int soMenu = 3;
-  int menu;
-  int n; // kich thuoc mang
-  NhanVien a[MAX];
+	NhanVien a[MAX];
+	int n; // so luong nhan vien hien tai dang co trong mang
+	int soMenu = 4, menu;
+	
+	do
+	{
+		menu = ChonMenu(soMenu);
+		XuLyMenu(menu, a, n);
+	} while (menu > 0);
 
-  docDuLieuTuFile(a, n, "nhanvien.txt");
-  HienThiDuLieu(a, n);
-
-  // do
-  // {
-  //   menu = ChonMenu(soMenu);
-  //   XuLyMenu(menu, a, n);
-  // } while (menu > 0);
 }

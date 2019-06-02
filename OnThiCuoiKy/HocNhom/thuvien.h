@@ -1,66 +1,59 @@
 
 #define MAX 100
 
-// strcpy
-// strlen
-// strcmp
-
 struct NhanVien
 {
-  char maSo[7];
-  char hoTen[25];
-  int ngaySinh;
-  int thangSinh;
-  int namSinh;
-  char queQuan[20];
-  double luong;
+	char maSo[7]; 
+	char hoTen[25];
+	int ngaySinh;
+	int thangSinh;
+	int namSinh;
+	char queQuan[15];
+	double luong;
 };
 
-// nguyen mau ham
-int docDuLieuTuFile(NhanVien nv[MAX], int &n, char tenTapTin[MAX]);
-void InDuongKe(char kt);
-void InTieuDe();
-void In_1_NhanVien(NhanVien nv);
-void HienThiDuLieu(NhanVien a[MAX], int n);
+int DocDuLieuNhanVien(NhanVien a[MAX], int &n, char tenTapTin[MAX]);
+void XuatDuongKe(char kt);
+void XuatTieuDe();
+void Xuat_1_NhanVien(NhanVien a);
+void XuatDanhSachNhanVien(NhanVien a[MAX], int n);
+int Tim_NV_MaSo(NhanVien a[MAX], int n, char maSo[7]);
+void Tim_NV_Luong(NhanVien a[MAX], int n, double X);
 
-// dinh nghia ham
-int docDuLieuTuFile(NhanVien nv[MAX], int &n, char tenTapTin[MAX])
+int DocDuLieuNhanVien(NhanVien a[MAX], int &n, char tenTapTin[MAX])
 {
-  ifstream in(tenTapTin); // input file stream
+	ifstream in(tenTapTin);
 
-  // kiem tra mo file co thanh cong hay khong
-  if (!in)
-    return 0; // mo file that bai
+	// Kiem tra viec mo tap tin co thanh cong hay khong
+	if (!in) 
+		return 0; // mo tap tin khong thanh cong
 
-  n = 0;            // chua co nhan vien nao het
-  in >> nv[n].maSo; // cin >>
-  in >> nv[n].hoTen;
-  in >> nv[n].ngaySinh;
-  in >> nv[n].thangSinh;
-  in >> nv[n].namSinh;
-  in >> nv[n].queQuan;
-  in >> nv[n].luong;
-  // doc xong du lieu cho nhan vien dau tien
+	n = 0; // ban dau chua co nhan vien nao het
 
-  //0, 1, 2, 3, 4,
+	in >> a[n].maSo;
+	in >> a[n].hoTen;
+	in >> a[n].ngaySinh;
+	in >> a[n].thangSinh;
+	in >> a[n].namSinh;
+	in >> a[n].queQuan;
+	in >> a[n].luong;
 
-  while (!in.eof())
-  {
-    n = n + 1;
+	while (!in.eof())
+	{
+		n = n + 1;
 
-    in >> nv[n].maSo;
-    in >> nv[n].hoTen;
-    in >> nv[n].ngaySinh;
-    in >> nv[n].thangSinh;
-    in >> nv[n].namSinh;
-    in >> nv[n].queQuan;
-    in >> nv[n].luong;
-  }
-
-  // dong file
-  in.close();
-  return 1; // mo file thanh cong
-  // n = 12;
+		in >> a[n].maSo;
+		in >> a[n].hoTen;
+		in >> a[n].ngaySinh;
+		in >> a[n].thangSinh;
+		in >> a[n].namSinh;
+		in >> a[n].queQuan;
+		in >> a[n].luong;
+	}
+	n = n + 1; //12 nhan vien
+	
+	in.close();
+	return 1;
 }
 
 // |=============================================================================
@@ -77,63 +70,114 @@ int docDuLieuTuFile(NhanVien nv[MAX], int &n, char tenTapTin[MAX])
 // ==============================================================================
 
 // 11/03/2000
+// 10000000.00
 
-void InTieuDe()
+void XuatDuongKe(char kt)
 {
-  InDuongKe('=');
-  cout << endl;
-  cout << '|';
-  cout << setiosflags(ios::left);
-  cout << setw(7) << "MaSo" << '|'
-       << setw(25) << "Ho va Ten" << '|'
-       << setw(14) << "Nam Sinh" << '|'
-       << setw(15) << "Que Quan" << '|'
-       << setw(12) << "Tien luong" << '|';
-  cout << endl;
-
-  InDuongKe('=');
-  cout << endl;
+	cout << '|';
+	for (int i = 1; i <= 82; i++)
+		cout << kt;
+	cout << '|';
+	cout << endl;
 }
 
-void In_1_NhanVien(NhanVien nv)
+// setw(x) set width 
+void XuatTieuDe()
 {
-  cout << '|';
-  cout << setiosflags(ios::left);
-  cout << setw(7) << nv.maSo << '|'
-       << setw(25) << nv.hoTen << '|'
-       << setw(2) << nv.ngaySinh << "/"
-       << setw(2) << nv.thangSinh << "/"
-       << setw(8) << nv.namSinh << '|'
-       << setw(15) << nv.queQuan << '|'
-       << setiosflags(ios::fixed) << setprecision(2) << setw(12) << nv.luong;
+	XuatDuongKe('=');
 
-  cout << '|' << endl;
+	// can chinh le trai
+	cout << '|';
+	cout << setiosflags(ios::left);
+
+	cout << setw(9) << "Ma So"
+		<< '|' << setw(27) << "Ho va Ten"
+		<< '|' << setw(12) << "Nam Sinh"
+		<< '|' << setw(17) << "Que Quan"
+		<< '|' << setw(13) << "Tien Luong";
+	cout << '|';
+	cout << endl;
+
+	XuatDuongKe('=');
 }
 
-void InDuongKe(char kt)
+// 11/03/2000
+void Xuat_1_NhanVien(NhanVien a)
 {
-  cout << '|';
-  for (int i = 1; i <= 77; i++)
-    cout << kt;
-  cout << '|';
+	cout << '|';
+	// can chinh le trai
+	cout << setiosflags(ios::left);
+
+	cout << setw(9) << a.maSo
+		<< '|' << setw(27) << a.hoTen
+		<< '|' << setw(2) << a.ngaySinh << '/'
+		<< setw(2) << a.thangSinh << '/'
+		<< setw(6) << a.namSinh
+		<< '|' << setw(17) << a.queQuan
+		<< '|' << setw(13) << setiosflags(ios::fixed) << setprecision(2) << a.luong;
+	cout << '|';
+	cout << endl;
 }
 
-void HienThiDuLieu(NhanVien a[MAX], int n)
+void XuatDanhSachNhanVien(NhanVien a[MAX], int n)
 {
-  // In tieu de
-  InTieuDe();
+	// In dong tieu de
+	XuatTieuDe();
 
-  // Tu 1 - 12: in ra 12 thang
-  for (int i = 0; i < n; i++)
-  {
-    In_1_NhanVien(a[i]);
-    if ((i + 1) % 3 == 0)
-    {
-      InDuongKe('-');
-      cout << endl;
-    }
-  }
+	// In nhan vien theo tung hang
+	for (int i = 0; i < n; i++)
+	{
+		Xuat_1_NhanVien(a[i]);
+		if ((i + 1) % 3 == 0)
+			XuatDuongKe('-');
+	}
 
-  // In ke doi
-  InDuongKe('=');
+	// In dong ke cuoi cung
+	XuatDuongKe('=');
+}
+
+int Tim_NV_MaSo(NhanVien a[MAX], int n, char maSo[7])
+{
+	// strcmp
+	int viTri = -1; // khong tim thay nhan vien voi maSo truyen vao trong DSNV
+
+	for (int i = 0; i < n; i++)
+	{
+		if (strcmp(a[i].maSo, maSo) == 0)
+		{
+			viTri = i;
+			break;
+		}
+	}
+
+	return viTri;
+}
+
+void Tim_NV_Luong(NhanVien a[MAX], int n, double X)
+{
+	int viTri[MAX]; // luu lai vi tri cua nhan vien co muc luong >= X
+	int m;
+
+	m = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		if (a[i].luong >= X)
+		{
+			viTri[m] = i;
+			m = m + 1;
+		}
+	}
+
+	cout << "\nCo " << m << " nhan vien co muc luong tren " << X << endl;
+
+	if (m > 0)
+	{
+		XuatTieuDe();
+		for (int i = 0; i < m; i++)
+		{
+			Xuat_1_NhanVien(a[viTri[i]]);
+		}
+		XuatDuongKe('=');
+	}
 }
