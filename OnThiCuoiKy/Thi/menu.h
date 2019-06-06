@@ -24,3 +24,37 @@ int ChonMenu(int soMenu)
 
   return stt;
 }
+
+void XuLyMenu(int menu, NhanVien a[MAX], int &n)
+{
+  char filename[MAX];
+  int kq;
+
+  system("clear");
+  switch (menu)
+  {
+  case 0:
+    cout << "\nThoat chuong trinh.";
+    cin.get();
+    break;
+  case 1:
+    cout << "\n1. Tao danh sach nhan vien.";
+    cout << "\nNhap ten file de mo : ";
+    cin >> filename;
+    kq = TaoDanhSachNhanVien(a, n, filename);
+    if (kq == 0)
+      cout << "\nMo tap tin khong thanh cong.";
+    else
+    {
+      cout << "\nMo tap tin thanh cong. So nhan vien hien tai la: " << n;
+    }
+
+    cin.get();
+    break;
+  case 2:
+    cout << "\n2. Xuat danh sach nhan vien.";
+    cin.get();
+    break;
+  }
+  cin.get();
+}
