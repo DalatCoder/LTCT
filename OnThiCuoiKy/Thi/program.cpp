@@ -11,8 +11,7 @@ void ChayChuongTrinh();
 
 int main()
 {
-  XuatTieuDe();
-  //ChayChuongTrinh();
+  ChayChuongTrinh();
   return 0;
 }
 

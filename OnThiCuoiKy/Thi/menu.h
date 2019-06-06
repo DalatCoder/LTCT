@@ -47,12 +47,16 @@ void XuLyMenu(int menu, NhanVien a[MAX], int &n)
     else
     {
       cout << "\nMo tap tin thanh cong. So nhan vien hien tai la: " << n;
+      cout << "\nDanh sach nhan vien hien tai:\n";
+      Xuat_DS_NhanVien(a, n);
     }
 
     cin.get();
     break;
   case 2:
     cout << "\n2. Xuat danh sach nhan vien.";
+    cout << "\nDanh sach nhan vien hien tai:\n";
+    Xuat_DS_NhanVien(a, n);
     cin.get();
     break;
   }

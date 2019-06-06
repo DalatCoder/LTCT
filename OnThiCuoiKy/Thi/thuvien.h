@@ -55,7 +55,7 @@ int TaoDanhSachNhanVien(NhanVien a[MAX], int &n, char filename[MAX])
     in >> a[n].luong;
   }
 
-  n = n + 1;
+  // n = n + 1;
 
   in.close();
   return 1;
@@ -63,7 +63,7 @@ int TaoDanhSachNhanVien(NhanVien a[MAX], int &n, char filename[MAX])
 
 void XuatDongKe(char kt)
 {
-  for (int i = 1; i <= 74; i++)
+  for (int i = 1; i <= 77; i++)
     cout << kt;
   cout << endl;
 }
@@ -73,7 +73,7 @@ void XuatTieuDe()
   XuatDongKe('=');
 
   cout << setiosflags(ios::left);
-  cout << setw(8) << "Ma So"
+  cout << setw(11) << "Ma So"
        << setw(8) << "Ho"
        << setw(8) << "tLot"
        << setw(8) << "Ten"
@@ -81,6 +81,31 @@ void XuatTieuDe()
        << setw(17) << "Que Quan"
        << setw(13) << "Luong";
   cout << endl;
+
+  XuatDongKe('=');
+}
+
+void Xuat_1_NhanVien(NhanVien a)
+{
+  cout << setiosflags(ios::left);
+  cout << setw(11) << a.maSo
+       << setw(8) << a.hoTen.ho
+       << setw(8) << a.hoTen.hoLot
+       << setw(8) << a.hoTen.ten
+       << setw(2) << a.ngayThangNam.ngay << '/'
+       << setw(2) << a.ngayThangNam.thang << '/'
+       << setw(6) << a.ngayThangNam.nam
+       << setw(17) << a.diaChi
+       << setw(13) << setiosflags(ios::fixed) << setprecision(2) << a.luong;
+  cout << endl;
+}
+
+void Xuat_DS_NhanVien(NhanVien a[MAX], int n)
+{
+  XuatTieuDe();
+
+  for (int i = 0; i < n;i++)
+    Xuat_1_NhanVien(a[i]);
 
   XuatDongKe('=');
 }
