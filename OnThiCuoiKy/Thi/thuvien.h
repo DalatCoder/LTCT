@@ -111,7 +111,11 @@ void Xuat_DS_NhanVien(NhanVien a[MAX], int n)
   XuatTieuDe();
 
   for (int i = 0; i < n;i++)
+  {
     Xuat_1_NhanVien(a[i]);
+    if ((i+1) % 3 == 0)
+      XuatDongKe('-');
+  }
 
   XuatDongKe('=');
 }
