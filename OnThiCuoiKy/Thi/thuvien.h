@@ -63,9 +63,11 @@ int TaoDanhSachNhanVien(NhanVien a[MAX], int &n, char filename[MAX])
 
 void XuatDongKe(char kt)
 {
-  for (int i = 1; i <= 77; i++)
-    cout << kt;
-  cout << endl;
+  cout << '|';
+  for (int i = 1; i <= 81; i++)
+    cout
+        << kt;
+  cout << '|' << endl;
 }
 
 void XuatTieuDe()
@@ -73,13 +75,15 @@ void XuatTieuDe()
   XuatDongKe('=');
 
   cout << setiosflags(ios::left);
+  cout << '|';
   cout << setw(11) << "Ma So"
-       << setw(8) << "Ho"
+       << '|' << setw(8) << "Ho"
        << setw(8) << "tLot"
        << setw(8) << "Ten"
-       << setw(12) << "Nam Sinh"
-       << setw(17) << "Que Quan"
-       << setw(13) << "Luong";
+       << '|' << setw(12) << "Nam Sinh"
+       << '|' << setw(17) << "Que Quan"
+       << '|' << setw(13) << "Luong";
+  cout << '|';
   cout << endl;
 
   XuatDongKe('=');
@@ -88,15 +92,17 @@ void XuatTieuDe()
 void Xuat_1_NhanVien(NhanVien a)
 {
   cout << setiosflags(ios::left);
+  cout << '|';
   cout << setw(11) << a.maSo
-       << setw(8) << a.hoTen.ho
+       << '|' << setw(8) << a.hoTen.ho
        << setw(8) << a.hoTen.hoLot
        << setw(8) << a.hoTen.ten
-       << setw(2) << a.ngayThangNam.ngay << '/'
+       << '|' << setw(2) << a.ngayThangNam.ngay << '/'
        << setw(2) << a.ngayThangNam.thang << '/'
        << setw(6) << a.ngayThangNam.nam
-       << setw(17) << a.diaChi
-       << setw(13) << setiosflags(ios::fixed) << setprecision(2) << a.luong;
+       << '|' << setw(17) << a.diaChi
+       << '|' << setw(13) << setiosflags(ios::fixed) << setprecision(2) << a.luong;
+  cout << '|';
   cout << endl;
 }
 
