@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -10,7 +11,8 @@ void ChayChuongTrinh();
 
 int main()
 {
-  ChayChuongTrinh();
+  XuatTieuDe();
+  //ChayChuongTrinh();
   return 0;
 }
 

@@ -60,3 +60,27 @@ int TaoDanhSachNhanVien(NhanVien a[MAX], int &n, char filename[MAX])
   in.close();
   return 1;
 }
+
+void XuatDongKe(char kt)
+{
+  for (int i = 1; i <= 74; i++)
+    cout << kt;
+  cout << endl;
+}
+
+void XuatTieuDe()
+{
+  XuatDongKe('=');
+
+  cout << setiosflags(ios::left);
+  cout << setw(8) << "Ma So"
+       << setw(8) << "Ho"
+       << setw(8) << "tLot"
+       << setw(8) << "Ten"
+       << setw(12) << "Nam Sinh"
+       << setw(17) << "Que Quan"
+       << setw(13) << "Luong";
+  cout << endl;
+
+  XuatDongKe('=');
+}
