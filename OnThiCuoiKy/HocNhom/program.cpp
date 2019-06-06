@@ -1,34 +1,26 @@
-
 #include <iostream>
-#include <conio.h>
 #include <fstream>
-#include <iomanip>
-#include <string.h>
 
 using namespace std;
 
-#include "Thuvien.h"
-#include "Menu.h"
+#include "thuvien.h"
+#include "menu.h"
 
 void ChayChuongTrinh();
 
 int main()
 {
 	ChayChuongTrinh();
-
-	return 0;
+	return 1;
 }
-
 void ChayChuongTrinh()
 {
+	int n;
+	int soMenu = 5, menu;
 	NhanVien a[MAX];
-	int n; // so luong nhan vien hien tai dang co trong mang
-	int soMenu = 4, menu;
-	
 	do
 	{
 		menu = ChonMenu(soMenu);
-		XuLyMenu(menu, a, n);
+		XuLyMenu(menu, a ,n);
 	} while (menu > 0);
-
 }
