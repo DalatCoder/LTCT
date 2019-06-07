@@ -110,12 +110,38 @@ void Xuat_DS_NhanVien(NhanVien a[MAX], int n)
 {
   XuatTieuDe();
 
-  for (int i = 0; i < n;i++)
+  for (int i = 0; i < n; i++)
   {
     Xuat_1_NhanVien(a[i]);
-    if ((i+1) % 3 == 0)
+    if ((i + 1) % 3 == 0)
       XuatDongKe('-');
   }
 
   XuatDongKe('=');
+}
+
+void LietKe_NhanVien_Nam(NhanVien a[MAX], int n, int nam)
+{
+  int viTri[MAX];
+  int m;
+
+  m = 0;
+
+  for (int i = 0; i < n; i++)
+    if (a[i].ngayThangNam.nam == nam)
+    {
+      viTri[m] = i;
+      m = m + 1;
+    }
+
+  if (m == 0)
+    cout << "\nKhong tim thay nhan vien sinh nam " << nam << " trong danh sach.";
+  else
+  {
+    cout << "\nTim thay " << m << " nhan vien sinh nam " << nam << endl;
+    XuatTieuDe();
+    for (int i = 0; i < m; i++)
+      Xuat_1_NhanVien(a[viTri[i]]);
+    XuatDongKe('=');
+  }
 }
