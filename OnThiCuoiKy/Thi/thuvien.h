@@ -145,3 +145,31 @@ void LietKe_NhanVien_Nam(NhanVien a[MAX], int n, int nam)
     XuatDongKe('=');
   }
 }
+
+double TimLuong_ThapNhat(NhanVien a[MAX], int n)
+{
+  double min;
+  min = a[0].luong;
+
+  for (int i = 1; i < n; i++)
+    if (min > a[i].luong)
+      min = a[i].luong;
+
+  return min;
+}
+
+void Xoa_NhanVien_Luong_ThapNhat(NhanVien a[MAX], int &n)
+{
+  int m, min;
+  m = 0;
+  min = TimLuong_ThapNhat(a, n);
+
+  for (int i = 0; i < n; i++)
+    if (a[i].luong != min)
+    {
+      a[m] = a[i];
+      m = m + 1;
+    }
+
+  n = m;
+}
