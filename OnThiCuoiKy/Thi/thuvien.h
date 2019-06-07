@@ -173,3 +173,26 @@ void Xoa_NhanVien_Luong_ThapNhat(NhanVien a[MAX], int &n)
 
   n = m;
 }
+
+void HoanVi(NhanVien &a, NhanVien &b)
+{
+  NhanVien t = a;
+  a = b;
+  b = t;
+}
+
+void SapXep_Tang_NamSinh_MaSo(NhanVien a[MAX], int n)
+{
+  // Sap xep tang theo nam sinh
+  for (int i = 0; i < n - 1; i++)
+    for (int j = i + 1; j < n;j++)
+      if (a[i].ngayThangNam.nam > a[j].ngayThangNam.nam)
+        HoanVi(a[i], a[j]);
+
+  //Sap xep tang theo ma so
+  for (int i = 0; i<n; i++)
+    for (int j = i + 1; j < n; j++)
+    if (a[i].ngayThangNam.nam == a[j].ngayThangNam.nam)
+    if (strcmp(a[i].maSo, a[j].maSo) > 0)
+      HoanVi(a[i], a[j]);
+}
