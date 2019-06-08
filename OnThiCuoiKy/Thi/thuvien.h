@@ -221,3 +221,19 @@ void LietKe_NhanVien_Ten(NhanVien a[MAX], int n, char ten[8])
     XuatDongKe('=');
   }
 }
+
+void SapXep_Tang_Luong_MaSo(NhanVien a[MAX], int n)
+{
+  // Sap xep danh sach nhan vien tang dan theo luong
+  for (int i = 0; i < n - 1; i++)
+    for (int j = i + 1; j < n; j++)
+      if (a[i].luong > a[j].luong)
+        HoanVi(a[i], a[j]);
+
+  // Sap xep danh sach nhan vien tang dan theo ma so
+  for (int i = 0; i < n - 1; i++)
+    for (int j = i + 1; j < n; j++)
+      if (a[i].luong == a[j].luong)
+        if (strcmp(a[i].maSo, a[j].maSo) > 0)
+          HoanVi(a[i], a[j]);
+}

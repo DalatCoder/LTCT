@@ -8,6 +8,7 @@ void XuatMenu()
   cout << "\n4. Xoa nhan vien co luong thap nhat.";
   cout << "\n5. Sap xep danh sach nhan vien tang dan theo nam sinh - ma so.";
   cout << "\n6. Liet ke nhan vien co ten Duong.";
+  cout << "\n7. Sap xep danh sach nhan vien tang dan theo luong - ma so.";
   cout << "\n===================================================\n";
 }
 
@@ -97,6 +98,15 @@ void XuLyMenu(int menu, NhanVien a[MAX], int &n)
     Xuat_DS_NhanVien(a, n);
     cout << "\nLiet ke nhan vien co ten Duong\n";
     LietKe_NhanVien_Ten(a, n, "Duong");
+    cin.get();
+    break;
+  case 7:
+    cout << "\n7. Sap xep danh sach nhan vien tang dan theo luong - ma so.";
+    cout << "\nDanh sach nhan vien ban dau:\n";
+    Xuat_DS_NhanVien(a, n);
+    SapXep_Tang_Luong_MaSo(a, n);
+    cout << "\nDanh sach nhan vien sau khi sap xep tang dan theo luong - ma so:\n";
+    Xuat_DS_NhanVien(a, n);
     cin.get();
     break;
   }
