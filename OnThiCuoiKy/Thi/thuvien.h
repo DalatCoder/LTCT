@@ -185,14 +185,39 @@ void SapXep_Tang_NamSinh_MaSo(NhanVien a[MAX], int n)
 {
   // Sap xep tang theo nam sinh
   for (int i = 0; i < n - 1; i++)
-    for (int j = i + 1; j < n;j++)
+    for (int j = i + 1; j < n; j++)
       if (a[i].ngayThangNam.nam > a[j].ngayThangNam.nam)
         HoanVi(a[i], a[j]);
 
   //Sap xep tang theo ma so
-  for (int i = 0; i<n; i++)
+  for (int i = 0; i < n; i++)
     for (int j = i + 1; j < n; j++)
-    if (a[i].ngayThangNam.nam == a[j].ngayThangNam.nam)
-    if (strcmp(a[i].maSo, a[j].maSo) > 0)
-      HoanVi(a[i], a[j]);
+      if (a[i].ngayThangNam.nam == a[j].ngayThangNam.nam)
+        if (strcmp(a[i].maSo, a[j].maSo) > 0)
+          HoanVi(a[i], a[j]);
+}
+
+void LietKe_NhanVien_Ten(NhanVien a[MAX], int n, char ten[8])
+{
+  int VT[MAX];
+  int m;
+  m = 0;
+
+  for (int i = 0; i < n; i++)
+    if (strcmp(a[i].hoTen.ten, ten) == 0)
+    {
+      VT[m] = i;
+      m = m + 1;
+    }
+
+  if (m == 0)
+    cout << "\nKhong co nhan vien co ten \"" << ten << "\" trong danh sach.";
+  else
+  {
+    cout << "\nTim thay " << m << " nhan vien co ten \"" << ten << " \".\n";
+    XuatTieuDe();
+    for (int i = 0; i < m; i++)
+      Xuat_1_NhanVien(a[VT[i]]);
+    XuatDongKe('=');
+  }
 }
